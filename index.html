@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ネコマサBLOG</title>
+  <style>
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+      line-height: 1.8;
+      margin: 0;
+      background-color: #1a1a1a;
+      color: #fff;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      padding: 60px 0;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3.5em;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    header p {
+        font-size: 1.2em;
+        color: #aaa;
+    }
+    .main-content {
+      padding: 30px 0;
+    }
+    .section-title {
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+    .post-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .post-card {
+      background-color: #2b2b2b;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .post-card:hover {
+        transform: translateY(-5px);
+    }
+    .post-card a {
+      text-decoration: none;
+      color: #fff;
+      display: block;
+      padding: 25px;
+    }
+    .post-card h2 {
+      font-size: 1.5em;
+      margin: 0 0 10px 0;
+      color: #00aaff;
+    }
+    .post-card p {
+        margin: 0;
+        color: #ccc;
+    }
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid #444;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ネコマサBLOG</h1>
+    <p>節約・副業・ガジェットレビュー</p>
+  </header>
+  <div class="container">
+    <div class="main-content">
+        <h2 class="section-title">最新記事</h2>
+        <div class="post-grid">
+            <div class="post-card">
+                <a href="https://nekomasa.website/smartphone-savings/">
+                    <h2>スマホの通信費を月額290円にする方法</h2>
+                    <p>かけ放題で31GBまでの高速通信を利用しつつ、毎月のスマホ代を劇的に下げる方法をご紹介。固定費を削減したい方は必見です。</p>
+                </a>
+            </div>
+            <div class="post-card">
+                <a href="https://nekomasa.website/subscription-discount/">
+                    <h2>サブスクリプションを安くする方法</h2>
+                    <p>ブラウザから申し込むだけで、多くのサブスクリプションサービスをより安く利用できることをご存知でしたか？この記事では、その具体的な方法と理由を解説します。</p>
+                </a>
+            </div>
+        </div>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 ネコマサBLOG</p>
+  </footer>
+</body>
+</html>
