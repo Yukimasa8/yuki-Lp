@@ -79,19 +79,101 @@
       text-decoration: none;
       color: #fff;
       display: block;
-      padding: 30px;
+      padding: 40px;
+    }
+    .post-toc {
+        background-color: #3a3a3a;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    .post-toc h3 {
+        font-size: 1.2em;
+        color: #00aaff;
+        margin-top: 0;
+        margin-bottom: 15px;
+        text-align: center; /* 目次タイトルを中央に */
+    }
+    .post-toc ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center; /* 目次項目を中央に */
+    }
+    .post-toc li {
+        margin-bottom: 8px;
+    }
+    .post-toc a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.2s;
+        display: inline;
+        padding: 0;
+    }
+    .post-toc a:hover {
+        color: #fff;
     }
     .post-card h2 {
-      font-size: 1.5em;
+      font-size: 1.3em; /* タイトルをやや小さく */
       margin: 0 0 10px 0;
       background-image: linear-gradient(to right, #00aaff, #8a2be2); /* 青から紫のグラデーション */
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       color: transparent; /* fallback for browsers that don't support text-fill-color */
     }
+    .post-main-image {
+        max-width: 80%; /* 画像を小さく */
+        height: auto;
+        display: block;
+        margin: 15px auto; /* 上下の余白と中央揃え */
+        border-radius: 8px;
+    }
     .post-card p {
         margin: 0;
         color: #ccc;
+    }
+    .post-content p {
+        font-size: 1em; /* やや小さく */
+        line-height: 1.7; /* 行間を調整 */
+        margin-top: 10px;
+        margin-bottom: 1em;
+        color: #e0e0e0;
+    }
+    .post-content h1 {
+        font-size: 1.6em;
+        margin-top: 1.6em;
+        margin-bottom: 0.8em;
+        color: #00aaff;
+    }
+    .post-content h2 {
+        font-size: 1.3em;
+        margin-top: 1.3em;
+        margin-bottom: 0.7em;
+        color: #00aaff;
+    }
+    .post-content h3 {
+        font-size: 1.1em;
+        margin-top: 1.1em;
+        margin-bottom: 0.5em;
+        color: #00aaff;
+    }
+    .post-content h4 {
+        font-size: 1em;
+        margin-top: 0.9em;
+        margin-bottom: 0.4em;
+        color: #00aaff;
+    }
+    .post-content h5 {
+        font-size: 0.9em;
+        margin-top: 0.7em;
+        margin-bottom: 0.3em;
+        color: #00aaff;
+    }
+    .post-content h6 {
+        font-size: 0.8em;
+        margin-top: 0.5em;
+        margin-bottom: 0.2em;
+        color: #00aaff;
     }
     footer {
       text-align: center;
@@ -119,23 +201,12 @@
     <div class="main-content">
         <h2 class="section-title">最新記事</h2>
         <div class="post-grid">
-            <div class="post-card">
-                <a href="https://nekomasa.website/smartphone-savings/">
-                    <h2>スマホの通信費を月額290円にする方法</h2>
-                    <p>かけ放題で31GBまでの高速通信を利用しつつ、毎月のスマホ代を劇的に下げる方法をご紹介。固定費を削減したい方は必見です。</p>
-                </a>
-            </div>
-            <div class="post-card">
-                <a href="https://nekomasa.website/subscription-discount/">
-                    <h2>サブスクリプションを安くする方法</h2>
-                    <p>ブラウザから申し込むだけで、多くのサブスクリプションサービスをより安く利用できることをご存知でしたか？この記事では、その具体的な方法と理由を解説します。</p>
-                </a>
-            </div>
         </div>
     </div>
   </div>
   <footer>
     <p>&copy; 2025 NEKOMASA BLOG</p>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
