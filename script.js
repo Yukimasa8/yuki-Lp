@@ -1,3 +1,4 @@
+
 const projectId = 'xm3dmjar';
 const dataset = 'production';
 const apiVersion = '2023-05-03';
@@ -62,22 +63,27 @@ async function renderPosts() {
     const postCard = document.createElement('div');
     postCard.classList.add('post-card');
 
-    const postLink = document.createElement('a');
-    postLink.href = post.slug ? `https://nekomasa.website/${post.slug.current}` : '#'; // Sanityのslugを使用
-    postLink.target = '_blank'; // 新しいタブで開く
-
-    const postTitle = document.createElement('h2');
-    postTitle.textContent = post.title;
+    // タイトルを外部リンクとして表示
+    const postTitleContainer = document.createElement('h2');
+    const postTitleLink = document.createElement('a');
+    postTitleLink.href = post.slug ? `https://nekomasa.website/${post.slug.current}` : '#';
+    postTitleLink.target = '_blank';
+    postTitleLink.textContent = post.title;
+    postTitleContainer.appendChild(postTitleLink);
 
     // メイン画像を追加
     const postImage = document.createElement('img');
     if (post.mainImageUrl) {
       postImage.src = post.mainImageUrl;
-      postImage.alt = post.title; // alt属性を設定
+      postImage.alt = post.title;
       postImage.classList.add('post-main-image');
     } else {
-      postImage.style.display = 'none'; // 画像がない場合は非表示
+      postImage.style.display = 'none';
     }
+
+    // 詳細コンテンツを格納するコンテナ
+    const detailsContainer = document.createElement('div');
+    detailsContainer.classList.add('post-details-container', 'hidden'); // 初期状態で非表示
 
     const postDescription = document.createElement('p');
     postDescription.textContent = post.description;
@@ -90,9 +96,8 @@ async function renderPosts() {
     postBody.classList.add('post-content');
     postBody.innerHTML = postBodyHtml;
 
-    postLink.appendChild(postTitle);
-    postLink.appendChild(postImage); // 画像をタイトルと説明の間に挿入
-    postLink.appendChild(postDescription);
+    // 詳細コンテナに要素を追加
+    detailsContainer.appendChild(postDescription);
 
     // 目次を生成して追加
     if (headings.length > 0) {
@@ -120,11 +125,25 @@ async function renderPosts() {
         tocList.appendChild(listItem);
       });
       tocContainer.appendChild(tocList);
-      postLink.appendChild(tocContainer);
+      detailsContainer.appendChild(tocContainer);
     }
 
-    postLink.appendChild(postBody); // 本文を追加
-    postCard.appendChild(postLink);
+    detailsContainer.appendChild(postBody);
+
+    // 詳細表示/非表示を切り替えるボタン
+    const toggleButton = document.createElement('button');
+    toggleButton.textContent = '詳細を見る';
+    toggleButton.classList.add('post-toggle-button');
+    toggleButton.addEventListener('click', () => {
+      detailsContainer.classList.toggle('hidden');
+      toggleButton.textContent = detailsContainer.classList.contains('hidden') ? '詳細を見る' : '閉じる';
+    });
+
+    postCard.appendChild(postTitleContainer);
+    postCard.appendChild(postImage);
+    postCard.appendChild(toggleButton);
+    postCard.appendChild(detailsContainer);
+
     postGrid.appendChild(postCard);
   });
 }
