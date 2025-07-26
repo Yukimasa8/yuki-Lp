@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const dataset = 'production';
   const apiVersion = '2023-05-03';
 
+  // getPosts 関数をDOMContentLoadedブロックの先頭に移動
   async function getPosts() {
     const query = encodeURIComponent(`*[_type == "post"]{
       _id,
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // Portable TextをHTMLに変換する関数を拡張
+  // renderPortableText 関数をDOMContentLoadedブロックの先頭に移動
   function renderPortableText(blocks, postIndex) {
     if (!blocks) return { html: '', headings: [] };
     let html = '';
