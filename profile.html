@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FBF5556Z9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FBF5556Z9M');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ネコマサBLOG</title>
@@ -92,37 +101,57 @@
       border-top: 1px solid #444;
       color: #888;
     }
+    .profile-card {
+      background-color: #2b2b2b;
+      border-radius: 10px;
+      padding: 40px;
+      text-align: center;
+    }
+    .profile-card h3 {
+        font-size: 2em;
+        margin-bottom: 30px;
+        color: #00aaff;
+    }
+    .profile-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        display: inline-block;
+        font-size: 1.2em;
+    }
+    .profile-card ul li {
+        margin-bottom: 15px;
+    }
+    .profile-card ul li strong {
+        color: #00aaff;
+        margin-right: 10px;
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">
-      <a href="#">NEKOMASA</a>
+      <a href="./index.html">NEKOMASA</a>
     </div>
     <nav>
       <ul>
-        <li><a href="#">ブログ</a></li>
-        <li><a href="#">プロフィール</a></li>
+        <li><a href="./index.html">ブログ</a></li>
+        <li><a href="./profile.html">プロフィール</a></li>
         <li><a href="#">YouTube</a></li>
       </ul>
     </nav>
   </header>
   <div class="container">
     <div class="main-content">
-        <h2 class="section-title">最新記事</h2>
-        <div class="post-grid">
-            <div class="post-card">
-                <a href="https://nekomasa.website/smartphone-savings/">
-                    <h2>スマホの通信費を月額290円にする方法</h2>
-                    <p>かけ放題で31GBまでの高速通信を利用しつつ、毎月のスマホ代を劇的に下げる方法をご紹介。固定費を削減したい方は必見です。</p>
-                </a>
-            </div>
-            <div class="post-card">
-                <a href="https://nekomasa.website/subscription-discount/">
-                    <h2>サブスクリプションを安くする方法</h2>
-                    <p>ブラウザから申し込むだけで、多くのサブスクリプションサービスをより安く利用できることをご存知でしたか？この記事では、その具体的な方法と理由を解説します。</p>
-                </a>
-            </div>
+        <h2 class="section-title">プロフィール</h2>
+        <div class="profile-card">
+            <h3>NEKOMASA</h3>
+            <ul>
+                <li><strong>趣味:</strong> 飼い猫のミーちゃんにちゅーるを献上すること</li>
+                <li><strong>年齢:</strong> 28(ニャー)歳</li>
+                <li><strong>最近の目標:</strong> ねこちぐらを完成させること</li>
+            </ul>
         </div>
     </div>
   </div>

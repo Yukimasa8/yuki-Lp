@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', async () => {
+  // ブログ記事一覧を表示する要素があるページでのみ実行する
+  const postGrid = document.querySelector('.post-grid');
+  if (!postGrid) {
+    return; // 要素がなければ何もしない
+  }
+
   const projectId = 'xm3dmjar';
   const dataset = 'production';
   const apiVersion = '2023-05-03';
@@ -52,7 +58,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   async function renderPosts() {
     const posts = await getPosts();
-    const postGrid = document.querySelector('.post-grid');
     postGrid.innerHTML = ''; // 既存の静的な記事をクリア
 
     if (posts.length === 0) {
