@@ -45,7 +45,19 @@
     }
     .logo a {
       text-decoration: none;
-      color: #fff;
+      color: #fff; /* Fallback color */
+      font-weight: bold;
+      background-image: linear-gradient(to right, #00aaff, #8a2be2); /* Blue to purple gradient */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text; /* Standard property */
+      text-fill-color: transparent; /* Standard property */
+      text-shadow: 0 0 8px rgba(0, 170, 255, 0.5); /* Subtle glow */
+      transition: all 0.3s ease; /* Smooth transition for hover */
+    }
+    .logo a:hover {
+      text-shadow: 0 0 15px rgba(0, 170, 255, 0.8); /* More intense glow on hover */
+      transform: scale(1.05); /* Slightly enlarge on hover */
     }
     nav ul {
       list-style: none;
