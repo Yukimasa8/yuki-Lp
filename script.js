@@ -10,8 +10,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   const apiVersion = '2023-05-03';
 
   // getPosts 関数をDOMContentLoadedブロックの先頭に移動
-  async function getPosts() {
-    const query = encodeURIComponent(`*[_type == "post"]{
+  async function getPosts(categoryTitle = null) {
+    let filter = '_type == "post"'
+    if (categoryTitle) {
+      filter += ` && "${categoryTitle}" in categories[]->title`
+    }
+
+    const query = encodeURIComponent(`*[${filter}]{
       _id,
       title,
       slug,
@@ -56,8 +61,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     return { html, headings };
   }
 
-  async function renderPosts() {
-    const posts = await getPosts();
+  async function renderPosts(categoryTitle = null) {
+    const posts = await getPosts(categoryTitle);
     postGrid.innerHTML = ''; // 既存の静的な記事をクリア
 
     if (posts.length === 0) {
@@ -95,7 +100,26 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       postGrid.appendChild(postCard);
     });
+
+    // アクティブなカテゴリボタンをハイライト
+    document.querySelectorAll('.category-button').forEach(button => {
+      if (button.dataset.category === categoryTitle) {
+        button.classList.add('active');
+      } else {
+        button.classList.remove('active');
+      }
+    });
   }
 
-  renderPosts();
+  // カテゴリボタンのイベントリスナーを設定
+  const categoryButtons = document.querySelectorAll('.category-button');
+  categoryButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.dataset.category;
+      renderPosts(category);
+    });
+  });
+
+  // 初期ロード時にデフォルトカテゴリの記事を表示
+  renderPosts('ネコマサの節約術');
 });
