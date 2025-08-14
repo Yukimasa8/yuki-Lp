@@ -120,6 +120,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   });
 
-  // 初期ロード時にデフォルトカテゴリの記事を表示
-  renderPosts('ネコマサの節約術');
+  // 初期ロード時にすべての記事を表示
+  renderPosts();
 });
