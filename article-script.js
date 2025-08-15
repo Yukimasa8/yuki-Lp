@@ -120,8 +120,10 @@ async function fetchArticleBySlug(slug) {
 }
 
 async function renderArticle() {
+  console.log("GEMINI DEBUG: renderArticle script started.");
   const urlParams = new URLSearchParams(window.location.search);
   const slug = urlParams.get('slug');
+  console.log("GEMINI DEBUG: Slug from URL:", slug);
 
   if (!slug) {
     document.getElementById('article-title').textContent = '記事が見つかりません';
@@ -129,6 +131,7 @@ async function renderArticle() {
   }
 
   const article = await fetchArticleBySlug(slug);
+  console.log("GEMINI DEBUG: Fetched article data:", article);
 
   if (!article) {
     document.getElementById('article-title').textContent = '記事が見つかりません';
@@ -148,6 +151,7 @@ async function renderArticle() {
   }
 
   const { html: articleBodyHtml, headings } = renderPortableText(article.body);
+  console.log("GEMINI DEBUG: Generated HTML:", articleBodyHtml);
   document.getElementById('article-body').innerHTML = articleBodyHtml;
 
   // 目次を生成
