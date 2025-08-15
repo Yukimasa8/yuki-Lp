@@ -180,4 +180,3 @@ async function renderArticle() {
 }
 
 renderArticle();
-();
