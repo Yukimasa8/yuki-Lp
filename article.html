@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) - Temporarily disabled for debugging -->
+  <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FBF5556Z9M"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -10,6 +11,7 @@
 
     gtag('config', 'G-FBF5556Z9M');
   </script>
+  -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>記事詳細 - ネコマサBLOG</title>
@@ -43,9 +45,21 @@
       font-size: 1.8em;
       font-weight: bold;
     }
-    .logo a {
+    .logo a, nav ul li a {
       text-decoration: none;
-      color: #fff;
+      color: #fff; /* Fallback color */
+      font-weight: bold;
+      background-image: linear-gradient(to right, #00aaff, #8a2be2); /* Blue to purple gradient */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text; /* Standard property */
+      text-fill-color: transparent; /* Standard property */
+      text-shadow: 0 0 15px rgba(0, 170, 255, 0.8); /* Brighter glow */
+      transition: all 0.3s ease; /* Smooth transition for hover */
+    }
+    .logo a:hover, nav ul li a:hover {
+      text-shadow: 0 0 25px rgba(0, 170, 255, 1); /* Even more intense glow on hover */
+      transform: scale(1.05); /* Slightly enlarge on hover */
     }
     nav ul {
       list-style: none;
@@ -55,11 +69,6 @@
     }
     nav ul li {
       margin-left: 30px;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
     }
     .article-content {
       padding: 30px 0;
@@ -172,13 +181,13 @@
 <body>
   <header>
     <div class="logo">
-      <a href="index.html">NEKOMASA</a>
+      <a href="./index.html">NEKOMASA</a>
     </div>
     <nav>
       <ul>
-        <li><a href="index.html#blog-posts">ブログ</a></li>
-        <li><a href="profile.html">プロフィール</a></li>
-        <li><a href="#">YouTube</a></li>
+        <li><a href="./index.html">ブログ</a></li>
+        <li><a href="./profile.html">プロフィール</a></li>
+        <li><a href="./youtube.html">YouTube</a></li>
       </ul>
     </nav>
   </header>
@@ -194,6 +203,6 @@
   <footer>
     <p>&copy; 2025 NEKOMASA BLOG</p>
   </footer>
-  <script src="article-script.js"></script>
+  <script src="article-script.js?v=2"></script>
 </body>
 </html>

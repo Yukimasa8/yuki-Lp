@@ -1,29 +1,89 @@
-
 const projectId = 'xm3dmjar';
 const dataset = 'production';
 const apiVersion = '2023-05-03';
 
-// Portable TextをHTMLに変換する関数を拡張
+// Portable TextをHTMLに変換する高機能な関数
 function renderPortableText(blocks) {
   if (!blocks) return { html: '', headings: [] };
+
   let html = '';
   const headings = [];
   let headingCounter = 0;
+  let listTag = null; // 現在のリストタグ（'ul' or 'ol'）を追跡
+
+  const closeList = () => {
+    if (listTag) {
+      html += `</${listTag}>`;
+      listTag = null;
+    }
+  };
 
   blocks.forEach(block => {
-    const childrenText = block.children.map(span => span.text).join('');
-    if (block.style && block.style.startsWith('h')) {
-      const level = parseInt(block.style.substring(1));
-      const id = `heading-${headingCounter++}`;
-      headings.push({ id: id, text: childrenText, level: level });
-      html += `<h${level} id="${id}">${childrenText}</h${level}>`;
-    } else if (block._type === 'block') {
-      html += `<p>${childrenText}</p>`;
+    // ブロックタイプが 'block' でない場合（例: 画像など）はリストを閉じる
+    if (block._type !== 'block' || !block.listItem) {
+      closeList();
     }
-    // 他のブロックタイプ（画像、リストなど）はここでは処理していません
+
+    if (block._type === 'block') {
+      const style = block.style || 'normal';
+      
+      // テキストコンテンツの生成
+      const childrenHtml = block.children.map(span => {
+        let text = span.text.replace(/\n/g, '<br>'); // ソフトブレークを<br>に変換
+        if (span.marks && span.marks.length > 0) {
+          // marksを逆順で適用するとネストが正しくなる
+          return span.marks.reverse().reduce((acc, mark) => {
+            if (mark === 'strong') return `<strong>${acc}</strong>`;
+            if (mark === 'em') return `<em>${acc}</em>`;
+            if (mark === 'underline') return `<u>${acc}</u>`;
+            if (mark === 'strike-through') return `<s>${acc}</s>`;
+            // リンクの処理
+            if (typeof mark === 'string' && block.markDefs) {
+               const markDef = block.markDefs.find(def => def._key === mark);
+               if (markDef && markDef._type === 'link') {
+                 return `<a href="${markDef.href}" target="_blank" rel="noopener noreferrer">${acc}</a>`;
+               }
+            }
+            return acc;
+          }, text);
+        }
+        return text;
+      }).join('');
+
+      // 見出しの処理
+      if (style.startsWith('h')) {
+        closeList();
+        const level = parseInt(style.substring(1));
+        const id = `heading-${headingCounter++}`;
+        headings.push({ id: id, text: block.children.map(c => c.text).join(''), level: level });
+        html += `<h${level} id="${id}">${childrenHtml}</h${level}>`;
+      } 
+      // リストの処理
+      else if (block.listItem) {
+        const newListTag = block.listItem === 'bullet' ? 'ul' : 'ol';
+        if (listTag !== newListTag) {
+          closeList();
+          listTag = newListTag;
+          html += `<${listTag}>`;
+        }
+        html += `<li>${childrenHtml}</li>`;
+      }
+      // 通常の段落の処理
+      else {
+        closeList();
+        // 2つ以上連続する<br>タグを段落の区切りに置換する
+        const paragraphs = childrenHtml.replace(/(<br>\s*){2,}/g, '</p><p>');
+        html += `<p>${paragraphs}</p>`;
+      }
+    }
+    // 他のカスタムブロックタイプ（例：画像）の処理をここに追加できる
+    // else if (block._type === 'image') { ... }
   });
+
+  closeList(); // 最後に開いているリストがあれば閉じる
   return { html, headings };
 }
+
 
 async function fetchArticleBySlug(slug) {
   const query = encodeURIComponent(`*[_type == "post" && slug.current == "${slug}"]{
@@ -32,8 +92,18 @@ async function fetchArticleBySlug(slug) {
     slug,
     description,
     "mainImageUrl": mainImage.asset->url,
-    body
-  }[0]`); // 最初の1件のみ取得
+    body[]{
+      ...,
+      // リンクのためのmarkDefsを取得
+      markDefs[]{
+        ...,
+        _type == "link" => {
+          "href": @.href,
+          "_key": @._key
+        }
+      }
+    }
+  }[0]`);
   const url = `https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}?query=${query}`;
 
   try {
@@ -110,3 +180,4 @@ async function renderArticle() {
 }
 
 renderArticle();
+();
