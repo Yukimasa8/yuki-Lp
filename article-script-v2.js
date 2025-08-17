@@ -76,6 +76,13 @@ function renderPortableText(blocks) {
         html += `<p>${paragraphs}</p>`;
       }
     }
+    // アフィリエイトリンクの処理
+    else if (block._type === 'affiliate') {
+      closeList();
+      if (block.code) {
+        html += block.code;
+      }
+    }
     // 他のカスタムブロックタイプ（例：画像）の処理をここに追加できる
     // else if (block._type === 'image') { ... }
   });
