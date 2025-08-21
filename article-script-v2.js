@@ -31,6 +31,7 @@ function renderPortableText(blocks) {
       // テキストコンテンツの生成
       const childrenHtml = block.children.map(span => {
         let text = span.text.replace(/\n/g, '<br>'); // ソフトブレークを<br>に変換
+        console.log('childrenHtml part:', text);
         if (span.marks && span.marks.length > 0) {
           // marksを逆順で適用するとネストが正しくなる
           return span.marks.reverse().reduce((acc, mark) => {
