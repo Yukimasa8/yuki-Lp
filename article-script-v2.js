@@ -193,6 +193,7 @@ function setupShareButtons(title) {
   const twitterBtn = document.getElementById('share-twitter');
   const facebookBtn = document.getElementById('share-facebook');
   const lineBtn = document.getElementById('share-line');
+  const copyBtn = document.getElementById('share-copy');
 
   const pageUrl = window.location.href;
   const pageTitle = title;
@@ -215,6 +216,21 @@ function setupShareButtons(title) {
     lineBtn.addEventListener('click', (e) => {
       const url = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(pageTitle)}`;
       window.open(url, '_blank', 'noopener,noreferrer');
+    });
+  }
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(pageUrl).then(() => {
+        const originalText = copyBtn.textContent;
+        copyBtn.textContent = 'コピーしました！';
+        setTimeout(() => {
+          copyBtn.textContent = originalText;
+        }, 2000);
+      }).catch(err => {
+        console.error('URLのコピーに失敗しました', err);
+        alert('コピーに失敗しました');
+      });
     });
   }
 }
