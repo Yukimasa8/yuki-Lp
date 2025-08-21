@@ -20,6 +20,7 @@ function renderPortableText(blocks) {
   };
 
   blocks.forEach(block => {
+    console.log('Processing block type:', block._type);
     // ブロックタイプが 'block' でない場合（例: 画像など）はリストを閉じる
     if (block._type !== 'block' || !block.listItem) {
       closeList();
@@ -50,7 +51,6 @@ function renderPortableText(blocks) {
         }
         return text;
       }).join('');
-      console.log('Final childrenHtml for block:', childrenHtml);
 
       // 見出しの処理
       if (style.startsWith('h')) {
