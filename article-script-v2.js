@@ -193,7 +193,6 @@ function setupShareButtons(title) {
   const twitterBtn = document.getElementById('share-twitter');
   const facebookBtn = document.getElementById('share-facebook');
   const lineBtn = document.getElementById('share-line');
-  const copyBtn = document.getElementById('share-copy');
 
   const pageUrl = window.location.href;
   const pageTitle = title;
@@ -219,13 +218,29 @@ function setupShareButtons(title) {
     });
   }
 
-  if (copyBtn) {
+  // Dynamically create and add the copy button
+  const shareButtonsContainer = document.querySelector('.share-buttons');
+  if (shareButtonsContainer) {
+    const copyBtn = document.createElement('button');
+    copyBtn.id = 'share-copy';
+    copyBtn.className = 'share-btn copy';
+    copyBtn.textContent = 'コピー';
+    
+    // Style the button to match others
+    Object.assign(copyBtn.style, {
+      backgroundColor: '#6c757d',
+    });
+
+    shareButtonsContainer.appendChild(copyBtn);
+
     copyBtn.addEventListener('click', () => {
       navigator.clipboard.writeText(pageUrl).then(() => {
         const originalText = copyBtn.textContent;
         copyBtn.textContent = 'コピーしました！';
+        copyBtn.disabled = true;
         setTimeout(() => {
           copyBtn.textContent = originalText;
+          copyBtn.disabled = false;
         }, 2000);
       }).catch(err => {
         console.error('URLのコピーに失敗しました', err);
