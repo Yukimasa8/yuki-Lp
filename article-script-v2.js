@@ -165,6 +165,7 @@ async function renderArticle() {
   }
 
   const { html: articleBodyHtml, headings } = renderPortableText(article.body);
+  console.log('Article body content:', article.body);
   document.getElementById('article-body').innerHTML = articleBodyHtml;
 
   // 目次を生成
