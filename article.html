@@ -203,6 +203,37 @@
             margin-bottom: 10px;
         }
     }
+    /* Share Buttons Styles */
+    .share-buttons {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .share-buttons h3 {
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .share-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: opacity 0.3s;
+    }
+    .share-btn:hover {
+      opacity: 0.8;
+    }
+    .share-btn.twitter {
+      background-color: #1DA1F2;
+    }
+    .share-btn.facebook {
+      background-color: #1877F2;
+    }
+    .share-btn.line {
+      background-color: #00B900;
+    }
   </style>
 </head>
 <body>
@@ -225,6 +256,14 @@
       <p id="article-description" class="article-description"></p>
       <div id="article-toc" class="article-toc"></div>
       <div id="article-body" class="article-body"></div>
+
+      <!-- Share Buttons -->
+      <div class="share-buttons">
+        <h3>この記事をシェアする</h3>
+        <a href="#" class="share-btn twitter" id="share-twitter">Twitter</a>
+        <a href="#" class="share-btn facebook" id="share-facebook">Facebook</a>
+        <a href="#" class="share-btn line" id="share-line">LINE</a>
+      </div>
     </div>
   </div>
   <footer>
