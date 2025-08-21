@@ -184,6 +184,36 @@ async function renderArticle() {
   } else {
     tocContainer.style.display = 'none'; // 見出しがない場合は目次を非表示
   }
+
+  // シェアボタンの設定
+  setupShareButtons(article.title);
+}
+
+function setupShareButtons(title) {
+  const url = encodeURIComponent(window.location.href);
+  const encodedTitle = encodeURIComponent(title);
+
+  const twitterBtn = document.getElementById('share-twitter');
+  const facebookBtn = document.getElementById('share-facebook');
+  const lineBtn = document.getElementById('share-line');
+
+  if (twitterBtn) {
+    twitterBtn.href = `https://twitter.com/intent/tweet?url=${url}&text=${encodedTitle}`;
+    twitterBtn.target = '_blank';
+    twitterBtn.rel = 'noopener noreferrer';
+  }
+
+  if (facebookBtn) {
+    facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+    facebookBtn.target = '_blank';
+    facebookBtn.rel = 'noopener noreferrer';
+  }
+
+  if (lineBtn) {
+    lineBtn.href = `https://social-plugins.line.me/lineit/share?url=${url}&text=${encodedTitle}`;
+    lineBtn.target = '_blank';
+    lineBtn.rel = 'noopener noreferrer';
+  }
 }
 
 renderArticle();
