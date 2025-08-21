@@ -1,4 +1,5 @@
 const projectId = 'xm3dmjar';
+console.log('Running article script v2.1 - with line break fix');
 const dataset = 'production';
 const apiVersion = '2023-05-03';
 
@@ -140,6 +141,15 @@ async function renderArticle() {
     document.getElementById('article-title').textContent = '記事が見つかりません';
     return;
   }
+
+  const debugElement = document.createElement('div');
+  debugElement.textContent = 'デバッグ: 改行修正適用済み';
+  debugElement.style.backgroundColor = 'red';
+  debugElement.style.color = 'white';
+  debugElement.style.textAlign = 'center';
+  debugElement.style.padding = '10px';
+  const container = document.querySelector('.container');
+  container.insertBefore(debugElement, container.firstChild);
 
   document.title = `${article.title} - ネコマサBLOG`;
   document.getElementById('article-title').textContent = article.title;
