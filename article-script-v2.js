@@ -71,9 +71,8 @@ function renderPortableText(blocks) {
       // 通常の段落の処理
       else {
         closeList();
-        // 2つ以上連続する<br>タグを段落の区切りに置換する
-        const paragraphs = childrenHtml.replace(/(<br>\s*){2,}/g, '</p><p>');
-        html += `<p>${paragraphs}</p>`;
+        // 2つ以上連続する<br>タグを段落の区切りに置換しないように変更
+        html += `<p>${childrenHtml}</p>`;
       }
     }
     // アフィリエイトリンクの処理
