@@ -190,29 +190,35 @@ async function renderArticle() {
 }
 
 function setupShareButtons(title) {
-  const url = encodeURIComponent(window.location.href);
-  const encodedTitle = encodeURIComponent(title);
-
   const twitterBtn = document.getElementById('share-twitter');
   const facebookBtn = document.getElementById('share-facebook');
   const lineBtn = document.getElementById('share-line');
 
+  const pageUrl = window.location.href;
+  const pageTitle = title;
+
   if (twitterBtn) {
-    twitterBtn.href = `https://twitter.com/intent/tweet?url=${url}&text=${encodedTitle}`;
-    twitterBtn.target = '_blank';
-    twitterBtn.rel = 'noopener noreferrer';
+    twitterBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(pageTitle)}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
   }
 
   if (facebookBtn) {
-    facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-    facebookBtn.target = '_blank';
-    facebookBtn.rel = 'noopener noreferrer';
+    facebookBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
   }
 
   if (lineBtn) {
-    lineBtn.href = `https://social-plugins.line.me/lineit/share?url=${url}&text=${encodedTitle}`;
-    lineBtn.target = '_blank';
-    lineBtn.rel = 'noopener noreferrer';
+    lineBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const url = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(pageTitle)}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
   }
 }
 
