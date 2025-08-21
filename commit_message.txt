@@ -1,0 +1,1 @@
+feat(debug): Add script version and visible debug message
