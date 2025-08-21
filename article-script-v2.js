@@ -199,7 +199,6 @@ function setupShareButtons(title) {
 
   if (twitterBtn) {
     twitterBtn.addEventListener('click', (e) => {
-      e.preventDefault();
       const url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(pageTitle)}`;
       window.open(url, '_blank', 'noopener,noreferrer');
     });
@@ -207,7 +206,6 @@ function setupShareButtons(title) {
 
   if (facebookBtn) {
     facebookBtn.addEventListener('click', (e) => {
-      e.preventDefault();
       const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
       window.open(url, '_blank', 'noopener,noreferrer');
     });
@@ -215,7 +213,6 @@ function setupShareButtons(title) {
 
   if (lineBtn) {
     lineBtn.addEventListener('click', (e) => {
-      e.preventDefault();
       const url = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(pageTitle)}`;
       window.open(url, '_blank', 'noopener,noreferrer');
     });
