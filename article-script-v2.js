@@ -143,15 +143,6 @@ async function renderArticle() {
     return;
   }
 
-  const debugElement = document.createElement('div');
-  debugElement.textContent = 'デバッグ: 改行修正適用済み';
-  debugElement.style.backgroundColor = 'red';
-  debugElement.style.color = 'white';
-  debugElement.style.textAlign = 'center';
-  debugElement.style.padding = '10px';
-  const container = document.querySelector('.container');
-  container.insertBefore(debugElement, container.firstChild);
-
   document.title = `${article.title} - ネコマサBLOG`;
   document.getElementById('article-title').textContent = article.title;
   document.getElementById('article-description').textContent = article.description;
@@ -165,7 +156,6 @@ async function renderArticle() {
   }
 
   const { html: articleBodyHtml, headings } = renderPortableText(article.body);
-  console.log('Article body content:', article.body);
   document.getElementById('article-body').innerHTML = articleBodyHtml;
 
   // 目次を生成
