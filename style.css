@@ -53,10 +53,13 @@ body {
       padding: 30px 0;
     }
     .section-title {
-        text-align: center;
-        font-size: 2em;
-        margin-bottom: 40px;
-    }
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 40px;
+        }
+        .profile-card {
+            text-align: center; /* Center text content within the card */
+        }
     .category-buttons {
         text-align: center;
         margin-bottom: 30px;
