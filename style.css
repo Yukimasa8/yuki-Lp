@@ -58,8 +58,12 @@ body {
             margin-bottom: 40px;
         }
         .profile-card {
-            text-align: center; /* Center text content within the card */
-        }
+    text-align: center; /* Center text content within the card */
+}
+.profile-card ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
     .category-buttons {
         text-align: center;
         margin-bottom: 30px;
