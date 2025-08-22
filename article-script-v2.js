@@ -3,6 +3,11 @@ console.log('Running article script v2.1 - with line break fix');
 const dataset = 'production';
 const apiVersion = '2023-05-03';
 
+// Sanity画像URLを生成するヘルパー関数
+function urlFor(source) {
+  return `https://cdn.sanity.io/images/${projectId}/${dataset}/${source.asset._ref.replace('image-', '').replace('-webp', '.webp').replace('-png', '.png').replace('-jpg', '.jpg').replace('-jpeg', '.jpeg')}`;
+}
+
 // Portable TextをHTMLに変換する高機能な関数
 function renderPortableText(blocks) {
   if (!blocks) return { html: '', headings: [] };
