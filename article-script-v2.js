@@ -43,7 +43,8 @@ function renderPortableText(blocks) {
             if (typeof mark === 'string' && block.markDefs) {
                const markDef = block.markDefs.find(def => def._key === mark);
                if (markDef && markDef._type === 'link') {
-                 return `<a href="${markDef.href}" target="_blank" rel="noopener noreferrer">${acc}</a>`;
+                 // 外部リンクにsponsored属性を付与する
+                 return `<a href="${markDef.href}" target="_blank" rel="noopener noreferrer sponsored">${acc}</a>`;
                }
             }
             return acc;

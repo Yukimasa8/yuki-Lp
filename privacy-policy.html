@@ -13,181 +13,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>プライバシーポリシー - ネコマサBLOG</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Noto Sans JP', 'Roboto', sans-serif;
-      line-height: 1.8;
-      margin: 0;
-      background-color: #1a1a1a;
-      background: linear-gradient(to right, #200d40, #100620);
-      background-attachment: fixed;
-      color: #fff;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      border-bottom: 1px solid #444;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-    .logo {
-      font-size: 1.8em;
-      font-weight: bold;
-    }
-    .logo a, nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      background-image: linear-gradient(to right, #00aaff, #8a2be2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
-      text-shadow: 0 0 15px rgba(0, 170, 255, 0.8);
-      transition: all 0.3s ease;
-    }
-    .logo a:hover, nav ul li a:hover {
-      text-shadow: 0 0 25px rgba(0, 170, 255, 1);
-      transform: scale(1.05);
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-    nav ul li {
-      margin-left: 30px;
-    }
-    .page-content {
-      padding: 30px 0;
-    }
-    .page-title {
-      font-size: 2.5em;
-      text-align: center;
-      margin-bottom: 40px;
-      color: #fff;
-    }
-    .content-section {
-        margin-bottom: 30px;
-    }
-    .content-section h2 {
-        font-size: 1.7em;
-        color: #00aaff;
-        border-bottom: 2px solid #00aaff;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-    }
-    .content-section p, .content-section ul {
-        font-size: 1.1em;
-        color: #e0e0e0;
-    }
-    .content-section a {
-        color: #00aaff;
-        text-decoration: none;
-    }
-    .content-section a:hover {
-        text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      padding: 40px 20px;
-      border-top: 1px solid #444;
-      color: #888;
-    }
-    .footer-links {
-        margin-top: 10px;
-    }
-    .footer-links a {
-        color: #aaa;
-        text-decoration: none;
-        margin: 0 10px;
-    }
-    .footer-links a:hover {
-        text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-        header {
-            padding: 10px 15px;
-        }
-        nav ul li {
-            margin-left: 10px;
-        }
-        nav ul li a {
-            font-size: 0.9em;
-        }
-    }
-
-    @media (max-width: 480px) {
-        nav ul {
-            flex-direction: column;
-            align-items: center;
-        }
-        nav ul li {
-            margin-left: 0;
-            margin-bottom: 10px;
-        }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/nekomasa.png">
 </head>
 <body>
   <header>
-    <div class="logo">
-      <a href="./index.html">NEKOMASA</a>
-    </div>
     <nav>
-      <ul>
-        <li><a href="./index.html">ブログ</a></li>
-        <li><a href="./profile.html">プロフィール</a></li>
-        <li><a href="./sns.html">SNS</a></li>
-      </ul>
+        <a href="index.html" class="logo">ネコマサBLOG</a>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">ホーム</a></li>
+            <li><a href="profile.html" class="nav-link">プロフィール</a></li>
+            <li><a href="sns.html" class="nav-link">SNS</a></li>
+            <li><a href="privacy-policy.html" class="nav-link">プライバシーポリシー</a></li>
+        </ul>
     </nav>
   </header>
-  <div class="container">
-    <div class="page-content">
-      <h1 class="page-title">プライバシーポリシー</h1>
 
-      <div class="content-section">
-        <h2>当サイトについて</h2>
-        <p>サイトアドレスは https://nekomasa.com です。</p>
-      </div>
+  <main class="container">
+    <section class="content-section">
+        <h1>プライバシーポリシー</h1>
+        <p>当サイト（以下、「当サイト」）は、以下の通りプライバシーポリシーを定めます。</p>
+        
+        <h2>1. 個人情報の利用目的</h2>
+        <p>当サイトでは、お問い合わせや記事へのコメントの際、名前やメールアドレス等の個人情報を入力いただく場合がございます。取得した個人情報は、お問い合わせに対する回答や必要な情報を電子メールなどでご連絡する場合に利用させていただくものであり、これらの目的以外では利用いたしません。</p>
 
-      <div class="content-section">
-        <h2>広告の配信について</h2>
-        <p>当サイトは、第三者配信の広告サービス「Google AdSense」を利用しています。このような広告配信事業者は、ユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報「Cookie」(氏名、住所、メール アドレス、電話番号は含まれません) を使用することがあります。</p>
-        <p>また、Amazonのアソシエイトとして、NEKOMASA BLOGは適格販売により収入を得ています。</p>
-      </div>
+        <h2>2. 広告について</h2>
+        <p>当サイトでは、第三者配信の広告サービス（Googleアドセンス、A8.netなど）を利用しており、ユーザーの興味に応じた商品やサービスの広告を表示するため、クッキー（Cookie）を使用しております。クッキーを使用することで当サイトはお客様のコンピュータを識別できるようになりますが、お客様個人を特定できるものではありません。</p>
+        <p>Cookieを無効にする方法やGoogleアドセンスに関する詳細は「<a href="https://policies.google.com/technologies/ads?gl=jp">広告 – ポリシーと規約 – Google</a>」をご確認ください。</p>
+        <p>また、当サイトは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。</p>
 
-      <div class="content-section">
-        <h2>アクセス解析ツールについて</h2>
-        <p>当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。このGoogleアナリティクスはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。この規約に関して、詳しくは<a href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank" rel="noopener noreferrer">こちら</a>をクリックしてください。</p>
-      </div>
+        <h2>3. アクセス解析ツールについて</h2>
+        <p>当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。このGoogleアナリティクスはトラフィックデータの収集のためにクッキー（Cookie）を使用しております。トラフィックデータは匿名で収集されており、個人を特定するものではありません。</p>
 
-      <div class="content-section">
-        <h2>免責事項</h2>
-        <p>当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について一切の責任を負いません。</p>
-        <p>当サイトのコンテンツ・情報につきまして、可能な限り正確な情報を掲載するよう努めておりますが、誤情報が入り込んだり、情報が古くなっていることもございます。当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますのでご了承ください。</p>
-      </div>
+        <h2>4. 免責事項</h2>
+        <p>当サイトからのリンクやバナーなどで移動したサイトで提供される情報、サービス等について一切の責任を負いません。</p>
+        <p>また、当サイトのコンテンツ・情報について、できる限り正確な情報を提供するように努めておりますが、正確性や安全性を保証するものではありません。情報が古くなっていることもございます。</p>
+        <p>当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますのでご了承ください。</p>
 
-    </div>
-  </div>
+        <h2>5. 著作権について</h2>
+        <p>当サイトで掲載している文章や画像などにつきましては、無断転載することを禁止します。</p>
+        <p>当サイトは著作権や肖像権の侵害を目的としたものではありません。著作権や肖像権に関して問題がございましたら、お問い合わせフォームよりご連絡ください。迅速に対応いたします。</p>
+
+        <h2>6. プライバシーポリシーの変更について</h2>
+        <p>当サイトは、個人情報に関して適用される日本の法令を遵守するとともに、本ポリシーの内容を適宜見直しその改善に努めます。修正された最新のプライバシーポリシーは常に本ページにて開示されます。</p>
+    </section>
+  </main>
+
   <footer>
-    <p>Amazonのアソシエイトとして、NEKOMASAは適格販売により収入を得ています。</p>
-    <div class="footer-links">
-        <a href="./privacy-policy.html">プライバシーポリシー</a>
-    </div>
-    <p>&copy; 2025 NEKOMASA BLOG</p>
+    <p>&copy; 2024 ネコマサBLOG. All Rights Reserved.</p>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>

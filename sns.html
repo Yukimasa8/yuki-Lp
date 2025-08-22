@@ -12,154 +12,50 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SNS - NEKOMASA</title>
-  <style>
-    body {
-      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-      line-height: 1.8;
-      margin: 0;
-      background-color: #1a1a1a;
-      background: linear-gradient(to right, #200d40, #100620);
-      background-attachment: fixed;
-      color: #fff;
-    }
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      border-bottom: 1px solid #444;
-    }
-    .logo {
-      font-size: 1.8em;
-      font-weight: bold;
-    }
-    .logo a, nav ul li a {
-      text-decoration: none;
-      color: #fff; /* Fallback color */
-      font-weight: bold;
-      background-image: linear-gradient(to right, #00aaff, #8a2be2); /* Blue to purple gradient */
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text; /* Standard property */
-      text-fill-color: transparent; /* Standard property */
-      text-shadow: 0 0 15px rgba(0, 170, 255, 0.8); /* Brighter glow */
-      transition: all 0.3s ease; /* Smooth transition for hover */
-    }
-    .logo a:hover, nav ul li a:hover {
-      text-shadow: 0 0 25px rgba(0, 170, 255, 1); /* Even more intense glow on hover */
-      transform: scale(1.05); /* Slightly enlarge on hover */
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-    nav ul li {
-      margin-left: 30px;
-    }
-    .main-content {
-      padding: 30px 0;
-    }
-    .section-title {
-        text-align: center;
-        font-size: 2em;
-        margin-bottom: 40px;
-    }
-    .link-list {
-        background-color: #2b2b2b;
-        border-radius: 10px;
-        padding: 40px;
-        text-align: center;
-    }
-    .link-list ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    .link-list li {
-        margin-bottom: 20px;
-    }
-    .link-list a {
-        color: #00aaff;
-        text-decoration: none;
-        font-size: 1.5em;
-        font-weight: bold;
-        transition: color 0.3s;
-    }
-    .link-list a:hover {
-        color: #8a2be2;
-    }
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      padding-top: 30px;
-      border-top: 1px solid #444;
-      color: #888;
-    }
-
-    @media (max-width: 768px) {
-        header {
-            padding: 10px 15px;
-        }
-        nav ul li {
-            margin-left: 10px;
-        }
-        nav ul li a {
-            font-size: 0.9em;
-        }
-    }
-
-    @media (max-width: 480px) {
-        nav ul {
-            flex-direction: column;
-            align-items: center;
-        }
-        nav ul li {
-            margin-left: 0;
-            margin-bottom: 10px;
-        }
-    }
-  </style>
+  <title>SNS - ネコマサBLOG</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/nekomasa.png">
 </head>
 <body>
   <header>
-    <div class="logo">
-      <a href="./index.html">NEKOMASA</a>
-    </div>
     <nav>
-      <ul>
-        <li><a href="./index.html">ブログ</a></li>
-        <li><a href="./profile.html">プロフィール</a></li>
-        <li><a href="./sns.html">SNS</a></li>
-      </ul>
+        <a href="index.html" class="logo">ネコマサBLOG</a>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">ホーム</a></li>
+            <li><a href="profile.html" class="nav-link">プロフィール</a></li>
+            <li><a href="sns.html" class="nav-link">SNS</a></li>
+            <li><a href="privacy-policy.html" class="nav-link">プライバシーポリシー</a></li>
+        </ul>
     </nav>
   </header>
-  <div class="container">
-    <div class="main-content">
-        <h2 class="section-title">SNS</h2>
-        <div class="link-list">
-            <ul>
-                <li><a href="https://www.youtube.com/@mii-channel" target="_blank" rel="noopener noreferrer">YouTube</a></li>
-                <li><a href="https://jp.mercari.com/user/profile/546972285" target="_blank" rel="noopener noreferrer">mercari</a></li>
-                <li><a href="https://x.com/NEKOMASA28" target="_blank" rel="noopener noreferrer">X(旧Twitter)</a></li>
-                <li><a href="https://line.me/S/sticker/31434013" target="_blank" rel="noopener noreferrer">LINEスタンプ</a></li>
-            </ul>
+
+  <main class="container">
+    <section class="sns-section">
+        <h1>SNS</h1>
+        <p>以下のSNSで情報を発信しています。お気軽にフォローしてください！</p>
+        <div class="sns-links">
+            <a href="https://twitter.com/nekomasa" class="sns-link twitter" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-twitter"></i> Twitter
+            </a>
+            <a href="https://github.com/nekomasa" class="sns-link github" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://zenn.dev/nekomasa" class="sns-link zenn" target="_blank" rel="noopener noreferrer">
+                Zenn
+            </a>
         </div>
-    </div>
-  </div>
+    </section>
+  </main>
+
   <footer>
-    <p>Amazonのアソシエイトとして、NEKOMASAは適格販売により収入を得ています。</p>
-    <div style="margin-top: 15px; margin-bottom: 15px;">
-        <a href="./privacy-policy.html" style="color: #aaa; text-decoration: none;">プライバシーポリシー</a>
-    </div>
-    <p>&copy; 2025 NEKOMASA BLOG</p>
+    <p>&copy; 2024 ネコマサBLOG. All Rights Reserved.</p>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>

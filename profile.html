@@ -12,186 +12,42 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ネコマサBLOG</title>
-  <style>
-    body {
-      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-      line-height: 1.8;
-      margin: 0;
-      background-color: #1a1a1a;
-      background: linear-gradient(to right, #200d40, #100620);
-      background-attachment: fixed;
-      color: #fff;
-    }
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      border-bottom: 1px solid #444;
-    }
-    .logo {
-      font-size: 1.8em;
-      font-weight: bold;
-    }
-    .logo a, nav ul li a {
-      text-decoration: none;
-      color: #fff; /* Fallback color */
-      font-weight: bold;
-      background-image: linear-gradient(to right, #00aaff, #8a2be2); /* Blue to purple gradient */
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text; /* Standard property */
-      text-fill-color: transparent; /* Standard property */
-      text-shadow: 0 0 15px rgba(0, 170, 255, 0.8); /* Brighter glow */
-      transition: all 0.3s ease; /* Smooth transition for hover */
-    }
-    .logo a:hover, nav ul li a:hover {
-      text-shadow: 0 0 25px rgba(0, 170, 255, 1); /* Even more intense glow on hover */
-      transform: scale(1.05); /* Slightly enlarge on hover */
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-    nav ul li {
-      margin-left: 30px;
-    }
-    .main-content {
-      padding: 30px 0;
-    }
-    .section-title {
-        text-align: center;
-        font-size: 2em;
-        margin-bottom: 40px;
-    }
-    .post-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-    }
-    .post-card {
-      background-color: #2b2b2b;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
-    .post-card:hover {
-        transform: translateY(-5px);
-    }
-    .post-card a {
-      text-decoration: none;
-      color: #fff;
-      display: block;
-      padding: 25px;
-    }
-    .post-card h2 {
-      font-size: 1.5em;
-      margin: 0 0 10px 0;
-      color: #00aaff;
-    }
-    .post-card p {
-        margin: 0;
-        color: #ccc;
-    }
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      padding-top: 30px;
-      border-top: 1px solid #444;
-      color: #888;
-    }
-    .profile-card {
-      background-color: #2b2b2b;
-      border-radius: 10px;
-      padding: 40px;
-      text-align: center;
-    }
-    .profile-card h3 {
-        font-size: 2em;
-        margin-bottom: 30px;
-        color: #00aaff;
-    }
-    .profile-card ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        text-align: left;
-        display: inline-block;
-        font-size: 1.2em;
-    }
-    .profile-card ul li {
-        margin-bottom: 15px;
-    }
-    .profile-card ul li strong {
-        color: #00aaff;
-        margin-right: 10px;
-    }
-
-    @media (max-width: 768px) {
-        header {
-            padding: 10px 15px;
-        }
-        nav ul li {
-            margin-left: 10px;
-        }
-        nav ul li a {
-            font-size: 0.9em;
-        }
-    }
-
-    @media (max-width: 480px) {
-        nav ul {
-            flex-direction: column;
-            align-items: center;
-        }
-        nav ul li {
-            margin-left: 0;
-            margin-bottom: 10px;
-        }
-    }
-  </style>
+  <title>プロフィール - ネコマサBLOG</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/nekomasa.png">
 </head>
 <body>
   <header>
-    <div class="logo">
-      <a href="./index.html">NEKOMASA</a>
-    </div>
     <nav>
-      <ul>
-        <li><a href="./index.html">ブログ</a></li>
-        <li><a href="./profile.html">プロフィール</a></li>
-        <li><a href="./sns.html">SNS</a></li>
-      </ul>
+        <a href="index.html" class="logo">ネコマサBLOG</a>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">ホーム</a></li>
+            <li><a href="profile.html" class="nav-link">プロフィール</a></li>
+            <li><a href="sns.html" class="nav-link">SNS</a></li>
+            <li><a href="privacy-policy.html" class="nav-link">プライバシーポリシー</a></li>
+        </ul>
     </nav>
   </header>
-  <div class="container">
-    <div class="main-content">
-        <h2 class="section-title">プロフィール</h2>
-        <div class="profile-card">
-            <h3>NEKOMASA</h3>
-            <img src="./assets/nekomasa.png" alt="ネコマサのプロフィール画像" style="display: block; margin: 0 auto 20px auto; width: 200px; height: 200px; border-radius: 50%; object-fit: cover;">
-            <ul>
-                <li><strong>年齢:</strong> 心は28(ニャー)歳</li>
-                <li><strong>趣味:</strong> 飼い猫のミーちゃんにちゅーるを献上すること</li>
-                <li><strong>最近の目標:</strong> ねこちぐらを完成させること</li>
-            </ul>
-        </div>
-    </div>
-  </div>
+
+  <main class="container">
+    <section class="profile-section">
+        <h1>プロフィール</h1>
+        <img src="assets/nekomasa.png" alt="ネコマサのプロフィール画像" class="profile-image">
+        <h2>ネコマサ</h2>
+        <p>はじめまして、ネコマサです。30代のWeb制作初心者です。</p>
+        <p>このブログでは、Web制作の学習過程や、副業での挑戦、日々の気づきなどを発信しています。</p>
+        <p>未経験からどこまでやれるのか、リアルな情報をお届けできればと思っています。応援よろしくお願いします！</p>
+    </section>
+  </main>
+
   <footer>
-    <p>Amazonのアソシエイトとして、NEKOMASAは適格販売により収入を得ています。</p>
-    <div style="margin-top: 15px; margin-bottom: 15px;">
-        <a href="./privacy-policy.html" style="color: #aaa; text-decoration: none;">プライバシーポリシー</a>
-    </div>
-    <p>&copy; 2025 NEKOMASA BLOG</p>
+    <p>&copy; 2024 ネコマサBLOG. All Rights Reserved.</p>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>

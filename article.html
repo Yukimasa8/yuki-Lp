@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <!-- Google tag (gtag.js) - Temporarily disabled for debugging -->
-  <!--
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6LLZ13CJPT"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -11,276 +10,59 @@
 
     gtag('config', 'G-6LLZ13CJPT');
   </script>
-  -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>記事詳細 - ネコマサBLOG</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Noto Sans JP', 'Roboto', sans-serif;
-      line-height: 1.8;
-      margin: 0;
-      background-color: #1a1a1a;
-      background: linear-gradient(to right, #200d40, #100620);
-      background-attachment: fixed;
-      color: #fff;
-    }
-    .container {
-      max-width: 800px; /* 記事本文の幅を調整 */
-      margin: 0 auto;
-      padding: 20px;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      border-bottom: 1px solid #444;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-    .logo {
-      font-size: 1.8em;
-      font-weight: bold;
-    }
-    .logo a, nav ul li a {
-      text-decoration: none;
-      color: #fff; /* Fallback color */
-      font-weight: bold;
-      background-image: linear-gradient(to right, #00aaff, #8a2be2); /* Blue to purple gradient */
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text; /* Standard property */
-      text-fill-color: transparent; /* Standard property */
-      text-shadow: 0 0 15px rgba(0, 170, 255, 0.8); /* Brighter glow */
-      transition: all 0.3s ease; /* Smooth transition for hover */
-    }
-    .logo a:hover, nav ul li a:hover {
-      text-shadow: 0 0 25px rgba(0, 170, 255, 1); /* Even more intense glow on hover */
-      transform: scale(1.05); /* Slightly enlarge on hover */
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-    nav ul li {
-      margin-left: 30px;
-    }
-    .article-content {
-      padding: 30px 0;
-    }
-    .article-title {
-      font-size: 2.5em;
-      text-align: center;
-      margin-bottom: 20px;
-      background-image: linear-gradient(to right, #00aaff, #8a2be2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
-    }
-    .article-main-image {
-        max-width: 90%;
-        height: auto;
-        display: block;
-        margin: 20px auto;
-        border-radius: 8px;
-    }
-    .article-description {
-        font-size: 1.1em;
-        text-align: center;
-        margin-bottom: 30px;
-        color: #ccc;
-    }
-    .article-body p {
-        font-size: 1.1em;
-        line-height: 1.8;
-        margin-bottom: 1.5em;
-        color: #e0e0e0;
-    }
-    .article-body h1 {
-        font-size: 2em;
-        margin-top: 1.8em;
-        margin-bottom: 1em;
-        color: #00aaff;
-    }
-    .article-body h2 {
-        font-size: 1.7em;
-        margin-top: 1.5em;
-        margin-bottom: 0.8em;
-        color: #00aaff;
-    }
-    .article-body h3 {
-        font-size: 1.4em;
-        margin-top: 1.2em;
-        margin-bottom: 0.6em;
-        color: #00aaff;
-    }
-    .article-body h4 {
-        font-size: 1.2em;
-        margin-top: 1em;
-        margin-bottom: 0.5em;
-        color: #00aaff;
-    }
-    .article-body h5 {
-        font-size: 1.1em;
-        margin-top: 0.8em;
-        margin-bottom: 0.4em;
-        color: #00aaff;
-    }
-    .article-body h6 {
-        font-size: 1em;
-        margin-top: 0.6em;
-        margin-bottom: 0.3em;
-        color: #00aaff;
-    }
-    .article-toc {
-        background-color: #3a3a3a;
-        border-radius: 8px;
-        padding: 20px;
-        margin-bottom: 30px;
-    }
-    .article-toc h3 {
-        font-size: 1.2em;
-        color: #00aaff;
-        margin-top: 0;
-        margin-bottom: 15px;
-        text-align: center;
-    }
-    .article-toc ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        text-align: center;
-    }
-    .article-toc li {
-        margin-bottom: 8px;
-    }
-    .article-toc a {
-        color: #ccc;
-        text-decoration: none;
-        transition: color 0.2s;
-        display: inline;
-        padding: 0;
-    }
-    .article-toc a:hover {
-        color: #fff;
-    }
-    .article-body a {
-        color: #00aaff;
-        text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      padding-top: 30px;
-      border-top: 1px solid #444;
-      color: #888;
-    }
-
-    @media (max-width: 768px) {
-        header {
-            padding: 10px 15px;
-        }
-        nav ul li {
-            margin-left: 10px;
-        }
-        nav ul li a {
-            font-size: 0.9em;
-        }
-    }
-
-    @media (max-width: 480px) {
-        nav ul {
-            flex-direction: column;
-            align-items: center;
-        }
-        nav ul li {
-            margin-left: 0;
-            margin-bottom: 10px;
-        }
-    }
-    /* Share Buttons Styles */
-    .share-buttons {
-      margin-top: 40px;
-      text-align: center;
-    }
-    .share-buttons h3 {
-      margin-bottom: 20px;
-      color: #fff;
-    }
-    .share-btn {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 5px;
-      border-radius: 5px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: opacity 0.3s;
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 1em;
-    }
-    .share-btn:hover {
-      opacity: 0.8;
-    }
-    .share-btn.twitter {
-      background-color: #1DA1F2;
-    }
-    .share-btn.facebook {
-      background-color: #1877F2;
-    }
-    .share-btn.line {
-      background-color: #00B900;
-    }
-    .share-btn.copy {
-      background-color: #6c757d;
-    }
-  </style>
+  <title>記事ページ</title> <!-- タイトルは動的に設定されます -->
+  <meta name="description" content=""> <!-- 説明は動的に設定されます -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/nekomasa.png">
 </head>
 <body>
   <header>
-    <div class="logo">
-      <a href="./index.html">NEKOMASA</a>
-    </div>
     <nav>
-      <ul>
-        <li><a href="./index.html">ブログ</a></li>
-        <li><a href="./profile.html">プロフィール</a></li>
-        <li><a href="./sns.html">SNS</a></li>
-      </ul>
+        <a href="index.html" class="logo">ネコマサBLOG</a>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">ホーム</a></li>
+            <li><a href="profile.html" class="nav-link">プロフィール</a></li>
+            <li><a href="sns.html" class="nav-link">SNS</a></li>
+            <li><a href="privacy-policy.html" class="nav-link">プライバシーポリシー</a></li>
+        </ul>
     </nav>
   </header>
-  <div class="container">
-    <div class="article-content">
-      <h1 id="article-title"></h1>
-      <img id="article-main-image" class="article-main-image" src="" alt="">
-      <p id="article-description" class="article-description"></p>
-      <div id="article-toc" class="article-toc"></div>
-      <div id="article-body" class="article-body"></div>
 
-      <!-- Share Buttons -->
-      <div class="share-buttons">
-        <h3>この記事をシェアする</h3>
-        <button class="share-btn twitter" id="share-twitter">Twitter</button>
-        <button class="share-btn facebook" id="share-facebook">Facebook</button>
-        <button class="share-btn line" id="share-line">LINE</button>
-        <button class="share-btn copy" id="share-copy">コピー</button>
-      </div>
-    </div>
-  </div>
+  <main class="container">
+    <article class="article-content">
+        <h1 id="article-title"></h1>
+        <p id="article-description"></p>
+        <img id="article-main-image" src="" alt="" class="article-main-image">
+        
+        <div class="share-buttons">
+            <span>このページをシェアする</span>
+            <button id="share-twitter"><i class="fab fa-twitter"></i></button>
+            <button id="share-facebook"><i class="fab fa-facebook-f"></i></button>
+            <button id="share-line"><i class="fab fa-line"></i></button>
+            <button id="share-copy"><i class="fas fa-copy"></i></button>
+        </div>
+
+        <div id="article-toc" class="article-toc"></div>
+        <div id="article-body">
+            <!-- 記事の本文がここに動的に読み込まれる -->
+        </div>
+    </article>
+  </main>
+
   <footer>
-    <p>Amazonのアソシエイトとして、NEKOMASAは適格販売により収入を得ています。</p>
-    <div style="margin-top: 15px; margin-bottom: 15px;">
-        <a href="./privacy-policy.html" style="color: #aaa; text-decoration: none;">プライバシーポリシー</a>
-    </div>
-    <p>&copy; 2025 NEKOMASA BLOG</p>
+    <p>&copy; 2024 ネコマサBLOG. All Rights Reserved.</p>
   </footer>
+
+  <button id="back-to-top" title="トップへ戻る"><i class="fas fa-arrow-up"></i></button>
+
   <script src="article-script-v2.js"></script>
 </body>
 </html>
