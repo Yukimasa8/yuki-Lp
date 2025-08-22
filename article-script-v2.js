@@ -86,7 +86,13 @@ function renderPortableText(blocks) {
       }
     }
     // 他のカスタムブロックタイプ（例：画像）の処理をここに追加できる
-    // else if (block._type === 'image') { ... }
+    else if (block._type === 'image') {
+      closeList();
+      if (block.asset) {
+        const imageUrl = urlFor(block);
+        html += `<figure><img src="${imageUrl}" alt="${block.alt || ''}" loading="lazy"></figure>`;
+      }
+    }
   });
 
   closeList(); // 最後に開いているリストがあれば閉じる
@@ -101,8 +107,18 @@ async function fetchArticleBySlug(slug) {
     slug,
     description,
     "mainImageUrl": mainImage.asset->url,
+    // Sanity画像URLを生成するヘルパー関数
+function urlFor(source) {
+  return `https://cdn.sanity.io/images/${projectId}/${dataset}/${source.asset._ref.replace('image-', '').replace('-webp', '.webp').replace('-png', '.png').replace('-jpg', '.jpg').replace('-jpeg', '.jpeg')}`;
+}
+
+// ... (rest of the code)
+
     body[]{
       ...,
+      _type == "image" => {
+        "asset": @.asset->
+      },
       // リンクのためのmarkDefsを取得
       markDefs[]{
         ...,
