@@ -220,6 +220,20 @@ body {
         margin-bottom: 0.2em;
         color: #00aaff;
     }
+    .article-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Add some vertical margin and center */
+    border-radius: 8px; /* Consistent with other images */
+}
+
+/* If there's a figure tag, apply some styling to it as well */
+.article-content figure {
+    margin: 20px 0; /* Adjust margin for figure element */
+    text-align: center; /* Center content within figure */
+}
+
     footer {
       text-align: center;
       margin-top: 60px;
