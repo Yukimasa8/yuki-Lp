@@ -112,13 +112,6 @@ async function fetchArticleBySlug(slug) {
     slug,
     description,
     "mainImageUrl": mainImage.asset->url,
-    // Sanity画像URLを生成するヘルパー関数
-function urlFor(source) {
-  return `https://cdn.sanity.io/images/${projectId}/${dataset}/${source.asset._ref.replace('image-', '').replace('-webp', '.webp').replace('-png', '.png').replace('-jpg', '.jpg').replace('-jpeg', '.jpeg')}`;
-}
-
-// ... (rest of the code)
-
     body[]{
       ...,
       _type == "image" => {
