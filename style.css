@@ -142,11 +142,12 @@ body {
     .post-toc ul {
         list-style: none;
         padding: 0;
-        margin: 0;
-        text-align: center; /* 目次項目を中央に */
+        margin: 0 auto; /* Center the ul itself */
+        text-align: center; /* Center text within li */
     }
     .post-toc li {
         margin-bottom: 8px;
+        display: inline-block; /* Make li elements inline-block to be centered by text-align on ul */
     }
     .post-toc a {
         color: #ccc;
