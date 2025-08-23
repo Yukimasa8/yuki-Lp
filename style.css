@@ -242,7 +242,13 @@ body {
     text-align: center; /* Center content within figure */
 }
 
-        footer {
+        .share-buttons {
+    text-align: center; /* Center the buttons */
+    margin-top: 50px; /* Add more space above */
+    margin-bottom: 30px; /* Keep some space below */
+}
+
+    footer {
       text-align: center;
       margin-top: 60px;
       padding-top: 30px;
