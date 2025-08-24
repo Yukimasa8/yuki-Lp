@@ -112,6 +112,7 @@ async function fetchArticleBySlug(slug) {
     slug,
     description,
     "mainImageUrl": mainImage.asset->url,
+    publishedAt, // Add publishedAt field
     body[]{
       ...,
       _type == "image" => {
