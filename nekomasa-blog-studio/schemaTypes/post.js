@@ -32,6 +32,17 @@ export default {
       },
     },
     {
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'datetime',
+      options: {
+        dateFormat: 'YYYY-MM-DD',
+        timeFormat: 'HH:mm',
+        calendarTodayLabel: 'Today'
+      },
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'array',

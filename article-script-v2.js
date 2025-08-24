@@ -162,6 +162,16 @@ async function renderArticle() {
   document.getElementById('article-title').textContent = article.title;
   document.getElementById('article-description').textContent = article.description;
 
+  // Display published date
+  const dateElement = document.getElementById('article-date');
+  if (article.publishedAt) {
+    const date = new Date(article.publishedAt);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    dateElement.textContent = `公開日: ${date.toLocaleDateString('ja-JP', options)}`;
+  } else {
+    dateElement.style.display = 'none';
+  }
+
   const mainImageElement = document.getElementById('article-main-image');
   if (article.mainImageUrl) {
     mainImageElement.src = article.mainImageUrl;
