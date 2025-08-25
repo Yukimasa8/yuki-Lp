@@ -96,17 +96,18 @@ document.addEventListener('DOMContentLoaded', async () => {
       postDescription.textContent = post.description;
 
       postCard.appendChild(postTitleContainer);
+      postCard.appendChild(postImage);
+      postCard.appendChild(postDescription);
 
       // 日付要素を作成して追加
       const postDate = document.createElement('p');
       postDate.textContent = new Date(post._createdAt).toLocaleDateString('ja-JP');
       postDate.style.color = '#666'; // 日付の文字色を少しグレーに
       postDate.style.fontSize = '0.9em'; // 文字サイズを少し小さく
-      postDate.style.margin = '0 0 10px 0'; // 下に少しマージンを追加
+      postDate.style.textAlign = 'right'; // 右詰めに変更
+      postDate.style.margin = '5px 0 0 0'; // 上に少しマージンを追加
 
       postCard.appendChild(postDate);
-      postCard.appendChild(postImage);
-      postCard.appendChild(postDescription);
 
       postGrid.appendChild(postCard);
     });
