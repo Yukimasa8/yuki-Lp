@@ -14,7 +14,7 @@ body {
     }
     header {
       display: flex;
-      justify-content: space-between;
+      justify-content: center; /* 中央揃えに変更 */
       align-items: center;
       padding: 20px 40px;
       border-bottom: 1px solid #444;
@@ -40,6 +40,15 @@ body {
       text-shadow: 0 0 25px rgba(0, 170, 255, 1); /* Even more intense glow on hover */
       transform: scale(1.05); /* Slightly enlarge on hover */
     }
+
+    /* Header Navigation Layout */
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* Spacing between logo and menu */
+    }
+
     nav ul {
       list-style: none;
       margin: 0;
