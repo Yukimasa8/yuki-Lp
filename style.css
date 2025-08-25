@@ -297,6 +297,16 @@ body {
         .br-sp {
             display: block; /* スマホ表示でのみ改行を有効にする */
         }
+        .text-gradient {
+          /* Re-apply gradient for mobile view to ensure it's not overridden */
+          color: #fff;
+          background-image: linear-gradient(to right, #00aaff, #8a2be2);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+          text-shadow: 0 0 15px rgba(0, 170, 255, 0.8);
+        }
     }
 
 /* Responsive line break utility */
