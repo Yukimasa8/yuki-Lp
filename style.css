@@ -175,11 +175,11 @@ body {
       color: transparent; /* fallback for browsers that don't support text-fill-color */
     }
     .post-main-image {
-        max-width: 80%; /* 画像を小さく */
-        height: auto;
+        width: 100%; /* カードの幅いっぱいに表示 */
+        height: 200px; /* 高さを200pxに固定 */
+        object-fit: cover; /* 画像の比率を保ったままトリミング */
         display: block;
-        margin: 15px auto; /* 上下の余白と中央揃え */
-        border-radius: 8px;
+        margin-bottom: 15px; /* 画像の下に余白を確保 */
     }
     .post-card p {
         margin: 0;
