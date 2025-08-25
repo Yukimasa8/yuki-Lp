@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       _id,
       title,
       slug,
+      _createdAt,
       description,
       "mainImageUrl": mainImage.asset->url,
       body // 本文のフィールドを追加
@@ -95,6 +96,15 @@ document.addEventListener('DOMContentLoaded', async () => {
       postDescription.textContent = post.description;
 
       postCard.appendChild(postTitleContainer);
+
+      // 日付要素を作成して追加
+      const postDate = document.createElement('p');
+      postDate.textContent = new Date(post._createdAt).toLocaleDateString('ja-JP');
+      postDate.style.color = '#666'; // 日付の文字色を少しグレーに
+      postDate.style.fontSize = '0.9em'; // 文字サイズを少し小さく
+      postDate.style.margin = '0 0 10px 0'; // 下に少しマージンを追加
+
+      postCard.appendChild(postDate);
       postCard.appendChild(postImage);
       postCard.appendChild(postDescription);
 
