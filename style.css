@@ -286,4 +286,7 @@ body {
             margin-left: 0;
             margin-bottom: 10px;
         }
+        .profile-card ul li {
+            font-size: 0.9em; /* スマホ表示で少しフォントを小さくして改行を調整 */
+        }
     }
