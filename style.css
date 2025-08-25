@@ -339,3 +339,8 @@ body {
   width: auto;
   vertical-align: middle; /* Helps align with other header items if any */
 }
+
+footer a {
+  color: #ccc; /* 少し明るいグレー */
+  text-decoration: underline; /* 下線を追加 */
+}
