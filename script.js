@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       postDate.textContent = new Date(post._createdAt).toLocaleDateString('ja-JP');
       postDate.style.color = '#666'; // 日付の文字色を少しグレーに
       postDate.style.fontSize = '0.9em'; // 文字サイズを少し小さく
-      postDate.style.textAlign = 'right'; // 右詰めに変更
+      postDate.style.textAlign = 'center'; // 中央揃えに変更
       postDate.style.margin = '5px 0 0 0'; // 上に少しマージンを追加
 
       postCard.appendChild(postDate);
