@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       filter += ` && "${categoryTitle}" in categories[]->title`
     }
 
-    const query = encodeURIComponent(`*[${filter}]{
+    const query = encodeURIComponent(`*[${filter}] | order(_createdAt desc){
       _id,
       title,
       slug,
