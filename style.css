@@ -24,21 +24,26 @@ body {
       font-size: 1.8em;
       font-weight: bold;
     }
-    .logo, nav ul li a { /* Apply to .logo directly */
-      text-decoration: none; /* Keep for nav links */
-      color: #fff; /* Fallback color */
+    .logo, nav ul li a { /* Common gradient and glow styles */
+      text-decoration: none;
       font-weight: bold;
-      background-image: linear-gradient(to right, #00aaff, #8a2be2); /* Blue to purple gradient */
+      background-image: linear-gradient(to right, #00aaff, #8a2be2);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text; /* Standard property */
-      text-fill-color: transparent; /* Standard property */
-      text-shadow: 0 0 15px rgba(0, 170, 255, 0.8); /* Brighter glow */
-      transition: all 0.3s ease; /* Smooth transition for hover */
+      background-clip: text;
+      text-fill-color: transparent;
+      text-shadow: 0 0 15px rgba(0, 170, 255, 0.8);
+      transition: all 0.3s ease;
     }
-    .logo:hover, nav ul li a:hover { /* Apply hover to .logo directly */
-      text-shadow: 0 0 25px rgba(0, 170, 255, 1); /* Even more intense glow on hover */
-      transform: scale(1.05); /* Slightly enlarge on hover */
+
+    .logo:hover, nav ul li a:hover { /* Common hover styles */
+      text-shadow: 0 0 25px rgba(0, 170, 255, 1);
+      transform: scale(1.05);
+    }
+
+    nav ul li a {
+        font-size: 1.1em; /* Adjust size for menu items */
+        color: #fff; /* Fallback color */
     }
 
     /* Header Navigation Layout */
