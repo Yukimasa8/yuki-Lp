@@ -294,4 +294,12 @@ body {
         .profile-card ul li {
             font-size: 0.9em; /* スマホ表示で少しフォントを小さくして改行を調整 */
         }
+        .br-sp {
+            display: block; /* スマホ表示でのみ改行を有効にする */
+        }
     }
+
+/* Responsive line break utility */
+.br-sp {
+  display: none;
+}
