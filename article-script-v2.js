@@ -214,6 +214,15 @@ async function renderArticle() {
 
   // シェアボタンの設定
   setupShareButtons(article.title);
+
+  // Google Analyticsにページビューイベントを送信
+  if (typeof gtag === 'function') { // gtag関数が存在するか確認
+    gtag('event', 'page_view', {
+      page_title: document.title, // ページのタイトル
+      page_path: window.location.pathname + window.location.search // ページのパスとクエリパラメータ
+    });
+    console.log('GA page_view event sent for:', document.title); // デバッグ用
+  }
 }
 
 function setupShareButtons(title) {
