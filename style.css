@@ -344,3 +344,7 @@ footer a {
   color: #ccc; /* 少し明るいグレー */
   text-decoration: underline; /* 下線を追加 */
 }
+
+footer p {
+  display: block; /* 強制的にブロック要素にする */
+}
