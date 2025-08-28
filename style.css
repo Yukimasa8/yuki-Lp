@@ -249,7 +249,7 @@ body {
         color: #00aaff;
     }
     .article-content img {
-    max-width: 100%;
+    max-width: 70%;
     height: auto;
     display: block;
     margin: 20px auto; /* Add some vertical margin and center */
