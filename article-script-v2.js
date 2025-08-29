@@ -87,7 +87,7 @@ function renderPortableText(blocks) {
     else if (block._type === 'affiliate') {
       closeList();
       if (block.code) {
-        html += `<div class="affiliate-link-container">${block.code}</div>`;
+        html += block.code;
       }
     }
     // 他のカスタムブロックタイプ（例：画像）の処理をここに追加できる

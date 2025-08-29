@@ -348,12 +348,3 @@ footer a {
 footer p {
   display: block; /* 強制的にブロック要素にする */
 }
-
-.affiliate-link-container a {
-  color: #ffc107 !important;
-  text-decoration: underline !important;
-}
-
-.affiliate-link-container a:hover {
-  color: #ffd54f !important;
-}
