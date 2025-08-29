@@ -350,10 +350,10 @@ footer p {
 }
 
 .post-content a {
-  color: #ffc107; /* 明るい黄色 */
-  text-decoration: underline;
+  color: #ffc107 !important; /* 明るい黄色 */
+  text-decoration: underline !important;
 }
 
 .post-content a:hover {
-  color: #ffd54f; /* ホバー時にもう少し明るく */
+  color: #ffd54f !important; /* ホバー時にもう少し明るく */
 }
