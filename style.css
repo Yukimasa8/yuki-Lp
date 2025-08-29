@@ -349,11 +349,11 @@ footer p {
   display: block; /* 強制的にブロック要素にする */
 }
 
-.post-content a {
-  color: #ffc107 !important; /* 明るい黄色 */
+.affiliate-link-container a {
+  color: #ffc107 !important;
   text-decoration: underline !important;
 }
 
-.post-content a:hover {
-  color: #ffd54f !important; /* ホバー時にもう少し明るく */
+.affiliate-link-container a:hover {
+  color: #ffd54f !important;
 }
