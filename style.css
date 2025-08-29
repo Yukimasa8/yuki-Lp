@@ -348,3 +348,12 @@ footer a {
 footer p {
   display: block; /* 強制的にブロック要素にする */
 }
+
+.post-content a {
+  color: #ffc107; /* 明るい黄色 */
+  text-decoration: underline;
+}
+
+.post-content a:hover {
+  color: #ffd54f; /* ホバー時にもう少し明るく */
+}
