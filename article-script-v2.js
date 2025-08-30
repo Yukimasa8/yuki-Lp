@@ -10,10 +10,11 @@ function urlFor(source) {
 
 // Portable TextをHTMLに変換する高機能な関数
 function renderPortableText(blocks) {
-  if (!blocks) return { html: '', headings: [] };
+  if (!blocks) return { html: '', headings: [], scripts: [] };
 
   let html = '';
   const headings = [];
+  const scripts = [];
   let headingCounter = 0;
   let listTag = null; // 現在のリストタグ（'ul' or 'ol'）を追跡
 
@@ -93,14 +94,9 @@ function renderPortableText(blocks) {
         // scriptタグ以外のHTML部分を追加
         html += block.code.replace(scriptRegex, '');
 
-        // scriptの中身を実行
+        // scriptの中身を配列に保存
         if (scriptMatch && scriptMatch[1]) {
-          try {
-            // ページのレンダリング後に実行されるように遅延させる
-            setTimeout(() => new Function(scriptMatch[1])(), 0);
-          } catch (e) {
-            console.error('Failed to execute affiliate script:', e);
-          }
+          scripts.push(scriptMatch[1]);
         }
       }
     }
@@ -115,7 +111,7 @@ function renderPortableText(blocks) {
   });
 
   closeList(); // 最後に開いているリストがあれば閉じる
-  return { html, headings };
+  return { html, headings, scripts };
 }
 
 
@@ -195,8 +191,19 @@ async function renderArticle() {
     mainImageElement.style.display = 'none';
   }
 
-  const { html: articleBodyHtml, headings } = renderPortableText(article.body);
+  const { html: articleBodyHtml, headings, scripts } = renderPortableText(article.body);
   document.getElementById('article-body').innerHTML = articleBodyHtml;
+
+  // 抽出したスクリプトを実行
+  if (scripts.length > 0) {
+    scripts.forEach(scriptBody => {
+      try {
+        new Function(scriptBody)();
+      } catch (e) {
+        console.error('Failed to execute affiliate script:', e);
+      }
+    });
+  }
 
   // 目次を生成
   const tocContainer = document.getElementById('article-toc');
