@@ -87,7 +87,21 @@ function renderPortableText(blocks) {
     else if (block._type === 'affiliate') {
       closeList();
       if (block.code) {
-        html += block.code;
+        const scriptRegex = /<script.*?>(.*?)<\/script>/s;
+        const scriptMatch = block.code.match(scriptRegex);
+        
+        // scriptタグ以外のHTML部分を追加
+        html += block.code.replace(scriptRegex, '');
+
+        // scriptの中身を実行
+        if (scriptMatch && scriptMatch[1]) {
+          try {
+            // ページのレンダリング後に実行されるように遅延させる
+            setTimeout(() => new Function(scriptMatch[1])(), 0);
+          } catch (e) {
+            console.error('Failed to execute affiliate script:', e);
+          }
+        }
       }
     }
     // 他のカスタムブロックタイプ（例：画像）の処理をここに追加できる
