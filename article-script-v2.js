@@ -198,7 +198,9 @@ async function renderArticle() {
   if (scripts.length > 0) {
     scripts.forEach(scriptBody => {
       try {
-        new Function(scriptBody)();
+        const scriptElement = document.createElement('script');
+        scriptElement.textContent = scriptBody;
+        document.body.appendChild(scriptElement);
       } catch (e) {
         console.error('Failed to execute affiliate script:', e);
       }
