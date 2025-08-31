@@ -318,7 +318,7 @@ body {
             display: none;
         }
         .site-credit {
-            font-size: 0.8em; /* スマホ表示でフォントを少し小さくする */
+            font-size: 0.8em !important; /* スマホ表示でフォントを少し小さくする */
         }
     }
 
