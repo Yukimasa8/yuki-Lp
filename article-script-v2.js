@@ -185,8 +185,10 @@ async function renderArticle() {
 
       if (updatedDate > publishedDate) {
           const options = { year: 'numeric', month: 'long', day: 'numeric' };
-          const updatedDateString = updatedDate.toLocaleDateString('ja-JP', options);
-          dateElement.textContent += ` (更新日: ${updatedDateString})`;
+          const updatedDateElement = document.createElement('p');
+          updatedDateElement.classList.add('updated-date'); // クラス名を追加
+          updatedDateElement.textContent = `更新日: ${updatedDate.toLocaleDateString('ja-JP', options)}`;
+          dateElement.parentNode.insertBefore(updatedDateElement, dateElement.nextSibling);
       }
   }
 
