@@ -181,7 +181,7 @@ async function renderArticle() {
 
     if (characterCount > 0) {
       const readingTime = Math.ceil(characterCount / 500);
-      dateString += ` | 約${readingTime}分`;
+      dateString += `　約${readingTime}分で読めます`;
     }
     dateElement.textContent = dateString;
 
