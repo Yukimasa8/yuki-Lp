@@ -317,6 +317,9 @@ body {
         .hamburger { /* スマホ表示でハンバーガーメニューを非表示 */
             display: none;
         }
+        .site-credit {
+            font-size: 0.8em; /* スマホ表示でフォントを少し小さくする */
+        }
     }
 
 /* Responsive line break utility */
