@@ -185,10 +185,8 @@ async function renderArticle() {
 
       if (updatedDate > publishedDate) {
           const options = { year: 'numeric', month: 'long', day: 'numeric' };
-          const updatedDateElement = document.createElement('p');
-          updatedDateElement.id = 'article-updated-date';
-          updatedDateElement.textContent = `更新日: ${updatedDate.toLocaleDateString('ja-JP', options)}`;
-          dateElement.parentNode.insertBefore(updatedDateElement, dateElement.nextSibling);
+          const updatedDateString = updatedDate.toLocaleDateString('ja-JP', options);
+          dateElement.textContent += ` (更新日: ${updatedDateString})`;
       }
   }
 
