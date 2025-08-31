@@ -326,7 +326,7 @@ body {
             overflow-wrap: break-word; /* はみ出し対策 */
         }
         .post-card h2 { /* 各記事カードのタイトル */
-            font-size: 1.1em !important; /* やや大きく調整 */
+            font-size: 1.0em !important; /* さらに小さく調整 */
             word-break: keep-all; /* 日本語の自然な改行を優先 */
             overflow-wrap: break-word; /* はみ出し対策 */
         }
