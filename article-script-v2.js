@@ -10,10 +10,11 @@ function urlFor(source) {
 
 // Portable TextをHTMLに変換する高機能な関数
 function renderPortableText(blocks) {
-  if (!blocks) return { html: '', headings: [] };
+  if (!blocks) return { html: '', headings: [], characterCount: 0 };
 
   let html = '';
   const headings = [];
+  let characterCount = 0;
   let headingCounter = 0;
   let listTag = null; // 現在のリストタグ（'ul' or 'ol'）を追跡
 
@@ -32,6 +33,11 @@ function renderPortableText(blocks) {
     }
 
     if (block._type === 'block') {
+      // 文字数をカウント
+      block.children.forEach(span => {
+        characterCount += span.text.length;
+      });
+
       const style = block.style || 'normal';
       
       // テキストコンテンツの生成
@@ -101,7 +107,7 @@ function renderPortableText(blocks) {
   });
 
   closeList(); // 最後に開いているリストがあれば閉じる
-  return { html, headings };
+  return { html, headings, characterCount };
 }
 
 
@@ -164,12 +170,21 @@ async function renderArticle() {
   document.getElementById('article-title').textContent = article.title;
   document.getElementById('article-description').textContent = article.description;
 
-  // Display published date
+  const { html: articleBodyHtml, headings, characterCount } = renderPortableText(article.body);
+
+  // Display published date and reading time
   const dateElement = document.getElementById('article-date');
   if (article.publishedAt) {
     const date = new Date(article.publishedAt);
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    dateElement.textContent = `公開日: ${date.toLocaleDateString('ja-JP', options)}`;
+    let dateString = `公開日: ${date.toLocaleDateString('ja-JP', options)}`;
+
+    if (characterCount > 0) {
+      const readingTime = Math.ceil(characterCount / 500);
+      dateString += ` | 約${readingTime}分`;
+    }
+    dateElement.textContent = dateString;
+
   } else {
     dateElement.style.display = 'none';
   }
@@ -200,7 +215,6 @@ async function renderArticle() {
     mainImageElement.style.display = 'none';
   }
 
-  const { html: articleBodyHtml, headings } = renderPortableText(article.body);
   document.getElementById('article-body').innerHTML = articleBodyHtml;
 
   // 目次を生成
