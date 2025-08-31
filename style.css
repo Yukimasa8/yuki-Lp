@@ -321,7 +321,9 @@ body {
             font-size: 0.8em !important; /* スマホ表示でフォントを少し小さくする */
         }
         .post-content h1 { /* 記事タイトル */
-            font-size: 1.3em !important; /* スマホ表示でフォントを小さくする */
+            font-size: 1.1em !important; /* さらに小さく */
+            word-break: keep-all; /* 日本語の自然な改行を優先 */
+            overflow-wrap: break-word; /* はみ出し対策 */
         }
     }
 
