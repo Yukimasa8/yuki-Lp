@@ -320,6 +320,9 @@ body {
         .site-credit {
             font-size: 0.8em !important; /* スマホ表示でフォントを少し小さくする */
         }
+        .post-content h1 { /* 記事タイトル */
+            font-size: 1.3em !important; /* スマホ表示でフォントを小さくする */
+        }
     }
 
 /* Responsive line break utility */
