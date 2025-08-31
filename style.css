@@ -327,7 +327,7 @@ body {
         }
         .post-card h2 { /* 各記事カードのタイトル */
             font-size: 1.0em !important; /* さらに小さく調整 */
-            word-break: keep-all; /* 日本語の自然な改行を優先 */
+            word-break: normal; /* 日本語のデフォルト改行ルールに戻す */
             overflow-wrap: break-word; /* はみ出し対策 */
         }
     }
