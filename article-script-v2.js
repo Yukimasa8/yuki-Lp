@@ -177,7 +177,7 @@ async function renderArticle() {
   if (article.publishedAt) {
     const date = new Date(article.publishedAt);
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    let dateString = `公開日: ${date.toLocaleDateString('ja-JP', options)}`;
+    let dateString = date.toLocaleDateString('ja-JP', options);
 
     if (characterCount > 0) {
       const readingTime = Math.ceil(characterCount / 500);
