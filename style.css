@@ -358,3 +358,10 @@ footer p {
   font-size: 0.9em;
   margin-top: 10px;
 }
+
+.site-credit {
+  text-align: center;
+  font-size: 0.9em;
+  color: #aaa;
+  margin-bottom: 30px;
+}
