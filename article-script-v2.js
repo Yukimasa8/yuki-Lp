@@ -112,7 +112,8 @@ async function fetchArticleBySlug(slug) {
     slug,
     description,
     "mainImageUrl": mainImage.asset->url,
-    publishedAt, // Add publishedAt field
+    publishedAt,
+    _updatedAt,
     body[]{
       ...,
       _type == "image" => {
@@ -171,6 +172,24 @@ async function renderArticle() {
     dateElement.textContent = `公開日: ${date.toLocaleDateString('ja-JP', options)}`;
   } else {
     dateElement.style.display = 'none';
+  }
+
+  // Display updated date if it's different from the published date
+  if (article._updatedAt && article.publishedAt) {
+      const publishedDate = new Date(article.publishedAt);
+      const updatedDate = new Date(article._updatedAt);
+
+      // Compare dates (ignoring time)
+      publishedDate.setHours(0, 0, 0, 0);
+      updatedDate.setHours(0, 0, 0, 0);
+
+      if (updatedDate > publishedDate) {
+          const options = { year: 'numeric', month: 'long', day: 'numeric' };
+          const updatedDateElement = document.createElement('p');
+          updatedDateElement.id = 'article-updated-date';
+          updatedDateElement.textContent = `更新日: ${updatedDate.toLocaleDateString('ja-JP', options)}`;
+          dateElement.parentNode.insertBefore(updatedDateElement, dateElement.nextSibling);
+      }
   }
 
   const mainImageElement = document.getElementById('article-main-image');
