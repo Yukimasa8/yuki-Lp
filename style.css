@@ -171,11 +171,10 @@ body {
         padding: 0;
         margin: 0 auto; /* Center the ul itself */
         display: inline-block; /* Makes ul take up only content width */
-        text-align: center; /* Align text within li to the center */
+        text-align: left; /* Align text within li to the left */
     }
     .article-toc li {
         margin-bottom: 8px;
-        display: inline-block; /* Make li elements inline-block to be centered by text-align on ul */
     }
     .article-toc a {
         color: #ccc;
