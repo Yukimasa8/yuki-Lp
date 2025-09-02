@@ -255,13 +255,18 @@ async function renderArticle() {
   setupShareButtons(article.title);
 
   // Google Analyticsにページビューイベントを送信
-  if (typeof gtag === 'function') { // gtag関数が存在するか確認
-    gtag('event', 'page_view', {
-      page_title: document.title, // ページのタイトル
-      page_path: window.location.pathname + window.location.search // ページのパスとクエリパラメータ
-    });
-    console.log('GA page_view event sent for:', document.title); // デバッグ用
-  }
+  // canonicalLink.hrefが設定された後に実行し、gtagが完全にロードされるのを待つ
+  setTimeout(() => {
+    if (typeof gtag === 'function') {
+      gtag('event', 'page_view', {
+        page_title: document.title, // ページのタイトル
+        page_path: window.location.pathname + window.location.search // ページのパスとクエリパラメータ
+      });
+      console.log('GA page_view event sent for:', document.title); // デバッグ用
+    } else {
+      console.warn('gtag function not available for GA page_view event.');
+    }
+  }, 500); // 500msの遅延を追加
 }
 
 function setupShareButtons(title) {
