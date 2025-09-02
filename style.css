@@ -248,6 +248,14 @@ body {
         margin-bottom: 0.2em;
         color: #00aaff;
     }
+    .article-content a {
+        color: #FFFF00; /* 明るい黄色に変更 */
+        text-decoration: underline; /* 下線を追加 */
+        transition: color 0.3s ease; /* ホバー時のアニメーション */
+    }
+    .article-content a:hover {
+        color: #FFD700; /* ホバー時に少し濃い黄色 */
+    }
     .article-content img {
     max-width: 70%;
     height: auto;
