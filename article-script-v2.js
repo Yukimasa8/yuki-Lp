@@ -170,6 +170,12 @@ async function renderArticle() {
   document.getElementById('article-title').textContent = article.title;
   document.getElementById('article-description').textContent = article.description;
 
+  // Canonical URLを設定
+  const canonicalLink = document.getElementById('canonical-link');
+  if (canonicalLink) {
+    canonicalLink.href = window.location.origin + window.location.pathname + window.location.search;
+  }
+
   const { html: articleBodyHtml, headings, characterCount } = renderPortableText(article.body);
 
   // Display published date and reading time
