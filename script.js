@@ -76,36 +76,40 @@ document.addEventListener('DOMContentLoaded', async () => {
       postCardLink.href = `article.html?slug=${post.slug.current}`;
       postCardLink.classList.add('post-card');
 
-      // The h2 title container, now without a link inside
-      const postTitleContainer = document.createElement('h2');
-      postTitleContainer.textContent = post.title;
-
-      // Main image
+      // Main image - now a direct child of the link
       const postImage = document.createElement('img');
       if (post.mainImageUrl) {
         postImage.src = post.mainImageUrl;
         postImage.alt = post.title;
         postImage.classList.add('post-main-image');
-      } else {
-        postImage.style.display = 'none';
+        postCardLink.appendChild(postImage); // Append image directly to the link
       }
 
+      // Create a container for the text content
+      const contentDiv = document.createElement('div');
+      contentDiv.classList.add('post-card-content');
+
+      // Title
+      const postTitleContainer = document.createElement('h2');
+      postTitleContainer.textContent = post.title;
+      contentDiv.appendChild(postTitleContainer);
+
+      // Description
       const postDescription = document.createElement('p');
       postDescription.textContent = post.description;
+      contentDiv.appendChild(postDescription);
 
-      // Date element
+      // Date
       const postDate = document.createElement('p');
       postDate.textContent = new Date(post._createdAt).toLocaleDateString('ja-JP');
-      postDate.style.color = '#666'; // 日付の文字色を少しグレーに
-      postDate.style.fontSize = '0.9em'; // 文字サイズを少し小さく
-      postDate.style.textAlign = 'center'; // 中央揃えに変更
-      postDate.style.margin = '5px 0 0 0'; // 上に少しマージンを追加
+      postDate.style.color = '#666';
+      postDate.style.fontSize = '0.9em';
+      postDate.style.textAlign = 'center';
+      postDate.style.margin = '5px 0 0 0';
+      contentDiv.appendChild(postDate);
 
-      // Append all elements to the main link
-      postCardLink.appendChild(postTitleContainer);
-      postCardLink.appendChild(postImage);
-      postCardLink.appendChild(postDescription);
-      postCardLink.appendChild(postDate);
+      // Append the content container to the link
+      postCardLink.appendChild(contentDiv);
 
       postGrid.appendChild(postCardLink);
     });
