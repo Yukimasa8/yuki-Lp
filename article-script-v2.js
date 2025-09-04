@@ -155,14 +155,14 @@ async function renderArticle() {
   const slug = urlParams.get('slug');
 
   if (!slug) {
-    document.getElementById('article-title').textContent = '記事が見つかりません';
+    window.location.href = '/404.html';
     return;
   }
 
   const article = await fetchArticleBySlug(slug);
 
   if (!article) {
-    document.getElementById('article-title').textContent = '記事が見つかりません';
+    window.location.href = '/404.html';
     return;
   }
 
