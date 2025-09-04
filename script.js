@@ -72,17 +72,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     posts.forEach((post, index) => {
-      const postCard = document.createElement('div');
-      postCard.classList.add('post-card');
+      const postCardLink = document.createElement('a');
+      postCardLink.href = `article.html?slug=${post.slug.current}`;
+      postCardLink.classList.add('post-card');
 
-      // タイトルを記事詳細ページへのリンクとして表示
+      // The h2 title container, now without a link inside
       const postTitleContainer = document.createElement('h2');
-      const postTitleLink = document.createElement('a');
-      postTitleLink.href = `article.html?slug=${post.slug.current}`;
-      postTitleLink.textContent = post.title;
-      postTitleContainer.appendChild(postTitleLink);
+      postTitleContainer.textContent = post.title;
 
-      // メイン画像を追加
+      // Main image
       const postImage = document.createElement('img');
       if (post.mainImageUrl) {
         postImage.src = post.mainImageUrl;
@@ -95,11 +93,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const postDescription = document.createElement('p');
       postDescription.textContent = post.description;
 
-      postCard.appendChild(postTitleContainer);
-      postCard.appendChild(postImage);
-      postCard.appendChild(postDescription);
-
-      // 日付要素を作成して追加
+      // Date element
       const postDate = document.createElement('p');
       postDate.textContent = new Date(post._createdAt).toLocaleDateString('ja-JP');
       postDate.style.color = '#666'; // 日付の文字色を少しグレーに
@@ -107,9 +101,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       postDate.style.textAlign = 'center'; // 中央揃えに変更
       postDate.style.margin = '5px 0 0 0'; // 上に少しマージンを追加
 
-      postCard.appendChild(postDate);
+      // Append all elements to the main link
+      postCardLink.appendChild(postTitleContainer);
+      postCardLink.appendChild(postImage);
+      postCardLink.appendChild(postDescription);
+      postCardLink.appendChild(postDate);
 
-      postGrid.appendChild(postCard);
+      postGrid.appendChild(postCardLink);
     });
 
     // アクティブなカテゴリボタンをハイライト
