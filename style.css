@@ -117,21 +117,18 @@ body {
     }
     a.post-card {
       display: block;
+      /* padding has been moved to .post-card-content */
+      background-color: #2b2b2b;
+      border-radius: 10px;
+      overflow: hidden;
       transition: transform 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
       text-decoration: none;
       color: #fff;
-      
-      /* New border image styles */
-      border-style: solid;
-      border-width: 40px; /* This value may need adjustment based on the image */
-      border-image-source: url('assets/film.png');
-      border-image-slice: 40 fill; /* The '40' must match border-width. 'fill' makes the center visible. */
-      border-image-repeat: repeat;
     }
 
     .post-card-content {
-      /* Padding is now controlled by the border-image */
-      padding: 0; 
+      padding: 20px;
     }
     a.post-card:hover {
         transform: translateY(-5px);
