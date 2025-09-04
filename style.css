@@ -117,6 +117,7 @@ body {
     }
     a.post-card {
       display: block;
+      position: relative; /* Required for pseudo-elements */
       /* padding has been moved to .post-card-content */
       background-color: #2b2b2b;
       border-radius: 10px;
@@ -392,4 +393,27 @@ footer p {
     color: #ccc;
     font-size: 0.9em;
     margin: 0;
+}
+
+/* Film strip effect */
+a.post-card:before,
+a.post-card:after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    height: 10px;
+    /* A repeating gradient to simulate sprocket holes */
+    background-image: radial-gradient(circle at 5px 5px, #555 3px, transparent 4px);
+    background-size: 20px 10px; /* Spacing of the holes */
+    background-repeat: repeat-x;
+    z-index: 10;
+}
+
+a.post-card:before {
+    top: 5px; /* Position it slightly from the edge */
+}
+
+a.post-card:after {
+    bottom: 5px; /* Position it slightly from the edge */
 }
