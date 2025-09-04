@@ -55,9 +55,9 @@ body {
     /* Header Navigation Layout */
     nav {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
-        gap: 15px; /* Spacing between logo and menu */
+        width: 100%;
     }
 
     nav ul {
@@ -385,4 +385,16 @@ footer p {
   font-size: 0.9em;
   color: #aaa;
   margin-bottom: 30px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.site-description {
+    color: #ccc;
+    font-size: 0.9em;
+    margin: 0;
 }
