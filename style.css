@@ -394,4 +394,8 @@ footer p {
     margin: 0;
 }
 
-
+.post-card-header {
+  background-color: #4a4a4a; /* A lighter grey */
+  padding: 20px;
+  margin: -20px -20px 15px -20px; /* T, R, B, L */
+}

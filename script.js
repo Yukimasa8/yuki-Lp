@@ -89,24 +89,30 @@ document.addEventListener('DOMContentLoaded', async () => {
       const contentDiv = document.createElement('div');
       contentDiv.classList.add('post-card-content');
 
+      // Create a header container for Title and Date
+      const headerDiv = document.createElement('div');
+      headerDiv.classList.add('post-card-header');
+
       // Title
       const postTitleContainer = document.createElement('h2');
       postTitleContainer.textContent = post.title;
-      contentDiv.appendChild(postTitleContainer);
+      headerDiv.appendChild(postTitleContainer);
+
+      // Date
+      const postDate = document.createElement('p');
+      postDate.textContent = new Date(post._createdAt).toLocaleDateString('ja-JP');
+      postDate.style.color = '#ccc'; // Adjusted for lighter grey background
+      postDate.style.fontSize = '0.9em';
+      postDate.style.textAlign = 'center';
+      postDate.style.margin = '5px 0 0 0';
+      headerDiv.appendChild(postDate);
+      
+      contentDiv.appendChild(headerDiv);
 
       // Description
       const postDescription = document.createElement('p');
       postDescription.textContent = post.description;
       contentDiv.appendChild(postDescription);
-
-      // Date
-      const postDate = document.createElement('p');
-      postDate.textContent = new Date(post._createdAt).toLocaleDateString('ja-JP');
-      postDate.style.color = '#666';
-      postDate.style.fontSize = '0.9em';
-      postDate.style.textAlign = 'center';
-      postDate.style.margin = '5px 0 0 0';
-      contentDiv.appendChild(postDate);
 
       // Append the content container to the link
       postCardLink.appendChild(contentDiv);
