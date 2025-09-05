@@ -443,3 +443,9 @@ footer p {
 .dere-bar span:after {
   content: ' ❤️';
 }
+
+@media (max-width: 480px) {
+  .tsun-bar span, .dere-bar span {
+    font-size: 0.7em;
+  }
+}
