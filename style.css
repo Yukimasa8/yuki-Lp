@@ -449,3 +449,11 @@ footer p {
     font-size: 0.7em;
   }
 }
+
+.tsundere-subtitle {
+  font-size: 0.8em;
+  color: #aaa;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
