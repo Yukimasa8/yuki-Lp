@@ -457,3 +457,10 @@ footer p {
   margin-bottom: 10px;
   text-align: center;
 }
+
+.sns-note {
+  font-size: 0.8em;
+  color: #aaa;
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
