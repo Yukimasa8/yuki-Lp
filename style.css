@@ -313,6 +313,9 @@ body {
         .br-sp {
             display: block; /* スマホ表示でのみ改行を有効にする */
         }
+        .site-credit-line2 {
+            display: block;
+        }
         .text-gradient {
           /* Re-apply gradient for mobile view to ensure it's not overridden */
           color: #fff;
