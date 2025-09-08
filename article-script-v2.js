@@ -151,26 +151,42 @@ async function fetchArticleBySlug(slug) {
 }
 
 async function renderArticle() {
+  // 1. Set a loading state immediately
+  document.getElementById('article-title').textContent = '読み込み中...';
+  document.getElementById('article-body').innerHTML = '<p>記事を読み込んでいます。少々お待ちください。</p>';
+
   const urlParams = new URLSearchParams(window.location.search);
   const slug = urlParams.get('slug');
 
+  function addNoIndexTag() {
+    const meta = document.createElement('meta');
+    meta.name = 'robots';
+    meta.content = 'noindex';
+    document.head.appendChild(meta);
+  }
+
   if (!slug) {
-    window.location.href = '/404.html';
+    document.getElementById('article-title').textContent = '記事が見つかりません';
+    document.getElementById('article-body').innerHTML = '<p>記事のURLが無効です。</p>';
+    addNoIndexTag();
     return;
   }
 
   const article = await fetchArticleBySlug(slug);
 
   if (!article) {
-    window.location.href = '/404.html';
+    document.getElementById('article-title').textContent = '記事が見つかりません';
+    document.getElementById('article-body').innerHTML = '<p>お探しの記事は見つかりませんでした。</p>';
+    addNoIndexTag();
     return;
   }
 
+  // --- Render the actual article ---
   document.title = `${article.title} - ネコマサBLOG`;
   document.getElementById('article-title').textContent = article.title;
   document.getElementById('article-description').textContent = article.description;
 
-  // Canonical URLを設定
+  // Canonical URL
   const canonicalLink = document.getElementById('canonical-link');
   if (canonicalLink) {
     canonicalLink.href = window.location.origin + window.location.pathname + window.location.search;
@@ -178,7 +194,7 @@ async function renderArticle() {
 
   const { html: articleBodyHtml, headings, characterCount } = renderPortableText(article.body);
 
-  // Display published date and reading time
+  // Date and reading time
   const dateElement = document.getElementById('article-date');
   if (article.publishedAt) {
     const date = new Date(article.publishedAt);
@@ -190,29 +206,27 @@ async function renderArticle() {
       dateString += `　約${readingTime}分で読めます`;
     }
     dateElement.textContent = dateString;
-
   } else {
     dateElement.style.display = 'none';
   }
 
-  // Display updated date if it's different from the published date
+  // Updated date
   if (article._updatedAt && article.publishedAt) {
       const publishedDate = new Date(article.publishedAt);
       const updatedDate = new Date(article._updatedAt);
-
-      // Compare dates (ignoring time)
       publishedDate.setHours(0, 0, 0, 0);
       updatedDate.setHours(0, 0, 0, 0);
 
       if (updatedDate > publishedDate) {
           const options = { year: 'numeric', month: 'long', day: 'numeric' };
           const updatedDateElement = document.createElement('p');
-          updatedDateElement.classList.add('updated-date'); // クラス名を追加
+          updatedDateElement.classList.add('updated-date');
           updatedDateElement.textContent = `更新日: ${updatedDate.toLocaleDateString('ja-JP', options)}`;
           dateElement.parentNode.insertBefore(updatedDateElement, dateElement.nextSibling);
       }
   }
 
+  // Main image
   const mainImageElement = document.getElementById('article-main-image');
   if (article.mainImageUrl) {
     mainImageElement.src = article.mainImageUrl;
@@ -221,15 +235,15 @@ async function renderArticle() {
     mainImageElement.style.display = 'none';
   }
 
+  // Article body
   document.getElementById('article-body').innerHTML = articleBodyHtml;
 
-  // 目次を生成
+  // Table of Contents
   const tocContainer = document.getElementById('article-toc');
   if (headings.length > 0) {
     const tocTitle = document.createElement('h3');
     tocTitle.textContent = '目次';
     tocContainer.appendChild(tocTitle);
-
     const tocList = document.createElement('ul');
     headings.forEach(heading => {
       const listItem = document.createElement('li');
@@ -248,25 +262,24 @@ async function renderArticle() {
     });
     tocContainer.appendChild(tocList);
   } else {
-    tocContainer.style.display = 'none'; // 見出しがない場合は目次を非表示
+    tocContainer.style.display = 'none';
   }
 
-  // シェアボタンの設定
+  // Share buttons
   setupShareButtons(article.title);
 
-  // Google Analyticsにページビューイベントを送信
-  // canonicalLink.hrefが設定された後に実行し、gtagが完全にロードされるのを待つ
+  // GA event
   setTimeout(() => {
     if (typeof gtag === 'function') {
       gtag('event', 'page_view', {
-        page_title: document.title, // ページのタイトル
-        page_path: window.location.pathname + window.location.search // ページのパスとクエリパラメータ
+        page_title: document.title,
+        page_path: window.location.pathname + window.location.search
       });
-      console.log('GA page_view event sent for:', document.title); // デバッグ用
+      console.log('GA page_view event sent for:', document.title);
     } else {
       console.warn('gtag function not available for GA page_view event.');
     }
-  }, 500); // 500msの遅延を追加
+  }, 500);
 }
 
 function setupShareButtons(title) {
