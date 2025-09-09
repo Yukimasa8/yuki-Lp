@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       _createdAt,
       description,
       "mainImageUrl": mainImage.asset->url,
+      "tags": tags[]->{title, slug},
       body // 本文のフィールドを追加
     }`);
     const url = `https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}?query=${query}`;
@@ -107,6 +108,21 @@ document.addEventListener('DOMContentLoaded', async () => {
       postDate.style.textAlign = 'center';
       postDate.style.margin = '5px 0 0 0';
       contentDiv.appendChild(postDate);
+
+      // Create and append tags
+      if (post.tags && post.tags.length > 0) {
+        const tagsContainer = document.createElement('div');
+        tagsContainer.classList.add('tags-container');
+        
+        post.tags.forEach(tag => {
+          const tagElement = document.createElement('span');
+          tagElement.classList.add('tag-item');
+          tagElement.textContent = tag.title;
+          tagsContainer.appendChild(tagElement);
+        });
+        
+        contentDiv.appendChild(tagsContainer);
+      }
 
       // Append the content container to the link
       postCardLink.appendChild(contentDiv);
