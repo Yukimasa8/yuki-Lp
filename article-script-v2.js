@@ -281,13 +281,13 @@ async function renderArticle() {
       if (tag && tag.slug && tag.slug.current) {
         const tagElement = document.createElement('a');
         tagElement.classList.add('tag-item');
-        tagElement.textContent = tag.title;
+        tagElement.textContent = `#${tag.title}`;
         tagElement.href = `index.html?tag=${tag.slug.current}`;
         tagsContainer.appendChild(tagElement);
       } else if (tag && tag.title) {
         const tagElement = document.createElement('span');
         tagElement.classList.add('tag-item', 'tag-item--no-link');
-        tagElement.textContent = tag.title;
+        tagElement.textContent = `#${tag.title}`;
         tagsContainer.appendChild(tagElement);
       }
     });
