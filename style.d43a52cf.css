@@ -266,6 +266,10 @@ body {
 .main-content a:hover {
   color: #8a2be2; /* ホバー時に紫に変更 */
 }
+
+a.category-button {
+  color: #fff; /* ボタン内のリンク文字を白に強制 */
+}
     .article-content img {
     max-width: 70%;
     height: auto;
