@@ -485,8 +485,8 @@ footer p {
   display: inline-block;
   padding: 2px 8px;
   margin: 2px;
-  border: 1px solid #ccc;
+  background-color: #e0e0e0;
   border-radius: 4px;
-  color: #aaa;
+  color: #666;
   font-size: 0.8em;
 }
