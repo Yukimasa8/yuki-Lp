@@ -270,6 +270,10 @@ body {
 a.category-button {
   color: #fff; /* ボタン内のリンク文字を白に強制 */
 }
+
+a.post-card {
+  text-decoration: none; /* ブログカードのタイトルから下線を削除 */
+}
     .article-content img {
     max-width: 70%;
     height: auto;
