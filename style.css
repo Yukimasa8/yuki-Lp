@@ -8,9 +8,9 @@ body {
       color: #fff;
     }
     .container {
-  max-width: 700px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 20px;
 }
     header {
       display: flex;
@@ -501,4 +501,10 @@ a.tag:hover {
   border-color: #ccc;
   box-shadow: 0 2px 4px rgba(0,0,0,0.15);
   transform: translateY(-1px);
+}
+
+.article-page-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px;
 }
