@@ -81,10 +81,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       postTitleContainer.textContent = post.title;
       contentDiv.appendChild(postTitleContainer);
 
-      const postDescription = document.createElement('p');
-      postDescription.textContent = post.description;
-      contentDiv.appendChild(postDescription);
-
       const postDate = document.createElement('p');
       postDate.textContent = new Date(post._createdAt).toLocaleDateString('ja-JP');
       postDate.style.color = '#666';
