@@ -255,8 +255,17 @@ body {
         transition: color 0.3s ease; /* ホバー時のアニメーション */
     }
     .article-content a:hover {
-        color: #eee; /* ホバー時に少し明るいグレー */
-    }
+    color: #eee; /* ホバー時に少し明るいグレー */
+}
+
+.main-content a {
+  color: #00aaff; /* 明るい青色に変更 */
+  text-decoration: underline; /* 下線を追加 */
+}
+
+.main-content a:hover {
+  color: #8a2be2; /* ホバー時に紫に変更 */
+}
     .article-content img {
     max-width: 70%;
     height: auto;
