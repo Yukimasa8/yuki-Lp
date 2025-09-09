@@ -12,8 +12,9 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SNS - NEKOMASA</title>
-  <link rel="stylesheet" href="style.css?v=1.9">
+  <title>タグページ</title> <!-- Dynamic title will be set by JS -->
+  <meta name="description" content=""> <!-- Dynamic description will be set by JS -->
+  <link rel="stylesheet" href="style.css?v=1.8">
   <link rel="icon" href="assets/nekomasa.png">
 </head>
 <body>
@@ -37,24 +38,19 @@
     </nav>
   </header>
 
-  <div class="container">
-    <div class="main-content" style="text-align: center;">
-        <h2 class="section-title text-gradient">SNS</h2>
-        
-        <div class="sns-links" style="display: flex; flex-direction: column; gap: 20px; max-width: 400px; margin: 40px auto;">
-            <a href="https://jp.mercari.com/user/profile/546972285" class="category-button" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">メルカリ</a>
-            <a href="https://x.com/NEKOMASA28" class="category-button" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">X (旧Twitter)</a>
-            <a href="https://store.line.me/stickershop/product/31434013/ja" class="category-button" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">LINEスタンプ</a>
-            <a href="https://www.youtube.com/@mii-channel" class="category-button" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">YouTube(ミーちゃんネル)</a>
-            <a href="https://www.instagram.com/yuki_metal_8" class="category-button" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">Instagram</a>
-            <p class="sns-note">(YouTubeとInstagramは現在、個人アカウントで運用中です。今後NEKOMASA用アカウントに移行予定です)</p>
+  <main class="container">
+    <div class="main-content">
+        <h2 class="section-title" id="tag-page-title"></h2>
+        <div class="post-grid" id="tag-post-grid">
+            <!-- Tagged posts will be loaded here -->
         </div>
     </div>
-  </div>
+  </main>
 
   <footer>
     <p>&copy; 2025 ネコマサBLOG. All Rights Reserved.<br><a href="privacy-policy.html">プライバシーポリシー</a></p>
   </footer>
-  <script src="script.js"></script>
+
+  <script src="tags-script.js"></script>
 </body>
 </html>

@@ -282,7 +282,7 @@ async function renderArticle() {
         const tagElement = document.createElement('a');
         tagElement.classList.add('tag');
         tagElement.textContent = tag.title;
-        tagElement.href = `index.html?tag=${tag.slug.current}`;
+        tagElement.href = `tags.html?slug=${tag.slug.current}`;
         tagsContainer.appendChild(tagElement);
       } else if (tag && tag.title) {
         const tagElement = document.createElement('span');
