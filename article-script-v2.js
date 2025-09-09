@@ -120,6 +120,7 @@ async function fetchArticleBySlug(slug) {
     "mainImageUrl": mainImage.asset->url,
     publishedAt,
     _updatedAt,
+    "tags": tags[]->{title, slug},
     body[]{
       ...,
       _type == "image" => {
@@ -263,6 +264,29 @@ async function renderArticle() {
     tocContainer.appendChild(tocList);
   } else {
     tocContainer.style.display = 'none';
+  }
+
+  // Render tags
+  if (article.tags && article.tags.length > 0) {
+    const tagsContainer = document.createElement('div');
+    tagsContainer.classList.add('tags-container', 'article-tags');
+
+    const tagsTitle = document.createElement('h3');
+    tagsTitle.textContent = '関連タグ';
+    tagsContainer.appendChild(tagsTitle);
+
+    article.tags.forEach(tag => {
+      const tagElement = document.createElement('a');
+      tagElement.classList.add('tag-item');
+      tagElement.textContent = tag.title;
+      tagElement.href = `index.html?tag=${tag.slug.current}`;
+      tagsContainer.appendChild(tagElement);
+    });
+
+    const shareButtons = document.querySelector('.share-buttons');
+    if (shareButtons) {
+      shareButtons.parentNode.insertBefore(tagsContainer, shareButtons);
+    }
   }
 
   // Share buttons

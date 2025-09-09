@@ -1,19 +1,21 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  // ブログ記事一覧を表示する要素があるページでのみ実行する
   const postGrid = document.querySelector('.post-grid');
   if (!postGrid) {
-    return; // 要素がなければ何もしない
+    return;
   }
 
   const projectId = 'xm3dmjar';
   const dataset = 'production';
   const apiVersion = '2023-05-03';
 
-  // getPosts 関数をDOMContentLoadedブロックの先頭に移動
-  async function getPosts(categoryTitle = null) {
-    let filter = '_type == "post"'
+  async function getPosts(categoryTitle = null, tagSlug = null) {
+    let filter = '_type == "post"';
     if (categoryTitle) {
-      filter += ` && "${categoryTitle}" in categories[]->title`
+      filter += ` && "${categoryTitle}" in categories[]->title`;
+    }
+    if (tagSlug) {
+      // Filter by tag reference
+      filter += ` && references(*[_type=="tag" && slug.current == "${tagSlug}"]._id)`;
     }
 
     const query = encodeURIComponent(`*[${filter}] | order(_createdAt desc){
@@ -23,8 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       _createdAt,
       description,
       "mainImageUrl": mainImage.asset->url,
-      "tags": tags[]->{title, slug},
-      body // 本文のフィールドを追加
+      body
     }`);
     const url = `https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}?query=${query}`;
 
@@ -41,66 +42,49 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // renderPortableText 関数をDOMContentLoadedブロックの先頭に移動
-  function renderPortableText(blocks, postIndex) {
-    if (!blocks) return { html: '', headings: [] };
-    let html = '';
-    const headings = [];
-    let headingCounter = 0;
+  async function renderPosts(categoryTitle = null, tagSlug = null) {
+    const sectionTitle = document.getElementById('blog-posts');
+    if (categoryTitle) {
+        sectionTitle.textContent = `カテゴリ: ${categoryTitle}`;
+    } else if (tagSlug) {
+        // To get the tag title, we would need another query. For now, just use the slug.
+        sectionTitle.textContent = `タグ: ${tagSlug}`;
+    } else {
+        sectionTitle.textContent = '最新記事';
+    }
 
-    blocks.forEach(block => {
-      const childrenText = block.children.map(span => span.text).join('');
-      if (block.style && block.style.startsWith('h')) {
-        const level = parseInt(block.style.substring(1));
-        const id = `post-${postIndex}-heading-${headingCounter++}`;
-        headings.push({ id: id, text: childrenText, level: level });
-        html += `<h${level} id="${id}">${childrenText}</h${level}>`;
-      } else if (block._type === 'block') {
-        html += `<p>${childrenText}</p>`;
-      }
-      // 他のブロックタイプ（画像、リストなど）はここでは処理していません
-    });
-    return { html, headings };
-  }
-
-  async function renderPosts(categoryTitle = null) {
-    const posts = await getPosts(categoryTitle);
-    postGrid.innerHTML = ''; // 既存の静的な記事をクリア
+    const posts = await getPosts(categoryTitle, tagSlug);
+    postGrid.innerHTML = '';
 
     if (posts.length === 0) {
       postGrid.innerHTML = '<p>まだ記事がありません。</p>';
       return;
     }
 
-    posts.forEach((post, index) => {
+    posts.forEach((post) => {
       const postCardLink = document.createElement('a');
       postCardLink.href = `article.html?slug=${post.slug.current}`;
       postCardLink.classList.add('post-card');
 
-      // Main image - now a direct child of the link
       const postImage = document.createElement('img');
       if (post.mainImageUrl) {
         postImage.src = post.mainImageUrl;
         postImage.alt = post.title;
         postImage.classList.add('post-main-image');
-        postCardLink.appendChild(postImage); // Append image directly to the link
+        postCardLink.appendChild(postImage);
       }
 
-      // Create a container for the text content
       const contentDiv = document.createElement('div');
       contentDiv.classList.add('post-card-content');
 
-      // Title
       const postTitleContainer = document.createElement('h2');
       postTitleContainer.textContent = post.title;
       contentDiv.appendChild(postTitleContainer);
 
-      // Description
       const postDescription = document.createElement('p');
       postDescription.textContent = post.description;
       contentDiv.appendChild(postDescription);
 
-      // Date
       const postDate = document.createElement('p');
       postDate.textContent = new Date(post._createdAt).toLocaleDateString('ja-JP');
       postDate.style.color = '#666';
@@ -109,46 +93,41 @@ document.addEventListener('DOMContentLoaded', async () => {
       postDate.style.margin = '5px 0 0 0';
       contentDiv.appendChild(postDate);
 
-      // Create and append tags
-      if (post.tags && post.tags.length > 0) {
-        const tagsContainer = document.createElement('div');
-        tagsContainer.classList.add('tags-container');
-        
-        post.tags.forEach(tag => {
-          const tagElement = document.createElement('span');
-          tagElement.classList.add('tag-item');
-          tagElement.textContent = tag.title;
-          tagsContainer.appendChild(tagElement);
-        });
-        
-        contentDiv.appendChild(tagsContainer);
-      }
-
-      // Append the content container to the link
       postCardLink.appendChild(contentDiv);
-
       postGrid.appendChild(postCardLink);
     });
 
-    // アクティブなカテゴリボタンをハイライト
     document.querySelectorAll('.category-button').forEach(button => {
-      if (button.dataset.category === categoryTitle) {
-        button.classList.add('active');
-      } else {
-        button.classList.remove('active');
-      }
+        if (button.dataset.category === categoryTitle) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
     });
   }
 
-  // カテゴリボタンのイベントリスナーを設定
+  // --- Event Listeners and Initial Load ---
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryParam = urlParams.get('category');
+  const tagParam = urlParams.get('tag');
+
+  // Category button listeners
   const categoryButtons = document.querySelectorAll('.category-button');
   categoryButtons.forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent default button behavior
       const category = button.dataset.category;
-      renderPosts(category);
+      const newUrl = category ? `?category=${encodeURIComponent(category)}` : window.location.pathname;
+      history.pushState({category: category}, '', newUrl);
+      renderPosts(category, null); // Render posts for category, clear tag filter
     });
   });
 
-  // 初期ロード時にすべての記事を表示
-  renderPosts();
+  // Initial load
+  if (tagParam) {
+    renderPosts(null, tagParam);
+  } else {
+    renderPosts(categoryParam || '');
+  }
 });
