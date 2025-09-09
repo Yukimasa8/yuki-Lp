@@ -25,8 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       _createdAt,
       description,
       "mainImageUrl": mainImage.asset->url,
-      body,
-      "tags": tags[]->{title, slug}
+      body
     }`);
     const url = `https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}?query=${query}`;
 
@@ -85,18 +84,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       const postDescription = document.createElement('p');
       postDescription.textContent = post.description;
       contentDiv.appendChild(postDescription);
-
-      if (post.tags && post.tags.length > 0) {
-        const tagsContainer = document.createElement('div');
-        tagsContainer.classList.add('tags-container');
-        post.tags.forEach(tag => {
-            const tagElement = document.createElement('span');
-            tagElement.classList.add('tag');
-            tagElement.textContent = tag.title;
-            tagsContainer.appendChild(tagElement);
-        });
-        contentDiv.appendChild(tagsContainer);
-      }
 
       const postDate = document.createElement('p');
       postDate.textContent = new Date(post._createdAt).toLocaleDateString('ja-JP');
