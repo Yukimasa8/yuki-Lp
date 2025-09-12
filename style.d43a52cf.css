@@ -525,3 +525,15 @@ a.tag:hover {
   margin: 0 auto;
   padding: 40px;
 }
+
+/* ヘッダーの説明文の中のリンクスタイル */
+.site-description a {
+  color: #ccc; /* 周りのテキストと同じ明るめのグレー */
+  text-decoration: underline; /* リンクであることを示す下線 */
+}
+
+/* ホバー時のスタイル */
+.site-description a:hover {
+  color: #fff; /* 少し明るくしてフィードバックを返す */
+  text-decoration: none; /* ホバー時に下線を消す */
+}
