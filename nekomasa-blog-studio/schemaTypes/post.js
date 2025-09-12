@@ -43,6 +43,22 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'dajareLevel',
+      title: 'ダジャレベル',
+      type: 'number',
+      description: 'この記事のダジャレのレベルを5段階で評価します。',
+      options: {
+        list: [
+          {title: '★☆☆☆☆', value: 1},
+          {title: '★★☆☆☆', value: 2},
+          {title: '★★★☆☆', value: 3},
+          {title: '★★★★☆', value: 4},
+          {title: '★★★★★', value: 5},
+        ],
+        layout: 'radio'
+      },
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'array',

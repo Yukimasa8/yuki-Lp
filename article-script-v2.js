@@ -120,6 +120,7 @@ async function fetchArticleBySlug(slug) {
     "mainImageUrl": mainImage.asset->url,
     publishedAt,
     _updatedAt,
+    dajareLevel,
     "tags": tags[]->{title, slug},
     body[]{
       ...,
@@ -209,6 +210,16 @@ async function renderArticle() {
       dateString += `　約${readingTime}分で読めます`;
     }
     dateElement.textContent = dateString;
+
+    // Dajare level
+    const dajareLevelElement = document.getElementById('dajare-level');
+    if (dajareLevelElement && article.dajareLevel) {
+      const stars = '★'.repeat(article.dajareLevel) + '☆'.repeat(5 - article.dajareLevel);
+      dajareLevelElement.innerHTML = `この記事のダジャレベル: <span class="dajare-stars">${stars}</span>`;
+    } else if (dajareLevelElement) {
+      dajareLevelElement.style.display = 'none';
+    }
+
   } else {
     dateElement.style.display = 'none';
   }
