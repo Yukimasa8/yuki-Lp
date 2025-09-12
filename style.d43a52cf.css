@@ -574,7 +574,8 @@ a.tag:hover {
 
 .dajare-table th:nth-child(2),
 .dajare-table td:nth-child(2) {
-  width: 25%;
+  white-space: nowrap; /* レベル名のテキストを折り返さない */
+  text-align: center; /* 中央揃えを追加 */
 }
 
 .table-wrapper {
