@@ -574,5 +574,13 @@ a.tag:hover {
 
 .dajare-table th:nth-child(2),
 .dajare-table td:nth-child(2) {
-  width: 30%;
+  width: 25%;
+}
+
+.table-wrapper {
+  overflow-x: auto; /* テーブルがはみ出した場合に横スクロールを有効にする */
+}
+
+.dajare-table td:nth-child(2) {
+  white-space: nowrap; /* レベル名のテキストを折り返さない */
 }
