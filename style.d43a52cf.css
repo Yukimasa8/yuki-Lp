@@ -537,3 +537,9 @@ a.tag:hover {
   color: #fff; /* 少し明るくしてフィードバックを返す */
   text-decoration: none; /* ホバー時に下線を消す */
 }
+
+/* プロフィールページのリストを見やすくする */
+.profile-card ul li strong {
+  display: block; /* ラベルをブロック要素にして改行させる */
+  margin-bottom: 5px; /* ラベルと内容の間に少し余白を追加 */
+}
