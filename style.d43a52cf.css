@@ -561,6 +561,7 @@ a.tag:hover {
   background-color: #333;
   color: #00aaff;
   font-weight: bold;
+  text-align: center; /* ヘッダーを中央揃え */
 }
 .dajare-table td:first-child { /* 星の列 */
   text-align: center;
