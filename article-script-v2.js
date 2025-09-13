@@ -125,7 +125,7 @@ async function fetchArticleBySlug(slug) {
     body[]{
       ...,
       _type == "image" => {
-        "asset": @.asset->
+        "asset": @.asset->{_ref}
       },
       // リンクのためのmarkDefsを取得
       markDefs[]{
