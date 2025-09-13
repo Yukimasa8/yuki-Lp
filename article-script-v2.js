@@ -149,6 +149,7 @@ async function fetchArticleBySlug(slug) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
+    console.log("Fetched article data:", data.result); // ★この行を追加
     return data.result;
   } catch (error) {
     console.error("Error fetching article from Sanity:", error);
