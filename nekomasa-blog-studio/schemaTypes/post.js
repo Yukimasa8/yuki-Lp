@@ -62,7 +62,7 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'array',
-      of: [{type: 'block'}, {type: 'affiliate'}],
+      of: [{type: 'block'}, {type: 'image'}, {type: 'affiliate'}],
     },
     {
       name: 'author',
