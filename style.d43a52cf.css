@@ -594,3 +594,11 @@ a.tag:hover {
 .dajare-table td:nth-child(2) {
   white-space: nowrap; /* レベル名のテキストを折り返さない */
 }
+
+.dajare-intro-text {
+  color: #fff; /* 白文字 */
+  font-size: 0.9em; /* 小さめのフォントサイズ */
+  text-align: center; /* 中央揃え */
+  margin-top: -20px; /* タイトルとの間隔を調整 */
+  margin-bottom: 30px;
+}
