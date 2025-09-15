@@ -126,4 +126,31 @@ document.addEventListener('DOMContentLoaded', async () => {
   } else {
     renderPosts(categoryParam || '');
   }
+
+  // Dajare Table Version Switching Logic
+  const dajareTableControls = document.querySelector('.dajare-table-controls');
+  if (dajareTableControls) {
+    const dajareVersionButtons = dajareTableControls.querySelectorAll('.dajare-version-button');
+    const dajareVersionContents = document.querySelectorAll('.dajare-version-content');
+
+    dajareVersionButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        dajareVersionButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to the clicked button
+        button.classList.add('active');
+
+        const targetId = button.dataset.target;
+
+        // Hide all content divs
+        dajareVersionContents.forEach(content => content.style.display = 'none');
+
+        // Show the target content div
+        const targetContent = document.getElementById(`dajare-table-${targetId}`);
+        if (targetContent) {
+          targetContent.style.display = 'block';
+        }
+      });
+    });
+  }
 });
