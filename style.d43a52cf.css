@@ -472,24 +472,26 @@ footer p {
     font-size: 0.7em;
   }
   .dajare-table {
-    table-layout: fixed; /* 列幅を固定 */
+    table-layout: fixed !important; /* 列幅を固定 */
+    width: 100% !important; /* テーブルの幅を100%に固定 */
   }
   .dajare-table th, .dajare-table td {
-    font-size: 0.75em; /* さらに小さく */
-    padding: 8px 10px; /* パディングも調整 */
+    font-size: 0.75em !important; /* さらに小さく */
+    padding: 8px 5px !important; /* パディングも調整 */
+    word-break: break-word !important; /* 長い単語の折り返し */
   }
   .dajare-table th:nth-child(1),
   .dajare-table td:nth-child(1) {
-    width: 15%; /* Adjust width for stars column */
+    width: 15% !important; /* 星の列の幅を調整 */
   }
   .dajare-table th:nth-child(2),
   .dajare-table td:nth-child(2) {
-    width: 30%; /* Adjust width for level name column */
+    width: 30% !important; /* レベル名列の幅を調整 */
     white-space: normal !important; /* レベル名の折り返しを許可 */
   }
   .dajare-table th:nth-child(3),
   .dajare-table td:nth-child(3) {
-    width: 55%; /* Adjust width for feature column */
+    width: 55% !important; /* 特徴列の幅を調整 */
   }
 }
 
