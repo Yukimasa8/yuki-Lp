@@ -471,6 +471,9 @@ footer p {
   .tsun-bar span, .dere-bar span {
     font-size: 0.7em;
   }
+  .dajare-table {
+    table-layout: fixed; /* 列幅を固定 */
+  }
   .dajare-table th, .dajare-table td {
     font-size: 0.75em; /* さらに小さく */
     padding: 8px 10px; /* パディングも調整 */
@@ -482,7 +485,7 @@ footer p {
   .dajare-table th:nth-child(2),
   .dajare-table td:nth-child(2) {
     width: 30%; /* Adjust width for level name column */
-    white-space: normal; /* レベル名の折り返しを許可 */
+    white-space: normal !important; /* レベル名の折り返しを許可 */
   }
   .dajare-table th:nth-child(3),
   .dajare-table td:nth-child(3) {
