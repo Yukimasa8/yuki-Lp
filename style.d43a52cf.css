@@ -475,9 +475,18 @@ footer p {
     font-size: 0.75em; /* さらに小さく */
     padding: 8px 10px; /* パディングも調整 */
   }
+  .dajare-table th:nth-child(1),
+  .dajare-table td:nth-child(1) {
+    width: 15%; /* Adjust width for stars column */
+  }
   .dajare-table th:nth-child(2),
   .dajare-table td:nth-child(2) {
+    width: 30%; /* Adjust width for level name column */
     white-space: normal; /* レベル名の折り返しを許可 */
+  }
+  .dajare-table th:nth-child(3),
+  .dajare-table td:nth-child(3) {
+    width: 55%; /* Adjust width for feature column */
   }
 }
 
