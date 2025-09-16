@@ -17,6 +17,18 @@ export default defineConfig({
           .title('Content')
           .items([
             S.listItem()
+              .title('Post')
+              .child(S.documentTypeList('post').title('Post')),
+            S.listItem()
+              .title('Author')
+              .child(S.documentTypeList('author').title('Author')),
+            S.listItem()
+              .title('Category')
+              .child(S.documentTypeList('category').title('Category')),
+            S.listItem()
+              .title('Affiliate')
+              .child(S.documentTypeList('affiliate').title('Affiliate')),
+            S.listItem()
               .title('Tag')
               .child(S.documentTypeList('tag').title('Tag')),
           ]),
@@ -28,5 +40,3 @@ export default defineConfig({
     types: schemaTypes,
   },
 })
-
-THIS IS A SYNTAX ERROR
