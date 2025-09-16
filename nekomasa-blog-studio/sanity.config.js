@@ -28,3 +28,5 @@ export default defineConfig({
     types: schemaTypes,
   },
 })
+
+THIS IS A SYNTAX ERROR
