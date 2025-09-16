@@ -75,13 +75,11 @@ export default {
       type: 'array',
       of: [{type: 'reference', to: {type: 'category'}}],
     },
-    /*
     {
       name: 'tags',
       title: 'Tags',
       type: 'array',
       of: [{type: 'reference', to: {type: 'tag'}}],
     },
-    */
   ],
 }
