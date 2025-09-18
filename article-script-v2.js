@@ -97,8 +97,14 @@ function renderPortableText(blocks) {
     else if (block._type === 'affiliate') {
       closeList();
       if (block.code) {
-        console.log("Affiliate block code:", block.code);
-        html += block.code;
+        // アフィリエイトネットワークから提供された不正なコメントを修正
+        const correctedCode = block.code.replace(/<--/g, '<!--').replace(/-->/g, '-->');
+        
+        // 修正されたコードを注意書きdivで囲む
+        html += `<div class="affiliate-wrapper" style="margin: 2em 0; padding: 1em; border: 1px solid #e0e0e0; border-radius: 8px;">` +
+                `<p style="font-size: 0.8em; color: #555; margin-top: 0; margin-bottom: 1em; text-align: left;">【広告】</p>` +
+                correctedCode +
+                `</div>`;
       }
     }
     // 他のカスタムブロックタイプ（例：画像）の処理をここに追加できる
