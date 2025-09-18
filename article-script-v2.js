@@ -99,7 +99,7 @@ function renderPortableText(blocks) {
       if (block.code) {
         // 不正なコメントを修正し、広告ラベルを直前に追加する
         const correctedCode = block.code.replace(/<--/g, '<!--');
-        html += `<p style="font-size: 0.8em; color: #555; margin-bottom: 0.5em; margin-top: 2em;">【広告】</p>` + correctedCode;
+        html += `<p style="font-size: 0.8em; color: #777; margin-bottom: 0.5em; margin-top: 2em;">【広告】</p>` + correctedCode;
       }
     }
     // 他のカスタムブロックタイプ（例：画像）の処理をここに追加できる
