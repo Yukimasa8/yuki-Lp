@@ -97,47 +97,8 @@ function renderPortableText(blocks) {
     else if (block._type === 'affiliate') {
       closeList();
       if (block.code) {
-        const containerId = `affiliate-block-${Math.random().toString(36).slice(2)}`;
-        // Add a placeholder div to the main HTML string. We'll populate this properly after the main render.
-        html += `<div id="${containerId}"></div>`;
-        
-        // Defer the script-aware rendering until after the main innerHTML is set
-        setTimeout(() => {
-          const placeholder = document.getElementById(containerId);
-          if (!placeholder) return;
-
-          const wrapper = document.createElement('div');
-          wrapper.className = 'affiliate-wrapper';
-          wrapper.style.cssText = 'margin: 2em 0; padding: 1em; border: 1px solid #e0e0e0; border-radius: 8px;';
-
-          const label = document.createElement('p');
-          label.style.cssText = 'font-size: 0.8em; color: #555; margin-top: 0; margin-bottom: 1em; text-align: left;';
-          label.textContent = '【広告】';
-          wrapper.appendChild(label);
-
-          // Use a DocumentFragment to parse the ad code and handle scripts correctly
-          const contentFragment = document.createRange().createContextualFragment(block.code);
-          
-          // Find and re-create scripts to make them executable
-          contentFragment.querySelectorAll('script').forEach(script => {
-            const newScript = document.createElement('script');
-            // Copy all attributes
-            for (const { name, value } of script.attributes) {
-              newScript.setAttribute(name, value);
-            }
-            // Copy inline content
-            newScript.textContent = script.textContent;
-            // Append the new, executable script to the document head
-            document.head.appendChild(newScript);
-            // Remove the non-executable script from the fragment
-            script.remove();
-          });
-
-          // Append the sanitized HTML content
-          wrapper.appendChild(contentFragment);
-          // Replace the placeholder with the fully rendered ad
-          placeholder.replaceWith(wrapper);
-        }, 0);
+        console.log("Affiliate block code:", block.code);
+        html += block.code;
       }
     }
     // 他のカスタムブロックタイプ（例：画像）の処理をここに追加できる
