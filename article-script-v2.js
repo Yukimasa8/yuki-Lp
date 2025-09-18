@@ -97,7 +97,9 @@ function renderPortableText(blocks) {
     else if (block._type === 'affiliate') {
       closeList();
       if (block.code) {
-        html += block.code;
+        // アフィリエイト提供の不正なコメントを修正し、表示を試みる
+        const correctedCode = block.code.replace(/<--/g, '<!--');
+        html += correctedCode;
       }
     }
     // 他のカスタムブロックタイプ（例：画像）の処理をここに追加できる
