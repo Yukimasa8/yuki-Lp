@@ -97,9 +97,9 @@ function renderPortableText(blocks) {
     else if (block._type === 'affiliate') {
       closeList();
       if (block.code) {
-        // アフィリエイト提供の不正なコメントを修正し、表示を試みる
+        // 不正なコメントを修正し、広告ラベルを直前に追加する
         const correctedCode = block.code.replace(/<--/g, '<!--');
-        html += correctedCode;
+        html += `<p style="font-size: 0.8em; color: #555; margin-bottom: 0.5em; margin-top: 2em;">【広告】</p>` + correctedCode;
       }
     }
     // 他のカスタムブロックタイプ（例：画像）の処理をここに追加できる
