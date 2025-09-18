@@ -259,9 +259,28 @@ async function renderArticle() {
   }
 
   // Article body
-  document.getElementById('article-body').innerHTML = articleBodyHtml;
+      document.getElementById('article-body').innerHTML = articleBodyHtml;
 
-  // Table of Contents
+      // --- START: Affiliate Ad Disclosure ---
+      // After rendering, find affiliate ads and prepend a disclosure label.
+      // This is done post-render to avoid breaking fragile ad objects.
+      setTimeout(() => {
+        const ads = document.querySelectorAll('a[href*="trafficgate.net"]');
+        ads.forEach(ad => {
+          // Check if a label already exists to avoid duplicates
+          if (ad.previousElementSibling && ad.previousElementSibling.classList.contains('affiliate-disclosure')) {
+            return;
+          }
+          const label = document.createElement('p');
+          label.textContent = '【広告】';
+          label.className = 'affiliate-disclosure'; // Add a class for identification
+          label.style.cssText = 'font-size: 0.8em; color: #555; margin-bottom: 0.5em; margin-top: 2em;';
+          ad.parentNode.insertBefore(label, ad);
+        });
+      }, 100); // A small delay to ensure any ad scripts have initialized
+      // --- END: Affiliate Ad Disclosure ---
+    
+      // Table of Contents
   const tocContainer = document.getElementById('article-toc');
   if (headings.length > 0) {
     const tocTitle = document.createElement('h3');
