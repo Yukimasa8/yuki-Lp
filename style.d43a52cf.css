@@ -76,6 +76,7 @@ body {
             text-align: center;
             font-size: 2em;
             margin-bottom: 40px;
+            font-family: 'Noto Sans JP', 'Roboto', 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
         }
         .profile-card {
     text-align: center; /* Center text content within the card */
