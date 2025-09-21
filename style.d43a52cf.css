@@ -668,3 +668,10 @@ header .logo-container .logo-image {
   height: 60px !important;
   width: auto !important;
 }
+
+.level-paw-icon {
+  width: 1.2em; /* Adjust size as needed */
+  height: 1.2em;
+  vertical-align: middle; /* Align with text */
+  margin: 0 0.1em; /* Add some spacing between icons */
+}

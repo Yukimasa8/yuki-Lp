@@ -230,12 +230,26 @@ async function renderArticle() {
       if (articleLevelsContainer && (article.dajareLevel || article.gorioshiLevel)) {
           let levelsHtml = '<div style="text-align: center;">この記事の</div>'; // Keep "この記事の" centered
           if (article.dajareLevel) {
-              const dajareStars = '★'.repeat(article.dajareLevel) + '☆'.repeat(5 - article.dajareLevel);
-              levelsHtml += `<div style="display: flex; justify-content: center; align-items: center;"><span style="width: 100px; text-align: right; margin-right: 5px;">ダジャレベル</span> <span class="dajare-stars">${dajareStars}</span></div>`;
+              let dajareIcons = '';
+              for (let i = 0; i < 5; i++) {
+                  if (i < article.dajareLevel) {
+                      dajareIcons += `<img src="assets/paw-filled.svg" class="level-paw-icon" alt="filled paw">`;
+                  } else {
+                      dajareIcons += `<img src="assets/paw-empty.svg" class="level-paw-icon" alt="empty paw">`;
+                  }
+              }
+              levelsHtml += `<div style="display: flex; justify-content: center; align-items: center;"><span style="width: 100px; text-align: right; margin-right: 5px;">ダジャレベル</span> <span class="dajare-stars">${dajareIcons}</span></div>`;
           }
           if (article.gorioshiLevel) {
-              const gorioshiStars = '★'.repeat(article.gorioshiLevel) + '☆'.repeat(5 - article.gorioshiLevel);
-              levelsHtml += `<div style="display: flex; justify-content: center; align-items: center;"><span style="width: 100px; text-align: right; margin-right: 5px;">熱苦しさ</span> <span class="gorioshi-stars">${gorioshiStars}</span></div>`;
+              let gorioshiIcons = '';
+              for (let i = 0; i < 5; i++) {
+                  if (i < article.gorioshiLevel) {
+                      gorioshiIcons += `<img src="assets/paw-filled.svg" class="level-paw-icon" alt="filled paw">`;
+                  } else {
+                      gorioshiIcons += `<img src="assets/paw-empty.svg" class="level-paw-icon" alt="empty paw">`;
+                  }
+              }
+              levelsHtml += `<div style="display: flex; justify-content: center; align-items: center;"><span style="width: 100px; text-align: right; margin-right: 5px;">熱苦しさ</span> <span class="gorioshi-stars">${gorioshiIcons}</span></div>`;
           }
           articleLevelsContainer.innerHTML = levelsHtml;
           // articleLevelsContainer.style.textAlign = 'center'; // No longer needed here as inner divs handle centering
