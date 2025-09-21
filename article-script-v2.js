@@ -127,6 +127,7 @@ async function fetchArticleBySlug(slug) {
     publishedAt,
     _updatedAt,
     dajareLevel,
+    gorioshiLevel,
     "tags": tags[]->{title, slug},
     body[]{
       ...,
