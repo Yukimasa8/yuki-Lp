@@ -62,7 +62,7 @@ export default {
       name: 'gorioshiLevel',
       title: 'ゴリ押しレベル',
       type: 'number',
-      description: 'ネコマサの気持ちの高ぶりによる誇張表現の過激さを★の数で表現したものです。',
+      description: 'この記事の熱苦しさを5段階で評価します。',
       options: {
         list: [
           {title: '設定なし', value: 0},
