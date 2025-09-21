@@ -641,15 +641,4 @@ a.tag:hover {
   margin-bottom: 40px;
 }
 
-/* --- ダジャレベルと熱苦しさの体裁調整 --- */
-#dajare-level,
-#gorioshi-level {
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
 
-/* ダジャレベルの下に少し多めに余白を取る */
-#dajare-level {
-  margin-bottom: 20px; 
-}
