@@ -638,7 +638,7 @@ a.tag:hover {
 
 /* --- 記事説明文と日付の間に余白を追加 --- */
 #article-description {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 /* --- 記事タイトルのサイズを調整 --- */
