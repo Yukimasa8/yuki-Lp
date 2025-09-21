@@ -652,7 +652,7 @@ a.tag:hover {
 
 /* --- 日付と読了時間の行間調整 --- */
 #article-date {
-  line-height: 1.2; /* 日付と読了時間の行の高さを調整 */
+  line-height: 1.0; /* 日付と読了時間の行の高さを調整 */
 }
 .article-date-container {
   margin-bottom: 0px; /* 日付とレベルセクションの間に余白 */
@@ -661,11 +661,11 @@ a.tag:hover {
 /* --- ダジャレベルと熱苦しさの体裁調整 --- */
 .level-row {
   margin-bottom: 0px; /* 各レベル行の間に余白 */
-  line-height: 1.2; /* レベル行の行の高さを調整 */
+  line-height: 1.0; /* レベル行の行の高さを調整 */
 }
 
 .level-row span {
-  line-height: 1.2; /* レベル行内のテキストの行の高さを調整 */
+  line-height: 1.0; /* レベル行内のテキストの行の高さを調整 */
 }
 
 .level-row:last-child {
