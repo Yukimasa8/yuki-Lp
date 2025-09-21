@@ -196,7 +196,19 @@ async function renderArticle() {
   // --- Render the actual article ---
   document.title = `${article.title} - ネコマサBLOG`;
   document.getElementById('article-title').textContent = article.title;
-  document.getElementById('article-description').textContent = article.description;
+
+  // Create and insert "この記事で分かること" heading before description
+  const whatYouLearnHeading = document.createElement('h3');
+  whatYouLearnHeading.textContent = 'この記事で分かること';
+  whatYouLearnHeading.style.textAlign = 'center'; // Center the heading
+  whatYouLearnHeading.style.marginTop = '30px'; // Add some space above
+  whatYouLearnHeading.style.marginBottom = '10px'; // Add some space below
+  const articleDescriptionElement = document.getElementById('article-description');
+  if (articleDescriptionElement) {
+    articleDescriptionElement.parentNode.insertBefore(whatYouLearnHeading, articleDescriptionElement);
+  }
+
+  articleDescriptionElement.textContent = article.description;
 
   // Canonical URL
   const canonicalLink = document.getElementById('canonical-link');
@@ -228,7 +240,7 @@ async function renderArticle() {
       // Combined Dajare and Gorioshi Level rendering
       const articleLevelsContainer = document.getElementById('article-levels');
       if (articleLevelsContainer && (article.dajareLevel || article.gorioshiLevel)) {
-          let levelsHtml = '<div class="level-row" style="text-align: center;">この記事の</div>'; // Keep "この記事の" centered
+          let levelsHtml = '';
           let levelItems = []; // Array to hold HTML for each level display
 
           if (article.dajareLevel) {
