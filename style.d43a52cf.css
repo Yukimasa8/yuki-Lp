@@ -650,18 +650,33 @@ a.tag:hover {
   margin-bottom: 40px;
 }
 
+/* --- 日付と読了時間の行間調整 --- */
+.article-date-container {
+  margin-bottom: 20px; /* 日付とレベルセクションの間に余白 */
+}
+
 /* --- ダジャレベルと熱苦しさの体裁調整 --- */
+.level-row {
+  margin-bottom: 10px; /* 各レベル行の間に余白 */
+}
+
+.level-row:last-child {
+  margin-bottom: 0; /* 最後のレベル行の下には余白なし */
+}
+
+/* 既存の#dajare-levelと#gorioshi-levelのスタイルは、.level-rowに移行したため不要になる可能性がありますが、
+   念のため残しておきます。もし重複や意図しない挙動があれば削除を検討します。 */
 #dajare-level,
 #gorioshi-level {
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  /* margin-top: 10px; */ /* .level-rowで制御 */
+  /* margin-bottom: 10px; */ /* .level-rowで制御 */
 }
 
 /* ダジャレベルの下に少し多めに余白を取る */
-#dajare-level {
-  margin-bottom: 20px; 
-}
+/* #dajare-level { */
+  /* margin-bottom: 20px; */ /* .level-rowで制御 */
+/* } */
 
 /* --- ヘッダーロゴのサイズ修正 --- */
 header .logo-container .logo-image {
@@ -682,10 +697,3 @@ header .logo-container .logo-image {
   justify-content: flex-start; /* Align icons to the start within their container */
 }
 
-.level-row {
-  line-height: 1em; /* Ensure tight line height */
-}
-
-.level-row + .level-row { /* Targets .level-row elements that are preceded by another .level-row */
-  margin-top: -15px; /* Adjust as needed to bring lines closer */
-}
