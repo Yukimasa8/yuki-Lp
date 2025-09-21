@@ -640,3 +640,9 @@ a.tag:hover {
 #article-description {
   margin-bottom: 30px;
 }
+
+/* --- 記事タイトルのサイズを調整 --- */
+#article-title {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
