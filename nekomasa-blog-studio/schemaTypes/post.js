@@ -48,6 +48,7 @@ export default {
       description: 'この記事のダジャレのレベルを5段階で評価します。',
       options: {
         list: [
+          {title: '設定なし', value: 0},
           {title: '★☆☆☆☆', value: 1},
           {title: '★★☆☆☆', value: 2},
           {title: '★★★☆☆', value: 3},
