@@ -229,6 +229,8 @@ async function renderArticle() {
       const articleLevelsContainer = document.getElementById('article-levels');
       if (articleLevelsContainer && (article.dajareLevel || article.gorioshiLevel)) {
           let levelsHtml = '<div class="level-row" style="text-align: center;">この記事の</div>'; // Keep "この記事の" centered
+          let combinedLevelsContent = '';
+
           if (article.dajareLevel) {
               let dajareIcons = '';
               for (let i = 0; i < 5; i++) {
@@ -238,8 +240,9 @@ async function renderArticle() {
                       dajareIcons += `<img src="assets/paw-empty.svg" class="level-paw-icon" alt="empty paw">`;
                   }
               }
-              levelsHtml += `<div class="level-row" style="display: flex; justify-content: center; align-items: center;"><span style="width: 100px; text-align: right; margin-right: 2px;">ダジャレベル</span> <span class="dajare-stars">${dajareIcons}</span></div>`;
+              combinedLevelsContent += `<span style="white-space: nowrap;">ダジャレベル <span class="dajare-stars">${dajareIcons}</span></span>`;
           }
+
           if (article.gorioshiLevel) {
               let gorioshiIcons = '';
               for (let i = 0; i < 5; i++) {
@@ -249,11 +252,18 @@ async function renderArticle() {
                       gorioshiIcons += `<img src="assets/paw-empty.svg" class="level-paw-icon" alt="empty paw">`;
                   }
               }
-              levelsHtml += `<div class="level-row" style="display: flex; justify-content: center; align-items: center;"><span style="width: 100px; text-align: right; margin-right: 2px;">熱苦しさ</span> <span class="gorioshi-stars">${gorioshiIcons}</span></div>`;
+              if (combinedLevelsContent !== '') {
+                  combinedLevelsContent += `&nbsp;&nbsp;|&nbsp;&nbsp;`; // Separator
+              }
+              combinedLevelsContent += `<span style="white-space: nowrap;">熱苦しさ <span class="gorioshi-stars">${gorioshiIcons}</span></span>`;
           }
+
+          if (combinedLevelsContent !== '') {
+              levelsHtml += `<div class="level-row" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">${combinedLevelsContent}</div>`;
+          }
+          
           articleLevelsContainer.innerHTML = levelsHtml;
-          // articleLevelsContainer.style.textAlign = 'center'; // No longer needed here as inner divs handle centering
-          articleLevelsContainer.style.marginBottom = '20px'; // Add some space below
+          articleLevelsContainer.style.marginBottom = '0px'; // Set to 0px as per user's request for narrowness
       } else if (articleLevelsContainer) {
           articleLevelsContainer.style.display = 'none';
       }
