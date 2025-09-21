@@ -659,3 +659,9 @@ a.tag:hover {
 #dajare-level {
   margin-bottom: 20px; 
 }
+
+/* --- ヘッダーロゴのサイズ修正 --- */
+header .logo-container .logo-image {
+  height: 60px !important;
+  width: auto !important;
+}

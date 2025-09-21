@@ -219,27 +219,30 @@ async function renderArticle() {
     }
     dateElement.textContent = dateString;
 
-    // Dajare level
-    const dajareLevelElement = document.getElementById('dajare-level');
-    if (dajareLevelElement && article.dajareLevel) {
-      const stars = '★'.repeat(article.dajareLevel) + '☆'.repeat(5 - article.dajareLevel);
-      dajareLevelElement.innerHTML = `この記事のダジャレベル: <span class="dajare-stars">${stars}</span>`;
-    } else if (dajareLevelElement) {
-      dajareLevelElement.style.display = 'none';
-    }
-
-    // Gorioshi level
-    const gorioshiLevelElement = document.getElementById('gorioshi-level');
-    if (gorioshiLevelElement && article.gorioshiLevel) {
-      const stars = '★'.repeat(article.gorioshiLevel) + '☆'.repeat(5 - article.gorioshiLevel);
-      gorioshiLevelElement.innerHTML = `この記事の熱苦しさ: <span class="gorioshi-stars">${stars}</span>`;
-    } else if (gorioshiLevelElement) {
-      gorioshiLevelElement.style.display = 'none';
-    }
+    
 
   } else {
-    dateElement.style.display = 'none';
-  }
+        dateElement.style.display = 'none';
+      }
+
+      // Combined Dajare and Gorioshi Level rendering
+      const articleLevelsContainer = document.getElementById('article-levels');
+      if (articleLevelsContainer && (article.dajareLevel || article.gorioshiLevel)) {
+          let levelsHtml = 'この記事の<br>';
+          if (article.dajareLevel) {
+              const dajareStars = '★'.repeat(article.dajareLevel) + '☆'.repeat(5 - article.dajareLevel);
+              levelsHtml += `ダジャレベル: <span class="dajare-stars">${dajareStars}</span><br>`;
+          }
+          if (article.gorioshiLevel) {
+              const gorioshiStars = '★'.repeat(article.gorioshiLevel) + '☆'.repeat(5 - article.gorioshiLevel);
+              levelsHtml += `熱苦しさ: <span class="gorioshi-stars">${gorioshiStars}</span><br>`;
+          }
+          articleLevelsContainer.innerHTML = levelsHtml;
+          articleLevelsContainer.style.textAlign = 'center'; // Center the whole block
+          articleLevelsContainer.style.marginBottom = '20px'; // Add some space below
+      } else if (articleLevelsContainer) {
+          articleLevelsContainer.style.display = 'none';
+      }
 
   // Updated date
   if (article._updatedAt && article.publishedAt) {
