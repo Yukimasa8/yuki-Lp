@@ -240,7 +240,7 @@ async function renderArticle() {
                       dajareIcons += `<img src="assets/paw-empty.svg" class="level-paw-icon" alt="empty paw">`;
                   }
               }
-              levelItems.push(`<span style="white-space: nowrap;">ダジャレベル <span class="dajare-stars">${dajareIcons}</span></span>`);
+              levelItems.push(`<span style="white-space: nowrap; border: 1px solid blue;">ダジャレベル <span class="dajare-stars">${dajareIcons}</span></span>`);
           }
 
           if (article.gorioshiLevel) {
@@ -252,13 +252,13 @@ async function renderArticle() {
                       gorioshiIcons += `<img src="assets/paw-empty.svg" class="level-paw-icon" alt="empty paw">`;
                   }
               }
-              levelItems.push(`<span style="white-space: nowrap;">熱苦しさ <span class="gorioshi-stars">${gorioshiIcons}</span></span>`);
+              levelItems.push(`<span style="white-space: nowrap; border: 1px solid blue;">熱苦しさ <span class="gorioshi-stars">${gorioshiIcons}</span></span>`);
           }
 
           if (levelItems.length > 0) {
               // Join the level items with a separator
               const combinedContent = levelItems.join(`&nbsp;&nbsp;|&nbsp;&nbsp;`);
-              levelsHtml += `<div class="level-row" style="display: flex; justify-content: center; align-items: center;">${combinedContent}</div>`;
+              levelsHtml += `<div class="level-row" style="display: flex; justify-content: center; align-items: center; border: 1px solid red;">${combinedContent}</div>`;
           }
           
           articleLevelsContainer.innerHTML = levelsHtml;
