@@ -227,6 +227,15 @@ async function renderArticle() {
       dajareLevelElement.style.display = 'none';
     }
 
+    // Gorioshi level
+    const gorioshiLevelElement = document.getElementById('gorioshi-level');
+    if (gorioshiLevelElement && article.gorioshiLevel) {
+      const stars = '★'.repeat(article.gorioshiLevel) + '☆'.repeat(5 - article.gorioshiLevel);
+      gorioshiLevelElement.innerHTML = `この記事のゴリ押しレベル: <span class="gorioshi-stars">${stars}</span>`;
+    } else if (gorioshiLevelElement) {
+      gorioshiLevelElement.style.display = 'none';
+    }
+
   } else {
     dateElement.style.display = 'none';
   }
