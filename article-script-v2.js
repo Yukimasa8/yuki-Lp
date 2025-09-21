@@ -240,7 +240,7 @@ async function renderArticle() {
                       dajareIcons += `<img src="assets/paw-empty.svg" class="level-paw-icon" alt="empty paw">`;
                   }
               }
-              levelItems.push(`<span style="white-space: nowrap;">ダジャレベル <span class="dajare-stars">${dajareIcons}</span></span>`);
+              levelItems.push(`<span style="display: inline-flex; align-items: center; white-space: nowrap;">ダジャレベル <span class="dajare-stars" style="display: inline-flex; align-items: center;">${dajareIcons}</span></span>`);
           }
 
           if (article.gorioshiLevel) {
@@ -252,7 +252,7 @@ async function renderArticle() {
                       gorioshiIcons += `<img src="assets/paw-empty.svg" class="level-paw-icon" alt="empty paw">`;
                   }
               }
-              levelItems.push(`<span style="white-space: nowrap;">熱苦しさ <span class="gorioshi-stars">${gorioshiIcons}</span></span>`);
+              levelItems.push(`<span style="display: inline-flex; align-items: center; white-space: nowrap;">熱苦しさ <span class="gorioshi-stars" style="display: inline-flex; align-items: center;">${gorioshiIcons}</span></span>`);
           }
 
           if (levelItems.length > 0) {
