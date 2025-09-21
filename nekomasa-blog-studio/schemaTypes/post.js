@@ -7,6 +7,9 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
+      options: {
+        rows: 2
+      }
     },
     {
       name: 'slug',
