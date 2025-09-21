@@ -683,6 +683,6 @@ header .logo-container .logo-image {
 }
 
 .level-row {
-  margin-bottom: -20px; /* Further reduce spacing */
+  margin-bottom: -5px; /* Adjust as needed to bring lines closer */
   line-height: 1em; /* Ensure tight line height */
 }
