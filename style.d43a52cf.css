@@ -675,3 +675,9 @@ header .logo-container .logo-image {
   vertical-align: middle; /* Align with text */
   margin: 0 0.1em; /* Add some spacing between icons */
 }
+
+.dajare-stars, .gorioshi-stars {
+  display: flex;
+  align-items: center; /* Vertically align the paw icons */
+  justify-content: flex-start; /* Align icons to the start within their container */
+}
