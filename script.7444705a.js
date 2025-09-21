@@ -62,13 +62,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     async function renderPosts(categoryTitle = null, tagSlug = null) {
-      const sectionTitle = document.getElementById('blog-posts');
+      const sectionTitleText = document.getElementById('blog-posts-text'); // Get the span element
       if (categoryTitle) {
-          sectionTitle.textContent = `カテゴリ: ${categoryTitle}`;
+          sectionTitleText.textContent = `カテゴリ: ${categoryTitle}`;
       } else if (tagSlug) {
-          sectionTitle.textContent = `タグ: ${tagSlug}`;
+          sectionTitleText.textContent = `タグ: ${tagSlug}`;
       } else {
-          sectionTitle.textContent = '最新記事';
+          sectionTitleText.textContent = '最新記事';
       }
 
       const posts = await getPosts(categoryTitle, tagSlug);
