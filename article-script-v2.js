@@ -238,7 +238,7 @@ async function renderArticle() {
                       dajareIcons += `<img src="assets/paw-empty.svg" class="level-paw-icon" alt="empty paw">`;
                   }
               }
-              levelsHtml += `<div style="display: flex; justify-content: center; align-items: center;"><span style="width: 100px; text-align: right; margin-right: 2px;">ダジャレベル</span> <span class="dajare-stars">${dajareIcons}</span></div>`;
+              levelsHtml += `<div class="level-row" style="display: flex; justify-content: center; align-items: center;"><span style="width: 100px; text-align: right; margin-right: 2px;">ダジャレベル</span> <span class="dajare-stars">${dajareIcons}</span></div>`;
           }
           if (article.gorioshiLevel) {
               let gorioshiIcons = '';
@@ -249,7 +249,7 @@ async function renderArticle() {
                       gorioshiIcons += `<img src="assets/paw-empty.svg" class="level-paw-icon" alt="empty paw">`;
                   }
               }
-              levelsHtml += `<div style="display: flex; justify-content: center; align-items: center;"><span style="width: 100px; text-align: right; margin-right: 2px;">熱苦しさ</span> <span class="gorioshi-stars">${gorioshiIcons}</span></div>`;
+              levelsHtml += `<div class="level-row" style="display: flex; justify-content: center; align-items: center;"><span style="width: 100px; text-align: right; margin-right: 2px;">熱苦しさ</span> <span class="gorioshi-stars">${gorioshiIcons}</span></div>`;
           }
           articleLevelsContainer.innerHTML = levelsHtml;
           // articleLevelsContainer.style.textAlign = 'center'; // No longer needed here as inner divs handle centering

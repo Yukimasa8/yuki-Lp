@@ -681,3 +681,7 @@ header .logo-container .logo-image {
   align-items: center; /* Vertically align the paw icons */
   justify-content: flex-start; /* Align icons to the start within their container */
 }
+
+.level-row {
+  margin-bottom: -10px; /* Adjust as needed to bring lines closer */
+}
