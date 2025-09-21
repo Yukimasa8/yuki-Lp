@@ -616,3 +616,22 @@ a.tag:hover {
   margin-top: -20px; /* タイトルとの間隔を調整 */
   margin-bottom: 30px;
 }
+
+/* --- 記事本文のタイポグラフィ改善 --- */
+#article-body {
+  /* 記事本文の基準となる文字サイズを、少しだけ大きくします */
+  font-size: 17px;
+}
+
+#article-body p,
+#article-body ul,
+#article-body ol {
+  /* 段落やリストの文字色と行間を統一します */
+  color: #e0e0e0;
+  line-height: 1.8;
+}
+
+#article-body p {
+  /* 段落ごとの下の余白を少し広げ、読みやすくします */
+  margin-bottom: 1.5em;
+}
