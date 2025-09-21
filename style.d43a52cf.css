@@ -665,6 +665,7 @@ a.tag:hover {
 }
 
 .level-row span {
+  font-size: 0.9em; /* レベル行内のテキストのフォントサイズを調整 */
   line-height: 1.0; /* レベル行内のテキストの行の高さを調整 */
 }
 
@@ -693,8 +694,8 @@ header .logo-container .logo-image {
 }
 
 .level-paw-icon {
-  width: 1.2em; /* Adjust size as needed */
-  height: 1.2em;
+  width: 0.9em; /* Adjust size as needed */
+  height: 0.9em;
   vertical-align: middle; /* Align with text */
   margin: 0 0.1em; /* Add some spacing between icons */
 }
