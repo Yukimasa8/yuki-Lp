@@ -229,7 +229,7 @@ async function renderArticle() {
       const articleLevelsContainer = document.getElementById('article-levels');
       if (articleLevelsContainer && (article.dajareLevel || article.gorioshiLevel)) {
           let levelsHtml = '<div class="level-row" style="text-align: center;">この記事の</div>'; // Keep "この記事の" centered
-          let combinedLevelsContent = '';
+          let levelItems = []; // Array to hold HTML for each level display
 
           if (article.dajareLevel) {
               let dajareIcons = '';
@@ -240,7 +240,7 @@ async function renderArticle() {
                       dajareIcons += `<img src="assets/paw-empty.svg" class="level-paw-icon" alt="empty paw">`;
                   }
               }
-              combinedLevelsContent += `<span style="white-space: nowrap;">ダジャレベル <span class="dajare-stars">${dajareIcons}</span></span>`;
+              levelItems.push(`<span style="white-space: nowrap;">ダジャレベル <span class="dajare-stars">${dajareIcons}</span></span>`);
           }
 
           if (article.gorioshiLevel) {
@@ -252,14 +252,13 @@ async function renderArticle() {
                       gorioshiIcons += `<img src="assets/paw-empty.svg" class="level-paw-icon" alt="empty paw">`;
                   }
               }
-              if (combinedLevelsContent !== '') {
-                  combinedLevelsContent += `&nbsp;&nbsp;|&nbsp;&nbsp;`; // Separator
-              }
-              combinedLevelsContent += `<span style="white-space: nowrap;">熱苦しさ <span class="gorioshi-stars">${gorioshiIcons}</span></span>`;
+              levelItems.push(`<span style="white-space: nowrap;">熱苦しさ <span class="gorioshi-stars">${gorioshiIcons}</span></span>`);
           }
 
-          if (combinedLevelsContent !== '') {
-              levelsHtml += `<div class="level-row" style="display: flex; justify-content: center; align-items: center;">${combinedLevelsContent}</div>`;
+          if (levelItems.length > 0) {
+              // Join the level items with a separator
+              const combinedContent = levelItems.join(`&nbsp;&nbsp;|&nbsp;&nbsp;`);
+              levelsHtml += `<div class="level-row" style="display: flex; justify-content: center; align-items: center;">${combinedContent}</div>`;
           }
           
           articleLevelsContainer.innerHTML = levelsHtml;
