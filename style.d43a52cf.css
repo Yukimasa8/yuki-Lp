@@ -668,10 +668,3 @@ header .logo-container .logo-image {
   height: 60px !important;
   width: auto !important;
 }
-
-.footprint-icon {
-  width: 1em; /* Adjust size relative to font-size */
-  height: 1em;
-  vertical-align: middle; /* Align with text */
-  margin: 0 0.2em; /* Add some spacing */
-}
