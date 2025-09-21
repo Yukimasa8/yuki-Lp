@@ -228,7 +228,7 @@ async function renderArticle() {
       // Combined Dajare and Gorioshi Level rendering
       const articleLevelsContainer = document.getElementById('article-levels');
       if (articleLevelsContainer && (article.dajareLevel || article.gorioshiLevel)) {
-          let levelsHtml = '<div style="text-align: center;">この記事の</div>'; // Keep "この記事の" centered
+          let levelsHtml = '<div class="level-row" style="text-align: center;">この記事の</div>'; // Keep "この記事の" centered
           if (article.dajareLevel) {
               let dajareIcons = '';
               for (let i = 0; i < 5; i++) {
