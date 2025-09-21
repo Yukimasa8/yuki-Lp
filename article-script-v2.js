@@ -257,7 +257,7 @@ async function renderArticle() {
 
           if (levelItems.length > 0) {
               // Join the level items with a separator
-              const combinedContent = levelItems.join(`&nbsp;&nbsp;|&nbsp;&nbsp;`);
+              const combinedContent = levelItems.join(``);
               levelsHtml += `<div class="level-row" style="display: flex; justify-content: center; align-items: center;">${combinedContent}</div>`;
           }
           
