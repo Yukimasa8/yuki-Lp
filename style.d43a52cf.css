@@ -635,3 +635,8 @@ a.tag:hover {
   /* 段落ごとの下の余白を少し広げ、読みやすくします */
   margin-bottom: 1.5em;
 }
+
+/* --- 記事説明文と日付の間に余白を追加 --- */
+#article-description {
+  margin-bottom: 30px;
+}
