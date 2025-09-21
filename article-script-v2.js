@@ -259,7 +259,7 @@ async function renderArticle() {
           }
 
           if (combinedLevelsContent !== '') {
-              levelsHtml += `<div class="level-row" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">${combinedLevelsContent}</div>`;
+              levelsHtml += `<div class="level-row" style="display: flex; justify-content: center; align-items: center;">${combinedLevelsContent}</div>`;
           }
           
           articleLevelsContainer.innerHTML = levelsHtml;
