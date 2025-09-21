@@ -231,7 +231,7 @@ async function renderArticle() {
     const gorioshiLevelElement = document.getElementById('gorioshi-level');
     if (gorioshiLevelElement && article.gorioshiLevel) {
       const stars = '★'.repeat(article.gorioshiLevel) + '☆'.repeat(5 - article.gorioshiLevel);
-      gorioshiLevelElement.innerHTML = `この記事のゴリ押しレベル: <span class="gorioshi-stars">${stars}</span>`;
+      gorioshiLevelElement.innerHTML = `この記事の熱苦しさ: <span class="gorioshi-stars">${stars}</span>`;
     } else if (gorioshiLevelElement) {
       gorioshiLevelElement.style.display = 'none';
     }
