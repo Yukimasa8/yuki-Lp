@@ -652,12 +652,12 @@ a.tag:hover {
 
 /* --- 日付と読了時間の行間調整 --- */
 .article-date-container {
-  margin-bottom: 5px; /* 日付とレベルセクションの間に余白 */
+  margin-bottom: 0px; /* 日付とレベルセクションの間に余白 */
 }
 
 /* --- ダジャレベルと熱苦しさの体裁調整 --- */
 .level-row {
-  margin-bottom: 2px; /* 各レベル行の間に余白 */
+  margin-bottom: 0px; /* 各レベル行の間に余白 */
 }
 
 .level-row:last-child {
