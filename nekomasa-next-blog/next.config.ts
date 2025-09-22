@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['cdn.sanity.io'],
   },
+  trailingSlash: true,
   /* config options here */
 };
 
