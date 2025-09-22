@@ -590,7 +590,9 @@ a.tag:hover {
 }
 .dajare-table td:first-child { /* 星の列 */
   text-align: center;
-  white-space: nowrap;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* 中央揃え */
 }
 .dajare-table tbody tr:nth-child(odd) {
   background-color: #2a2a2a;
@@ -708,6 +710,6 @@ header .logo-container .logo-image {
   width: 1.2em; /* 星のテキストと同じくらいのサイズに調整 */
   height: 1.2em;
   vertical-align: middle; /* テキストと中央揃え */
-  margin: 0 0.1em; /* アイコン間の余白 */
+  margin: 0 0.05em; /* アイコン間の余白 */
 }
 
