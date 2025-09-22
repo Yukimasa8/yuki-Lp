@@ -595,7 +595,7 @@ a.tag:hover {
   flex-wrap: nowrap; /* 折り返しを禁止 */
   justify-content: center; /* 中央寄せ */
   align-items: center; /* 垂直方向の中央寄せ */
-  padding: 5px 15px; /* 上下のパディングを調整 */
+  padding: 12px 15px; /* 上下のパディングを元の値に戻す */
 }
 .dajare-table tbody tr:nth-child(odd) {
   background-color: #2a2a2a;
