@@ -1,5 +1,3 @@
-import {TagsIcon} from 'sanity-plugin-tags'
-
 export default {
   name: 'post',
   title: 'Post',
@@ -102,11 +100,7 @@ export default {
       name: 'tags',
       title: 'Tags',
       type: 'array',
-      icon: TagsIcon,
       of: [{type: 'reference', to: {type: 'tag'}}],
-      components: {
-        input: 'tags'
-      }
     },
   ],
 }
