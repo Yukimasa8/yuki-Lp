@@ -576,6 +576,7 @@ a.tag:hover {
   border-collapse: collapse;
   text-align: left;
   font-size: 0.9em;
+  table-layout: fixed; /* テーブルのレイアウトを固定 */
 }
 .dajare-table th, .dajare-table td {
   border: 1px solid #555;
@@ -593,6 +594,7 @@ a.tag:hover {
   display: flex;
   flex-wrap: nowrap; /* 折り返しを禁止 */
   justify-content: flex-start; /* 左寄せ */
+  width: 80px; /* 幅を固定 */
 }
 .dajare-table tbody tr:nth-child(odd) {
   background-color: #2a2a2a;
