@@ -1,5 +1,5 @@
-import { client, urlFor } from '../../../../nekomasa-next-blog/lib/sanity';
-import PortableTextRenderer from '../../../../nekomasa-next-blog/src/components/PortableTextRenderer';
+import { client, urlFor } from '@/lib/sanity';
+import PortableTextRenderer from '@/components/PortableTextRenderer';
 import Image from 'next/image';
 import Link from 'next/link';
 

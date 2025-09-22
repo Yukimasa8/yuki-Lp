@@ -1,7 +1,7 @@
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { urlFor } from '../lib/sanity';
+import { urlFor } from '@/lib/sanity';
 
 // Custom components for PortableText rendering
 const components = {

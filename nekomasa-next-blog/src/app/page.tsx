@@ -1,4 +1,4 @@
-import { client, urlFor } from '../../../nekomasa-next-blog/lib/sanity';
+import { client, urlFor } from '@/lib/sanity';
 import Link from 'next/link';
 import Image from 'next/image';
 
