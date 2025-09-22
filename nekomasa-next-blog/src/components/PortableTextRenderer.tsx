@@ -1,0 +1,72 @@
+import { PortableText } from '@portabletext/react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { urlFor } from '../lib/sanity';
+
+// Custom components for PortableText rendering
+const components = {
+  types: {
+    image: ({ value }) => {
+      if (!value?.asset?._ref) {
+        return null;
+      }
+      return (
+        <figure className="my-8">
+          <Image
+            className="w-full h-auto rounded-lg shadow-md"
+            src={urlFor(value).url()}
+            alt={value.alt || ''}
+            width={800} // Adjust as needed
+            height={500} // Adjust as needed
+            sizes="(max-width: 800px) 100vw, 800px"
+            priority={false} // Load images lazily
+          />
+          {value.caption && <figcaption className="text-center text-sm text-gray-500 mt-2">{value.caption}</figcaption>}
+        </figure>
+      );
+    },
+    affiliate: ({ value }) => {
+      if (!value?.code) return null;
+      return (
+        <div className="my-8 p-4 border border-gray-200 rounded-lg bg-gray-50">
+          <p className="text-xs text-gray-500 mb-2">【広告】</p>
+          <div dangerouslySetInnerHTML={{ __html: value.code }} />
+        </div>
+      );
+    },
+  },
+  marks: {
+    link: ({ children, value }) => {
+      const rel = !value.href.startsWith('/') ? 'noopener noreferrer sponsored' : undefined;
+      return (
+        <Link href={value.href} rel={rel} target={rel ? '_blank' : '_self'}>
+          {children}
+        </Link>
+      );
+    },
+  },
+  block: {
+    h1: ({ children }) => <h1 className="text-3xl font-bold my-6">{children}</h1>,
+    h2: ({ children }) => <h2 className="text-2xl font-bold my-5">{children}</h2>,
+    h3: ({ children }) => <h3 className="text-xl font-bold my-4">{children}</h3>,
+    h4: ({ children }) => <h4 className="text-lg font-bold my-3">{children}</h4>,
+    normal: ({ children }) => <p className="my-2 leading-relaxed">{children}</p>,
+    blockquote: ({ children }) => <blockquote className="border-l-4 border-gray-300 pl-4 py-2 my-4 italic text-gray-700">{children}</blockquote>,
+  },
+  list: {
+    bullet: ({ children }) => <ul className="list-disc list-inside ml-4 my-2">{children}</ul>,
+    number: ({ children }) => <ol className="list-decimal list-inside ml-4 my-2">{children}</ol>,
+  },
+  listItem: {
+    bullet: ({ children }) => <li className="mb-1">{children}</li>,
+    number: ({ children }) => <li className="mb-1">{children}</li>,
+  },
+};
+
+interface PortableTextRendererProps {
+  blocks: any[];
+}
+
+export default function PortableTextRenderer({ blocks }: PortableTextRendererProps) {
+  return <PortableText value={blocks} components={components} />;
+}
