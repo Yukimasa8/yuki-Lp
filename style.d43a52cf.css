@@ -591,13 +591,8 @@ a.tag:hover {
 }
 .dajare-table td:first-child { /* 星の列 */
   text-align: center;
-  padding: 12px 15px; /* 上下のパディングを元の値に戻す */
-  position: relative; /* 子要素の絶対配置の基準 */
-  display: flex;
-  flex-wrap: nowrap; /* 折り返しを禁止 */
-  justify-content: center; /* 中央寄せ */
-  align-items: center; /* 垂直方向の中央寄せ */
-  height: 100%; /* 親要素の高さに合わせる */
+  padding: 12px 15px;
+  vertical-align: middle;
 }
 .dajare-table tbody tr:nth-child(odd) {
   background-color: #2a2a2a;
@@ -711,9 +706,5 @@ header .logo-container .logo-image {
   justify-content: flex-start; /* Align icons to the start within their container */
 }
 
-.paw-icon {
-  width: 1.2em; /* 星のテキストと同じくらいのサイズに調整 */
-  height: 1.2em;
-  margin: 0 0.1em; /* アイコン間の余白 */
-}
+
 
