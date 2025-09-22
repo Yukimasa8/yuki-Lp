@@ -591,11 +591,12 @@ a.tag:hover {
 }
 .dajare-table td:first-child { /* 星の列 */
   text-align: center;
-  display: flex;
-  flex-wrap: nowrap; /* 折り返しを禁止 */
-  justify-content: center; /* 中央寄せ */
-  align-items: center; /* 垂直方向の中央寄せ */
   padding: 12px 15px; /* 上下のパディングを元の値に戻す */
+  vertical-align: middle; /* 垂直方向の中央寄せ */
+  line-height: normal; /* 行の高さをリセット */
+  vertical-align: unset; /* 垂直方向の配置をリセット */
+  line-height: normal; /* 行の高さをリセット */
+  vertical-align: unset; /* 垂直方向の配置をリセット */
   line-height: normal; /* 行の高さをリセット */
   vertical-align: unset; /* 垂直方向の配置をリセット */
   line-height: normal; /* 行の高さをリセット */
