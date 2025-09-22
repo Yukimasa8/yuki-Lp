@@ -596,7 +596,7 @@ a.tag:hover {
 }
 .dajare-table th:nth-child(1),
 .dajare-table td:nth-child(1) {
-  width: 100px; /* 足跡の数の列の幅を調整 */
+  width: 80px; /* 足跡の数の列の幅を調整 */
 }
 .dajare-table tbody tr:nth-child(odd) {
   background-color: #2a2a2a;
@@ -606,6 +606,7 @@ a.tag:hover {
 .dajare-table td:nth-child(2) {
   white-space: nowrap; /* レベル名のテキストを折り返さない */
   text-align: center; /* 中央揃えを追加 */
+  width: 120px; /* レベル名列の幅を調整 */
 }
 
 .table-wrapper {
