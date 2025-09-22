@@ -128,6 +128,7 @@ async function fetchArticleBySlug(slug) {
     _updatedAt,
     dajareLevel,
     gorioshiLevel,
+    "categories": categories[]->{title, "slug": slug.current},
     "tags": tags[]->{title, slug},
     body[]{
       ...,
@@ -334,15 +335,36 @@ async function renderArticle() {
     tocContainer.style.display = 'none';
   }
 
+  // Render Categories and Tags
+  const catAndTagWrapper = document.createElement('div');
+  const shareButtons = document.querySelector('.share-buttons');
+
+  // Render categories
+  if (article.categories && article.categories.length > 0) {
+    const categoriesContainer = document.createElement('div');
+    categoriesContainer.classList.add('categories-container', 'article-categories');
+    const categoriesTitle = document.createElement('h3');
+    categoriesTitle.textContent = 'カテゴリー';
+    categoriesContainer.appendChild(categoriesTitle);
+    article.categories.forEach(category => {
+      if (category && category.slug && category.slug.current) {
+        const categoryElement = document.createElement('a');
+        categoryElement.classList.add('tag'); // Reuse 'tag' class for styling
+        categoryElement.textContent = category.title;
+        categoryElement.href = `categories.html?slug=${category.slug.current}`;
+        categoriesContainer.appendChild(categoryElement);
+      }
+    });
+    catAndTagWrapper.appendChild(categoriesContainer);
+  }
+
   // Render tags
   if (article.tags && article.tags.length > 0) {
     const tagsContainer = document.createElement('div');
     tagsContainer.classList.add('tags-container', 'article-tags');
-
     const tagsTitle = document.createElement('h3');
     tagsTitle.textContent = '関連タグ';
     tagsContainer.appendChild(tagsTitle);
-
     article.tags.forEach(tag => {
       if (tag && tag.slug && tag.slug.current) {
         const tagElement = document.createElement('a');
@@ -357,11 +379,11 @@ async function renderArticle() {
         tagsContainer.appendChild(tagElement);
       }
     });
+    catAndTagWrapper.appendChild(tagsContainer);
+  }
 
-    const shareButtons = document.querySelector('.share-buttons');
-    if (shareButtons) {
-      shareButtons.parentNode.insertBefore(tagsContainer, shareButtons);
-    }
+  if (shareButtons && catAndTagWrapper.hasChildNodes()) {
+    shareButtons.parentNode.insertBefore(catAndTagWrapper, shareButtons);
   }
 
   // Share buttons
