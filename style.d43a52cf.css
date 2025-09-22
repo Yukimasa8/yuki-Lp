@@ -606,7 +606,7 @@ a.tag:hover {
 .dajare-table td:nth-child(2) {
   white-space: nowrap; /* レベル名のテキストを折り返さない */
   text-align: center; /* 中央揃えを追加 */
-  width: 120px; /* レベル名列の幅を調整 */
+  width: 150px; /* レベル名列の幅を調整 */
 }
 
 .table-wrapper {
