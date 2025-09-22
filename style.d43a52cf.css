@@ -590,8 +590,6 @@ a.tag:hover {
 }
 .dajare-table td:first-child { /* 星の列 */
   text-align: center;
-  font-size: 1.2em;
-  color: #ffc107;
   white-space: nowrap;
 }
 .dajare-table tbody tr:nth-child(odd) {
@@ -704,5 +702,12 @@ header .logo-container .logo-image {
   display: flex;
   align-items: center; /* Vertically align the paw icons */
   justify-content: flex-start; /* Align icons to the start within their container */
+}
+
+.paw-icon {
+  width: 1.2em; /* 星のテキストと同じくらいのサイズに調整 */
+  height: 1.2em;
+  vertical-align: middle; /* テキストと中央揃え */
+  margin: 0 0.1em; /* アイコン間の余白 */
 }
 
