@@ -706,5 +706,9 @@ header .logo-container .logo-image {
   justify-content: flex-start; /* Align icons to the start within their container */
 }
 
-
-
+.paw-icon {
+  width: 1.2em; /* 星のテキストと同じくらいのサイズに調整 */
+  height: 1.2em;
+  vertical-align: middle; /* テキストと中央揃え */
+  margin: 0 0.1em; /* アイコン間の余白 */
+}
