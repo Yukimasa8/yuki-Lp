@@ -31,6 +31,9 @@ jobs:
         run: npm run build
         working-directory: nekomasa-next-blog
 
+      - name: Copy CNAME file to build output
+        run: cp CNAME nekomasa-next-blog/out/
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
