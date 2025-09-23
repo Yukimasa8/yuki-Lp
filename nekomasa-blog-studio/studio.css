@@ -1,0 +1,11 @@
+/* nekomasa-blog-studio/studio.css */
+
+/* Portable Textエディタの最小高さを設定 */
+.cm-editor {
+  min-height: 400px !important; /* 適切な高さに調整 */
+}
+
+/* Portable Textエディタのコンテンツ領域の最小高さを設定 */
+.cm-content {
+  min-height: 350px !important; /* エディタ全体の高さより少し小さく */
+}
