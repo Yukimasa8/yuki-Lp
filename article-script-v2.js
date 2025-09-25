@@ -344,15 +344,15 @@ async function renderArticle() {
     const categoriesContainer = document.createElement('div');
     categoriesContainer.classList.add('categories-container', 'article-categories');
     const categoriesTitle = document.createElement('h3');
-    categoriesTitle.textContent = 'この記事のカテゴリー';
+    categoriesTitle.textContent = 'カテゴリー';
     categoriesContainer.appendChild(categoriesTitle);
     article.categories.forEach(category => {
-      if (category && category.slug) {
+      if (category && category.slug && category.slug.current) {
         const categoryElement = document.createElement('a');
         categoryElement.classList.add('tag'); // Reuse 'tag' class for styling
         categoryElement.textContent = category.title;
-        categoryElement.href = `categories.html?slug=${category.slug}`;
-        categoriesWrapper.appendChild(categoryElement);
+        categoryElement.href = `categories.html?slug=${category.slug.current}`;
+        categoriesContainer.appendChild(categoryElement);
       }
     });
     catAndTagWrapper.appendChild(categoriesContainer);
@@ -366,12 +366,12 @@ async function renderArticle() {
     tagsTitle.textContent = '関連タグ';
     tagsContainer.appendChild(tagsTitle);
     article.tags.forEach(tag => {
-      if (tag && tag.slug) {
+      if (tag && tag.slug && tag.slug.current) {
         const tagElement = document.createElement('a');
         tagElement.classList.add('tag');
         tagElement.textContent = tag.title;
-        tagElement.href = `tags.html?slug=${tag.slug}`;
-        tagsWrapper.appendChild(tagElement);
+        tagElement.href = `tags.html?slug=${tag.slug.current}`;
+        tagsContainer.appendChild(tagElement);
       } else if (tag && tag.title) {
         const tagElement = document.createElement('span');
         tagElement.classList.add('tag', 'tag-item--no-link');
