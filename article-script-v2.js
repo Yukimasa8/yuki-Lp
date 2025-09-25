@@ -336,55 +336,54 @@ async function renderArticle() {
   }
 
   // Render Categories and Tags
-  const catAndTagWrapper = document.createElement('div');
   const shareButtons = document.querySelector('.share-buttons');
 
+  const articleCategoriesElement = document.getElementById('article-categories');
+  const articleTagsElement = document.getElementById('article-tags');
+
   // Render categories
-  if (article.categories && article.categories.length > 0) {
-    const categoriesContainer = document.createElement('div');
-    categoriesContainer.classList.add('categories-container', 'article-categories');
+  if (article.categories && article.categories.length > 0 && articleCategoriesElement) {
     const categoriesTitle = document.createElement('h3');
-    categoriesTitle.textContent = 'この記事のカテゴリー';
-    categoriesContainer.appendChild(categoriesTitle);
+    categoriesTitle.textContent = 'この記事のカテゴリー'; // テキスト変更
+    // categoriesTitle.style.textAlign = 'center'; // この行は削除し、CSSで制御
+    articleCategoriesElement.appendChild(categoriesTitle);
+    const categoriesWrapper = document.createElement('div');
+    categoriesWrapper.classList.add('categories-wrapper');
     article.categories.forEach(category => {
       if (category && category.slug) {
         const categoryElement = document.createElement('a');
-        categoryElement.classList.add('tag'); // Reuse 'tag' class for styling
+        categoryElement.classList.add('tag');
         categoryElement.textContent = category.title;
         categoryElement.href = `categories.html?slug=${category.slug}`;
-        categoriesContainer.appendChild(categoryElement);
+        categoriesWrapper.appendChild(categoryElement);
       }
     });
-    catAndTagWrapper.appendChild(categoriesContainer);
+    articleCategoriesElement.appendChild(categoriesWrapper);
   }
 
   // Render tags
-  if (article.tags && article.tags.length > 0) {
-    const tagsContainer = document.createElement('div');
-    tagsContainer.classList.add('tags-container', 'article-tags');
+  if (article.tags && article.tags.length > 0 && articleTagsElement) {
     const tagsTitle = document.createElement('h3');
     tagsTitle.textContent = '関連タグ';
-    tagsContainer.appendChild(tagsTitle);
+    // tagsTitle.style.textAlign = 'center'; // この行は削除し、CSSで制御
+    articleTagsElement.appendChild(tagsTitle);
+    const tagsWrapper = document.createElement('div');
+    tagsWrapper.classList.add('tags-wrapper');
     article.tags.forEach(tag => {
       if (tag && tag.slug) {
         const tagElement = document.createElement('a');
         tagElement.classList.add('tag');
         tagElement.textContent = tag.title;
         tagElement.href = `tags.html?slug=${tag.slug}`;
-        tagsContainer.appendChild(tagElement);
-      } else if (tag && tag.title) {
-        const tagElement = document.createElement('span');
-        tagElement.classList.add('tag', 'tag-item--no-link');
-        tagElement.textContent = tag.title;
-        tagsContainer.appendChild(tagElement);
+        tagsWrapper.appendChild(tagElement);
       }
     });
-    catAndTagWrapper.appendChild(tagsContainer);
+    articleTagsElement.appendChild(tagsWrapper);
   }
 
-  if (shareButtons && catAndTagWrapper.hasChildNodes()) {
-    shareButtons.parentNode.insertBefore(catAndTagWrapper, shareButtons);
-  }
+  // if (shareButtons && catAndTagWrapper.hasChildNodes()) {
+  //   shareButtons.parentNode.insertBefore(catAndTagWrapper, shareButtons);
+  // }
 
   // Share buttons
   setupShareButtons(article.title);
