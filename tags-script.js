@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const tagSlug = urlParams.get('slug');
     console.log("tagSlug from URL:", tagSlug); // デバッグログを追加
+    console.log("Type of tagSlug:", typeof tagSlug); // ★この行を追加
 
     if (!tagSlug) {
       tagPageTitle.textContent = 'タグが見つかりません';
