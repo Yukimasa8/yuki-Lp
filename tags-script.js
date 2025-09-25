@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      console.log("Fetched posts data for tag:", tagSlug, data.result); // ★この行を追加
+      
       return data.result;
     } catch (error) {
       console.error("Error fetching data from Sanity:", error);
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      console.log("Fetched tag title data:", data.result); // デバッグログを追加
+      
       return data.result ? data.result.title : null;
     } catch (error) {
       console.error("Error fetching tag title from Sanity:", error);
@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   async function renderTagPage() {
     const urlParams = new URLSearchParams(window.location.search);
     const tagSlug = urlParams.get('slug');
-    console.log("tagSlug from URL:", tagSlug); // デバッグログを追加
-    console.log("Type of tagSlug:", typeof tagSlug); // ★この行を追加
+    
+    
 
     if (!tagSlug) {
       tagPageTitle.textContent = 'タグが見つかりません';
