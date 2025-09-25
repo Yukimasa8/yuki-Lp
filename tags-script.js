@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     posts.forEach((post) => {
       const postCardLink = document.createElement('a');
-      postCardLink.href = `article.html?slug=${post.slug.current}`;
+      postCardLink.href = `article.html?slug=${post.slug}`;
       postCardLink.classList.add('post-card');
 
       const postImage = document.createElement('img');
