@@ -374,7 +374,7 @@ async function renderArticle() {
         const tagElement = document.createElement('a');
         tagElement.classList.add('tag');
         tagElement.textContent = tag.title;
-        tagElement.href = `tags.html?slug=${tag.slug}`;
+        tagElement.href = `tags.html?slug=${tag.slug.current}`;
         tagsWrapper.appendChild(tagElement);
       }
     });
