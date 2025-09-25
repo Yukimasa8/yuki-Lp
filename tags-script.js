@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
+      console.log("Fetched posts data for tag:", tagSlug, data.result); // ★この行を追加
       return data.result;
     } catch (error) {
       console.error("Error fetching data from Sanity:", error);
