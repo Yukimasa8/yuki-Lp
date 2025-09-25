@@ -347,11 +347,11 @@ async function renderArticle() {
     categoriesTitle.textContent = 'カテゴリー';
     categoriesContainer.appendChild(categoriesTitle);
     article.categories.forEach(category => {
-      if (category && category.slug && category.slug.current) {
+      if (category && category.slug) {
         const categoryElement = document.createElement('a');
         categoryElement.classList.add('tag'); // Reuse 'tag' class for styling
         categoryElement.textContent = category.title;
-        categoryElement.href = `categories.html?slug=${category.slug.current}`;
+        categoryElement.href = `categories.html?slug=${category.slug}`;
         categoriesContainer.appendChild(categoryElement);
       }
     });
@@ -366,11 +366,11 @@ async function renderArticle() {
     tagsTitle.textContent = '関連タグ';
     tagsContainer.appendChild(tagsTitle);
     article.tags.forEach(tag => {
-      if (tag && tag.slug && tag.slug.current) {
+      if (tag && tag.slug) {
         const tagElement = document.createElement('a');
         tagElement.classList.add('tag');
         tagElement.textContent = tag.title;
-        tagElement.href = `tags.html?slug=${tag.slug.current}`;
+        tagElement.href = `tags.html?slug=${tag.slug}`;
         tagsContainer.appendChild(tagElement);
       } else if (tag && tag.title) {
         const tagElement = document.createElement('span');
