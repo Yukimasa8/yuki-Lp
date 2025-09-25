@@ -344,7 +344,7 @@ async function renderArticle() {
     const categoriesContainer = document.createElement('div');
     categoriesContainer.classList.add('categories-container', 'article-categories');
     const categoriesTitle = document.createElement('h3');
-    categoriesTitle.textContent = 'カテゴリー';
+    categoriesTitle.textContent = 'この記事のカテゴリー';
     categoriesContainer.appendChild(categoriesTitle);
     article.categories.forEach(category => {
       if (category && category.slug) {
