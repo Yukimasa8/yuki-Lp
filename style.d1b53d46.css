@@ -863,17 +863,17 @@ header .logo-container .logo-image {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px; /* A bit more gap */
+  gap: 10px; /* Reduced gap */
 }
 
 .share-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 18px;
+  padding: 8px 15px; /* Reduced padding */
   border-radius: 5px;
   text-decoration: none;
-  font-size: 0.9em;
+  font-size: 0.85em; /* Reduced font size */
   font-weight: bold;
   
   /* Ghost button styles */
@@ -890,7 +890,7 @@ header .logo-container .logo-image {
 
 .share-btn i {
   margin-right: 8px;
-  font-size: 1.1em;
+  font-size: 1em; /* Reduced icon size */
   /* Color will be inherited from the parent .share-btn */
 }
 
