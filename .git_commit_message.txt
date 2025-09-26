@@ -1,1 +1,0 @@
-fix: Correct script filename in article.html
