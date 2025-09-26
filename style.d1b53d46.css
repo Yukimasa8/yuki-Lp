@@ -773,7 +773,7 @@ header .logo-container .logo-image {
 .share-buttons span {
   display: block;
   margin-bottom: 15px;
-  font-size: 1.1em;
+  font-size: 0.95em; /* Adjusted font size */
   color: #ccc;
 }
 
