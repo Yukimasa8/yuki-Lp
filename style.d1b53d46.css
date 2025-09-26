@@ -656,7 +656,7 @@ a.tag:hover {
   line-height: 1.0; /* 日付と読了時間の行の高さを調整 */
 }
 .article-date-container {
-  margin-bottom: 0px; /* 日付とレベルセクションの間に余白 */
+  margin-bottom: 20px; /* 日付とレベルセクションの間に余白を増やす */
 }
 
 /* --- ダジャレベルと熱苦しさの体裁調整 --- */

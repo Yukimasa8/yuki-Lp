@@ -275,7 +275,7 @@ async function renderArticle() {
           }
           
           articleLevelsContainer.innerHTML = levelsHtml;
-          articleLevelsContainer.style.marginBottom = '0px'; // Set to 0px as per user's request for narrowness
+          articleLevelsContainer.style.marginBottom = '20px'; // Increased margin for better spacing
       } else if (articleLevelsContainer) {
           articleLevelsContainer.style.display = 'none';
       }
