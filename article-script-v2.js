@@ -433,14 +433,16 @@ function setupShareButtons(title) {
   }
 
   if (copyBtn) {
-    copyBtn.addEventListener('click', () => {
+    copyBtn.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent page jump
       navigator.clipboard.writeText(pageUrl).then(() => {
-        const originalText = copyBtn.textContent;
-        copyBtn.textContent = 'コピーしました！';
-        copyBtn.disabled = true;
+        const originalHTML = copyBtn.innerHTML;
+        copyBtn.innerHTML = 'コピーしました！'; // Icon disappears temporarily
+        copyBtn.style.pointerEvents = 'none'; // Disable clicks
+
         setTimeout(() => {
-          copyBtn.textContent = originalText;
-          copyBtn.disabled = false;
+          copyBtn.innerHTML = originalHTML; // Restore original content (icon + text)
+          copyBtn.style.pointerEvents = 'auto'; // Re-enable clicks
         }, 2000);
       }).catch(err => {
         console.error('URLのコピーに失敗しました', err);
