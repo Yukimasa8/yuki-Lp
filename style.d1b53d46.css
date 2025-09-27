@@ -466,10 +466,7 @@ footer p {
   background-color: #ff69b4; /* "Dere" pink */
 }
 
-.tsun-bar span:after {
-  content: ' 💔';
-  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
-}
+
 
 .dere-bar span:after {
   content: ' ❤️';
