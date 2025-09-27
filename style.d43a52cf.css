@@ -553,14 +553,21 @@ a.tag:hover {
 
 /* ヘッダーの説明文の中のリンクスタイル */
 .site-description a {
-  color: #ccc; /* 周りのテキストと同じ明るめのグレー */
-  text-decoration: underline; /* リンクであることを示す下線 */
+  text-decoration: none;
+  font-weight: bold;
+  background-image: linear-gradient(to right, #00aaff, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(0, 170, 255, 0.8);
+  transition: all 0.3s ease;
 }
 
 /* ホバー時のスタイル */
 .site-description a:hover {
-  color: #fff; /* 少し明るくしてフィードバックを返す */
-  text-decoration: none; /* ホバー時に下線を消す */
+  text-shadow: 0 0 25px rgba(0, 170, 255, 1);
+  transform: scale(1.05);
 }
 
 /* プロフィールページのリストを見やすくする */
