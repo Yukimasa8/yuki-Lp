@@ -466,6 +466,10 @@ footer p {
   background-color: #ff69b4; /* "Dere" pink */
 }
 
+.tsun-bar span:after {
+  content: ' 💔';
+}
+
 .dere-bar span:after {
   content: ' ❤️';
 }
