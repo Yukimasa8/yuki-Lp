@@ -264,7 +264,6 @@ body {
 .main-content a {
   color: #00aaff; /* 明るい青色に変更 */
   text-decoration: underline; /* 下線を追加 */
-  text-shadow: 0 0 8px rgba(0, 170, 255, 0.8); /* テキストシャドウをより強調 */
 }
 
 .main-content a:hover {
