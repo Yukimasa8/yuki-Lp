@@ -574,6 +574,7 @@ a.tag:hover {
 .profile-card ul li strong {
   display: block; /* ラベルをブロック要素にして改行させる */
   margin-bottom: 5px; /* ラベルと内容の間に少し余白を追加 */
+  font-size: 1.2em; /* 文字を少し大きくする */
 }
 
 /* ダジャレベル早見表のスタイル */
