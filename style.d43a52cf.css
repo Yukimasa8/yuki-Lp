@@ -88,7 +88,7 @@ body {
     padding: 0; /* Remove default padding */
 }
 .profile-card ul li {
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
     .category-buttons {
         text-align: center;
@@ -573,8 +573,8 @@ a.tag:hover {
 /* プロフィールページのリストを見やすくする */
 .profile-card ul li strong {
   display: block; /* ラベルをブロック要素にして改行させる */
-  margin-bottom: 5px; /* ラベルと内容の間に少し余白を追加 */
-  font-size: 1.2em; /* 文字を少し大きくする */
+  margin-bottom: 10px; /* ラベルと内容の間に少し余白を追加 */
+  font-size: 1.4em; /* 文字を少し大きくする */
 }
 
 /* ダジャレベル早見表のスタイル */
@@ -724,4 +724,9 @@ header .logo-container .logo-image {
   height: 1.2em;
   vertical-align: middle; /* テキストと中央揃え */
   margin: 0 0.1em; /* アイコン間の余白 */
+}
+
+.profile-card ul li a {
+  display: inline-block;
+  margin-top: 10px;
 }
