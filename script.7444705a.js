@@ -145,4 +145,15 @@ document.addEventListener('DOMContentLoaded', async () => {
       renderPosts(categoryParam || '');
     }
   }
+
+  // Tsundere Meter Title Update
+  const tsundereTitle = document.getElementById('tsundere-title');
+  if (tsundereTitle) {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+    const formattedDate = `${year}年${month}月${day}日`;
+    tsundereTitle.innerHTML = tsundereTitle.innerHTML.replace('現在', formattedDate);
+  }
 });
