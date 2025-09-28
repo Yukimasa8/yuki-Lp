@@ -24,7 +24,7 @@ async function findHtmlFiles(dir) {
         const res = path.resolve(dir, dirent.name);
         if (dirent.isDirectory()) {
             // Skip common non-source directories
-            if (['node_modules', '.git', '.github', 'dist', 'nekomasa-blog-studio'].includes(dirent.name)) {
+            if (['node_modules', '.git', '.github', 'dist', 'nekomasa-blog-studio', 'nekomasa-next-blog'].includes(dirent.name)) {
                 continue;
             }
             htmlFiles = htmlFiles.concat(await findHtmlFiles(res));
