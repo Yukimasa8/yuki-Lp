@@ -139,6 +139,9 @@ body {
     .post-card-content {
       padding: 20px;
       flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     a.post-card:hover {
         transform: translateY(-5px);
