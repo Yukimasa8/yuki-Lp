@@ -94,8 +94,8 @@ body {
         text-align: center;
         margin-bottom: 30px;
         display: grid; /* Change to grid */
-        grid-template-columns: repeat(3, auto); /* 各カラムの幅をコンテンツに合わせる */
-        justify-content: center; /* グリッドトラック全体を中央揃え */
+        grid-template-columns: repeat(3, 1fr); /* 3カラムグリッドに戻す */
+        justify-items: center; /* グリッドアイテムを中央揃えに戻す */
         gap: 10px;
     }
     .category-button {
@@ -750,5 +750,6 @@ header .logo-container .logo-image {
 
 .category-buttons .category-button:nth-child(1) {
     grid-column: 1 / span 3;
-    justify-self: center; /* Add this line */
+    justify-self: center;
+    width: 100%; /* Add this line */
 }
