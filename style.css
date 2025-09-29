@@ -1,0 +1,735 @@
+body {
+      font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+      line-height: 1.8;
+      margin: 0;
+      background-color: #1a1a1a;
+      background: linear-gradient(to right, #200d40, #100620);
+      background-attachment: fixed;
+      color: #fff;
+    }
+    .container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid #444;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    .logo {
+      /* font-size: 1.8em; */ /* Replaced by image logo */
+      font-weight: bold;
+    }
+    .logo, nav ul li a { /* Common gradient and glow styles */
+      text-decoration: none;
+      font-weight: bold;
+      background-image: linear-gradient(to right, #00aaff, #8a2be2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      text-shadow: 0 0 15px rgba(0, 170, 255, 0.8);
+      transition: all 0.3s ease;
+    }
+
+    .logo:hover, nav ul li a:hover { /* Common hover styles */
+      text-shadow: 0 0 25px rgba(0, 170, 255, 1);
+      transform: scale(1.05);
+    }
+
+    .logo-image {
+      height: 60px; /* Adjust height as needed */
+      width: auto;
+      vertical-align: middle; /* Helps align with other header items if any */
+    }
+
+    nav ul li a {
+        font-size: 1.1em; /* Adjust size for menu items */
+        color: #fff; /* Fallback color */
+    }
+
+    /* Header Navigation Layout */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    nav ul li {
+      margin-left: 30px;
+    }
+    .main-content {
+      padding: 30px 0;
+    }
+    .section-title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 40px;
+            font-family: 'Noto Sans JP', 'Roboto', 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+            color: inherit; /* Ensure color is inherited normally */
+            text-shadow: none; /* Remove any potential text shadow interference */
+        }
+        .profile-card {
+    text-align: center; /* Center text content within the card */
+}
+.profile-card ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+.profile-card ul li {
+  margin-bottom: 60px;
+}
+    .category-buttons {
+        text-align: center;
+        margin-bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .category-button {
+        background-color: #00aaff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+    .category-button:hover {
+        background-color: #0088cc;
+        transform: translateY(-2px);
+    }
+    .category-button.active {
+        background-color: #8a2be2; /* Active color */
+        box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+    }
+    .post-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    a.post-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      /* padding has been moved to .post-card-content */
+      background-color: #2b2b2b;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .post-card-content {
+      padding: 20px;
+      flex-grow: 1;
+    }
+    a.post-card:hover {
+        transform: translateY(-5px);
+    }
+    .post-details-container.hidden {
+        display: none;
+    }
+    .post-toggle-button {
+        background-color: #00aaff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        margin: 20px auto 0; /* 上の余白と中央揃え */
+        display: block;
+        transition: background-color 0.3s;
+    }
+    .post-toggle-button:hover {
+        background-color: #0088cc;
+    }
+    .article-toc {
+        background-color: #3a3a3a;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    .article-toc h3 {
+        font-size: 1.2em;
+        color: #00aaff;
+        margin-top: 0;
+        margin-bottom: 15px;
+        text-align: center; /* 目次タイトルを中央に */
+    }
+    .article-toc ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center items horizontally */
+    }
+    .article-toc li {
+        margin-bottom: 8px;
+    }
+    .article-toc a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.2s;
+        display: inline;
+        padding: 0;
+    }
+    .article-toc a:hover {
+        color: #fff;
+    }
+    .post-card h2 {
+      font-size: 1.3em; /* タイトルをやや小さく */
+      margin: 0 0 10px 0;
+      background-image: linear-gradient(to right, #00aaff, #8a2be2); /* 青から紫のグラデーション */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent; /* fallback for browsers that don't support text-fill-color */
+    }
+    .post-main-image {
+        width: 100%; /* カードの幅いっぱいに表示 */
+        height: 200px; /* 高さを200pxに固定 */
+        object-fit: cover; /* 画像の比率を保ったままトリミング */
+        display: block;
+        /* margin-bottom: 15px; */ /* 画像の下に余白を確保 - This is the likely cause of the layout issue */
+    }
+    .post-card p {
+        margin: 0;
+        color: #ccc;
+    }
+    .post-content p {
+        font-size: 1em; /* やや小さく */
+        line-height: 1.7; /* 行間を調整 */
+        margin-top: 10px;
+        margin-bottom: 1em;
+        color: #e0e0e0;
+    }
+    .post-content h1 {
+        font-size: 1.6em;
+        margin-top: 1.6em;
+        margin-bottom: 0.8em;
+        color: #00aaff;
+    }
+    .post-content h2 {
+        font-size: 1.3em;
+        margin-top: 1.3em;
+        margin-bottom: 0.7em;
+        color: #00aaff;
+    }
+    .post-content h3 {
+        font-size: 1.1em;
+        margin-top: 1.1em;
+        margin-bottom: 0.2em;
+        color: #00aaff;
+    }
+    .post-content h4 {
+        font-size: 1em;
+        margin-top: 0.9em;
+        margin-bottom: 0.4em;
+        color: #00aaff;
+    }
+    .post-content h5 {
+        font-size: 0.9em;
+        margin-top: 0.7em;
+        margin-bottom: 0.3em;
+        color: #00aaff;
+    }
+    .post-content h6 {
+        font-size: 0.8em;
+        margin-top: 0.5em;
+        margin-bottom: 0.2em;
+        color: #00aaff;
+    }
+    .article-content a {
+        color: #ccc; /* グレーに変更 */
+        text-decoration: underline; /* 下線を追加 */
+        transition: color 0.3s ease; /* ホバー時のアニメーション */
+    }
+    .article-content a:hover {
+    color: #eee; /* ホバー時に少し明るいグレー */
+}
+
+.main-content a {
+  color: #00aaff; /* 明るい青色に変更 */
+  text-decoration: underline; /* 下線を追加 */
+}
+
+.main-content a:hover {
+  color: #8a2be2; /* ホバー時に紫に変更 */
+}
+
+a.category-button {
+  color: #fff; /* ボタン内のリンク文字を白に強制 */
+}
+
+a.post-card {
+  text-decoration: none; /* ブログカードのタイトルから下線を削除 */
+}
+    .article-content img {
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Add some vertical margin and center */
+    border-radius: 8px; /* Consistent with other images */
+}
+
+/* If there's a figure tag, apply some styling to it as well */
+.article-content figure {
+    margin: 20px 0; /* Adjust margin for figure element */
+    text-align: center; /* Center content within figure */
+}
+
+        .share-buttons {
+    text-align: center; /* Center the buttons */
+    margin-top: 50px; /* Add more space above */
+    margin-bottom: 30px; /* Keep some space below */
+}
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid #444;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+        header {
+            padding: 10px 15px;
+        }
+        nav ul li {
+            margin-left: 10px;
+        }
+        nav ul li a {
+            font-size: 0.9em;
+        }
+    }
+
+    @media (max-width: 480px) {
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+            display: flex !important; /* 強制的に表示 */
+        }
+        nav ul li {
+            margin-left: 0;
+            margin-bottom: 10px;
+        }
+        .profile-card ul li {
+            font-size: 0.9em; /* スマホ表示で少しフォントを小さくして改行を調整 */
+        }
+        .br-sp {
+            display: block; /* スマホ表示でのみ改行を有効にする */
+        }
+        .site-credit-line2 {
+            display: block;
+        }
+        .text-gradient {
+          /* Re-apply gradient for mobile view to ensure it's not overridden */
+          color: #fff;
+          background-image: linear-gradient(to right, #00aaff, #8a2be2);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+          text-shadow: 0 0 15px rgba(0, 170, 255, 0.8);
+        }
+        .hamburger { /* スマホ表示でハンバーガーメニューを非表示 */
+            display: none;
+        }
+        .site-credit {
+            font-size: 0.8em !important; /* スマホ表示でフォントを少し小さくする */
+        }
+        .post-content h1 { /* 記事タイトル */
+            font-size: 1.1em !important; /* さらに小さく */
+            word-break: keep-all; /* 日本語の自然な改行を優先 */
+            overflow-wrap: break-word; /* はみ出し対策 */
+        }
+        .post-card h2 { /* 各記事カードのタイトル */
+            font-size: 1.2em !important; /* さらに大きく調整 */
+            word-break: normal; /* 日本語のデフォルト改行ルールに戻す */
+            overflow-wrap: break-word; /* はみ出し対策 */
+        }
+    }
+
+/* Responsive line break utility */
+.br-sp {
+  display: none;
+}
+
+.text-gradient {
+  color: #fff;
+  background-image: linear-gradient(to right, #00aaff, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(0, 170, 255, 0.8);
+}
+
+
+
+footer a {
+  color: #ccc; /* 少し明るいグレー */
+  text-decoration: underline; /* 下線を追加 */
+}
+
+footer p {
+  display: block; /* 強制的にブロック要素にする */
+}
+
+.updated-date {
+  display: inline-block;
+  background-color: #8a2be2; /* 紫色のアクセントカラー */
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 15px; /* 角を丸くする */
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+.site-credit {
+  text-align: center;
+  font-size: 0.9em;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.site-description {
+    color: #ccc;
+    font-size: 0.9em;
+    margin: 0;
+    text-align: center;
+}
+
+#blog-posts {
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+/* Tsundere Meter Styles */
+.tsundere-meter {
+  margin-top: 60px;
+  padding: 0 20px;
+}
+
+.tsundere-meter h4 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.bar-container {
+  display: flex;
+  width: 100%;
+  height: 30px;
+  background-color: #333;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px solid #555;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+}
+
+.tsun-bar, .dere-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.tsun-bar {
+  background-color: #6a5acd; /* "Tsun" purple */
+}
+
+.dere-bar {
+  background-color: #ff69b4; /* "Dere" pink */
+}
+
+.dere-bar span:after {
+  content: ' ❤️';
+}
+
+@media (max-width: 480px) {
+  .tsun-bar span, .dere-bar span {
+    font-size: 0.7em;
+  }
+  .dajare-table {
+    table-layout: fixed !important; /* 列幅を固定 */
+    width: 100% !important; /* テーブルの幅を100%に固定 */
+  }
+  .dajare-table th, .dajare-table td {
+    font-size: 0.75em !important; /* さらに小さく */
+    padding: 8px 5px !important; /* パディングも調整 */
+    word-break: break-word !important; /* 長い単語の折り返し */
+  }
+  .dajare-table th:nth-child(1),
+  .dajare-table td:nth-child(1) {
+    width: 15% !important; /* 星の列の幅を調整 */
+  }
+  .dajare-table th:nth-child(2),
+  .dajare-table td:nth-child(2) {
+    width: 30% !important; /* レベル名列の幅を調整 */
+    white-space: normal !important; /* レベル名の折り返しを許可 */
+  }
+  .dajare-table th:nth-child(3),
+  .dajare-table td:nth-child(3) {
+    width: 55% !important; /* 特徴列の幅を調整 */
+  }
+}
+
+.tsundere-subtitle {
+  font-size: 0.8em;
+  color: #aaa;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.sns-note {
+  font-size: 0.8em;
+  color: #aaa;
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
+
+.tag-item--no-link {
+  cursor: not-allowed;
+  background-color: #444;
+}
+
+.tags-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+a.tag {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 4px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #424242;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+a.tag:hover {
+  background-color: #e0e0e0;
+  border-color: #ccc;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+}
+
+.article-page-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+/* ヘッダーの説明文の中のリンクスタイル */
+.site-description a {
+  text-decoration: none;
+  font-weight: bold;
+  background-image: linear-gradient(to right, #00aaff, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(0, 170, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+/* ホバー時のスタイル */
+.site-description a:hover {
+  text-shadow: 0 0 25px rgba(0, 170, 255, 1);
+  transform: scale(1.05);
+}
+
+/* プロフィールページのリストを見やすくする */
+.profile-card ul li strong {
+  display: block; /* ラベルをブロック要素にして改行させる */
+  margin-bottom: 10px; /* ラベルと内容の間に少し余白を追加 */
+  font-size: 1.4em; /* 文字を少し大きくする */
+}
+
+/* ダジャレベル早見表のスタイル */
+.dajare-table {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9em;
+  table-layout: fixed; /* テーブルのレイアウトを固定 */
+}
+.dajare-table th, .dajare-table td {
+  border: 1px solid #555;
+  padding: 12px 15px;
+  vertical-align: middle;
+}
+.dajare-table th {
+  background-color: #333;
+  color: #00aaff;
+  font-weight: bold;
+  text-align: center; /* ヘッダーを中央揃え */
+}
+.dajare-table td:first-child { /* 星の列 */
+  text-align: center;
+  padding: 12px 15px;
+  vertical-align: middle;
+}
+.dajare-table th:nth-child(1),
+.dajare-table td:nth-child(1) {
+  width: 80px; /* 足跡の数の列の幅を調整 */
+}
+.dajare-table tbody tr:nth-child(odd) {
+  background-color: #2a2a2a;
+}
+
+.dajare-table th:nth-child(2),
+.dajare-table td:nth-child(2) {
+  white-space: nowrap; /* レベル名のテキストを折り返さない */
+  text-align: center; /* 中央揃えを追加 */
+  width: 150px; /* レベル名列の幅を調整 */
+}
+
+.table-wrapper {
+  overflow-x: auto; /* テーブルがはみ出した場合に横スクロールを有効にする */
+}
+
+.dajare-table td:nth-child(2) {
+  white-space: nowrap; /* レベル名のテキストを折り返さない */
+}
+
+.dajare-intro-text {
+  color: #fff; /* 白文字 */
+  font-size: 0.9em; /* 小さめのフォントサイズ */
+  text-align: center; /* 中央揃え */
+  margin-top: -20px; /* タイトルとの間隔を調整 */
+  margin-bottom: 30px;
+}
+
+/* --- 記事本文のタイポグラフィ改善 --- */
+#article-body {
+  /* 記事本文の基準となる文字サイズを、少しだけ大きくします */
+  font-size: 17px;
+}
+
+#article-body p,
+#article-body ul,
+#article-body ol {
+  /* 段落やリストの文字色と行間を統一します */
+  color: #e0e0e0;
+  line-height: 1.8;
+}
+
+#article-body p {
+  /* 段落ごとの下の余白を少し広げ、読みやすくします */
+  margin-bottom: 1.5em;
+}
+
+/* --- 記事説明文と日付の間に余白を追加 --- */
+#article-description {
+  margin-bottom: 60px;
+}
+
+/* --- 記事タイトルのサイズを調整 --- */
+#article-title {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+/* --- 日付と読了時間の行間調整 --- */
+#article-date {
+  line-height: 1.0; /* 日付と読了時間の行の高さを調整 */
+}
+.article-date-container {
+  margin-bottom: 0px; /* 日付とレベルセクションの間に余白 */
+}
+
+/* --- ダジャレベルと熱苦しさの体裁調整 --- */
+.level-row {
+  margin-bottom: 0px; /* 各レベル行の間に余白 */
+  line-height: 1.0; /* レベル行の行の高さを調整 */
+}
+
+.level-row span {
+  /* font-size: 0.9em; */ /* レベル行内のテキストのフォントサイズを調整 */
+  line-height: 1.0; /* レベル行内のテキストの行の高さを調整 */
+}
+
+.level-row:last-child {
+  margin-bottom: 0; /* 最後のレベル行の下には余白なし */
+}
+
+/* 既存の#dajare-levelと#gorioshi-levelのスタイルは、.level-rowに移行したため不要になる可能性がありますが、
+   念のため残しておきます。もし重複や意図しない挙動があれば削除を検討します。 */
+#dajare-level,
+#gorioshi-level {
+  text-align: center;
+  /* margin-top: 10px; */ /* .level-rowで制御 */
+  /* margin-bottom: 10px; */ /* .level-rowで制御 */
+}
+
+/* ダジャレベルの下に少し多めに余白を取る */
+/* #dajare-level { */
+  /* margin-bottom: 20px; */ /* .level-rowで制御 */
+/* } */
+
+/* --- ヘッダーロゴのサイズ修正 --- */
+header .logo-container .logo-image {
+  height: 60px !important;
+  width: auto !important;
+}
+
+.level-paw-icon {
+  width: 1em; /* Adjust size to match text */
+  height: 1em;
+  vertical-align: middle; /* Align with text */
+  margin: 0 0.1em; /* Add some spacing between icons */
+}
+
+.dajare-stars, .gorioshi-stars {
+  display: flex;
+  align-items: center; /* Vertically align the paw icons */
+  justify-content: flex-start; /* Align icons to the start within their container */
+}
+
+.paw-icon {
+  width: 1.2em; /* 星のテキストと同じくらいのサイズに調整 */
+  height: 1.2em;
+  vertical-align: middle; /* テキストと中央揃え */
+  margin: 0 0.1em; /* アイコン間の余白 */
+}
+
+.profile-card ul li a {
+  display: inline-block;
+  margin-top: 10px;
+}
