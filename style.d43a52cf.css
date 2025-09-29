@@ -750,6 +750,5 @@ header .logo-container .logo-image {
 
 .category-buttons .category-button:nth-child(1) {
     grid-column: 1 / span 3;
-    max-width: 150px; /* Add this line */
     justify-self: center; /* Add this line */
 }
