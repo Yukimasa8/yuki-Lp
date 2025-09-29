@@ -211,7 +211,7 @@ body {
         height: 200px; /* 高さを200pxに固定 */
         object-fit: cover; /* 画像の比率を保ったままトリミング */
         display: block;
-        margin-top: 15px; /* Add this line */
+        margin-top: 45px; /* Change this line */
         margin-bottom: 15px; /* 画像の下に余白を確保 */
     }
     .post-card p {
