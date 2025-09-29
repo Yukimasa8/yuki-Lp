@@ -734,3 +734,7 @@ header .logo-container .logo-image {
   display: inline-block;
   margin-top: 10px;
 }
+
+.post-categories {
+  text-align: center;
+}
