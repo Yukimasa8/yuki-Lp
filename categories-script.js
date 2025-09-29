@@ -12,9 +12,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       title,
       slug,
       _createdAt,
-      description,
       "mainImageUrl": mainImage.asset->url,
-      body
+      "categories": categories[]->{_id, title, "slug": slug.current}
     }`);
     const url = `https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}?query=${query}`;
 
@@ -104,9 +103,20 @@ document.addEventListener('DOMContentLoaded', async () => {
       postTitleContainer.textContent = post.title;
       contentDiv.appendChild(postTitleContainer);
 
-      const postDescription = document.createElement('p');
-      postDescription.textContent = post.description;
-      contentDiv.appendChild(postDescription);
+      // カテゴリー表示ロジックを追加
+      if (post.categories && post.categories.length > 0) {
+        const categoriesDiv = document.createElement('div');
+        categoriesDiv.classList.add('post-categories');
+
+        post.categories.forEach(cat => {
+          const categoryLink = document.createElement('a');
+          categoryLink.href = `categories.html?slug=${cat.slug}`;
+          categoryLink.classList.add('tag');
+          categoryLink.textContent = cat.title.replace('ネコマサの', '');
+          categoriesDiv.appendChild(categoryLink);
+        });
+        contentDiv.appendChild(categoriesDiv);
+      }
 
       const postDate = document.createElement('p');
       postDate.textContent = new Date(post._createdAt).toLocaleDateString('ja-JP');
