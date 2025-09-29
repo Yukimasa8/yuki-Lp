@@ -102,10 +102,10 @@ body {
         background-color: #00aaff;
         color: #fff;
         border: none;
-        padding: 10px 20px;
+        padding: 8px 16px; /* paddingを少し小さく */
         border-radius: 5px;
         cursor: pointer;
-        font-size: 1em;
+        font-size: 0.9em; /* font-sizeを少し小さく */
         transition: background-color 0.3s, transform 0.2s;
     }
     .category-button:hover {
