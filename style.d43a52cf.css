@@ -371,6 +371,9 @@ a.post-card {
             word-break: normal; /* 日本語のデフォルト改行ルールに戻す */
             overflow-wrap: break-word; /* はみ出し対策 */
         }
+        .section-title { /* カテゴリーページのタイトル */
+            font-size: 1.5em !important; /* スマホ表示で小さく */
+        }
     }
 
 /* Responsive line break utility */
