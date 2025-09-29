@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const categoryLink = document.createElement('a');
             categoryLink.href = `categories.html?slug=${cat.slug}`;
             categoryLink.classList.add('tag');
-            categoryLink.textContent = cat.title;
+            categoryLink.textContent = cat.title.replace('ネコマサの', ''); // 「ネコマサの」を削除して表示
             categoriesDiv.appendChild(categoryLink);
           });
           contentDiv.appendChild(categoriesDiv);
