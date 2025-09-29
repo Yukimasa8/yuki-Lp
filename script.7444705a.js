@@ -94,15 +94,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         const contentDiv = document.createElement('div');
         contentDiv.classList.add('post-card-content');
 
-        const postTitleContainer = document.createElement('h2');
-        postTitleContainer.textContent = post.title;
-        contentDiv.appendChild(postTitleContainer);
-
-        // カテゴリー表示ロジックを追加
+        // カテゴリー表示ロジック
         if (post.categories && post.categories.length > 0) {
           const categoriesDiv = document.createElement('div');
           categoriesDiv.classList.add('post-categories');
-          categoriesDiv.style.marginTop = '10px'; // 以前のインラインスタイルを再現
+          categoriesDiv.style.marginTop = '10px';
 
           post.categories.forEach(cat => {
             const categoryLink = document.createElement('a');
@@ -111,8 +107,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             categoryLink.textContent = cat.title.replace('ネコマサの', ''); // 「ネコマサの」を削除して表示
             categoriesDiv.appendChild(categoryLink);
           });
-          contentDiv.appendChild(categoriesDiv);
+          contentDiv.appendChild(categoriesDiv); // カテゴリーを先に追加
         }
+
+        const postTitleContainer = document.createElement('h2');
+        postTitleContainer.textContent = post.title;
+        contentDiv.appendChild(postTitleContainer); // タイトルを後に続くように追加
 
         const postDate = document.createElement('p');
         postDate.textContent = new Date(post._createdAt).toLocaleDateString('ja-JP');
