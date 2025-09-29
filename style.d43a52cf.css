@@ -120,9 +120,12 @@ body {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 20px;
+        grid-auto-rows: 1fr; /* Add this line */
     }
     a.post-card {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
       /* padding has been moved to .post-card-content */
       background-color: #2b2b2b;
       border-radius: 10px;
@@ -135,6 +138,7 @@ body {
 
     .post-card-content {
       padding: 20px;
+      flex-grow: 1;
     }
     a.post-card:hover {
         transform: translateY(-5px);
