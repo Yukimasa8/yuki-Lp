@@ -23,6 +23,7 @@ async function getPosts() {
 
 export default async function HomePage() {
   const posts = await getPosts();
+  console.log("Fetched posts:", JSON.stringify(posts, null, 2));
 
   return (
     <div className="container mx-auto p-4">
