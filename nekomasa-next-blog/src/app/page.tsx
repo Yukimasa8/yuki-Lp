@@ -11,6 +11,10 @@ async function getPosts() {
       description,
       publishedAt,
       "mainImageUrl": mainImage.asset->url,
+      "categories": categories[]->{
+        _id,
+        title
+      }
     }
   `;
   const posts = await client.fetch(query);
@@ -39,6 +43,15 @@ export default async function HomePage() {
             )}
             <div className="p-4">
               <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
+              {post.categories && (
+                <div className="flex flex-wrap gap-2 mb-2">
+                  {post.categories.map((category) => (
+                    <span key={category._id} className="bg-gray-200 text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">
+                      {category.title}
+                    </span>
+                  ))}
+                </div>
+              )}
               <p className="text-gray-600 text-sm mb-2">{new Date(post.publishedAt).toLocaleDateString('ja-JP')}</p>
               <p className="text-gray-700 text-base line-clamp-3">{post.description}</p>
             </div>
