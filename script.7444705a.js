@@ -102,7 +102,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (post.categories && post.categories.length > 0) {
           const categoriesDiv = document.createElement('div');
           categoriesDiv.classList.add('post-categories');
-          categoriesDiv.style.marginTop = '10px';
 
           post.categories.forEach(cat => {
             const categoryLink = document.createElement('a');

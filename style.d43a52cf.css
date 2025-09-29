@@ -742,4 +742,5 @@ header .logo-container .logo-image {
 
 .post-categories {
   text-align: center;
+  margin: 10px 0; /* Add this line */
 }
