@@ -208,7 +208,7 @@ body {
     }
     .post-main-image {
         width: 100%; /* カードの幅いっぱいに表示 */
-        height: 200px; /* 高さを150pxから200pxに戻す */
+        height: 250px; /* 高さを150pxから200pxに戻す */
         object-fit: cover; /* 画像の比率を保ったままトリミング */
         display: block;
         margin-top: 45px; /* Change this line */
