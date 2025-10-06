@@ -1,12 +1,11 @@
-import { client, urlFor } from '../../../lib/sanity';
+import { client, urlFor } from '@/lib/sanity';
 import Link from 'next/link';
 import Image from 'next/image';
 
 // Function to fetch all tags
-async function getAllTags() {
+async function getAllTags(): Promise<Array<{ title: string, slug: { current: string } }>> {
   const query = `
     *[_type == "tag"]{
-      _id,
       title,
       slug
     }
@@ -16,7 +15,14 @@ async function getAllTags() {
 }
 
 // Function to fetch posts by tag slug
-async function getPostsByTagSlug(tagSlug: string) {
+async function getPostsByTagSlug(tagSlug: string): Promise<Array<{
+  _id: string;
+  title: string;
+  slug: { current: string };
+  description: string;
+  publishedAt: string;
+  mainImageUrl: string;
+}>> {
   const query = `
     *[_type == "post" && references(*[_type=="tag" && slug.current == $tagSlug]._id)] | order(publishedAt desc) {
       _id,

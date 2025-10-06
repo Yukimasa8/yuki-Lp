@@ -6,7 +6,7 @@ import { urlFor } from '../lib/sanity';
 // Custom components for PortableText rendering
 const components = {
   types: {
-    image: ({ value }) => {
+    image: ({ value }: { value: any }) => {
       if (!value?.asset?._ref) {
         return null;
       }
@@ -25,7 +25,7 @@ const components = {
         </figure>
       );
     },
-    affiliate: ({ value }) => {
+    affiliate: ({ value }: { value: any }) => {
       if (!value?.code) return null;
       return (
         <div className="my-8 p-4 border border-gray-200 rounded-lg bg-gray-50">
@@ -36,7 +36,7 @@ const components = {
     },
   },
   marks: {
-    link: ({ children, value }) => {
+    link: ({ children, value }: { children: any, value: any }) => {
       const rel = !value.href.startsWith('/') ? 'noopener noreferrer sponsored' : undefined;
       return (
         <Link href={value.href} rel={rel} target={rel ? '_blank' : '_self'}>
@@ -46,20 +46,20 @@ const components = {
     },
   },
   block: {
-    h1: ({ children }) => <h1 className="text-3xl font-bold my-6">{children}</h1>,
-    h2: ({ children }) => <h2 className="text-2xl font-bold my-5">{children}</h2>,
-    h3: ({ children }) => <h3 className="text-xl font-bold my-4">{children}</h3>,
-    h4: ({ children }) => <h4 className="text-lg font-bold my-3">{children}</h4>,
-    normal: ({ children }) => <p className="my-2 leading-relaxed">{children}</p>,
-    blockquote: ({ children }) => <blockquote className="border-l-4 border-gray-300 pl-4 py-2 my-4 italic text-gray-700">{children}</blockquote>,
+    h1: ({ children }: { children: any }) => <h1 className="text-3xl font-bold my-6">{children}</h1>,
+    h2: ({ children }: { children: any }) => <h2 className="text-2xl font-bold my-5">{children}</h2>,
+    h3: ({ children }: { children: any }) => <h3 className="text-xl font-bold my-4">{children}</h3>,
+    h4: ({ children }: { children: any }) => <h4 className="text-lg font-bold my-3">{children}</h4>,
+    blockquote: ({ children }: { children: any }) => <blockquote className="border-l-4 border-gray-300 pl-4 py-2 my-4 italic">{children}</blockquote>,
+    normal: ({ children }: { children: any }) => <p className="my-4">{children}</p>,
   },
   list: {
-    bullet: ({ children }) => <ul className="list-disc list-inside ml-4 my-2">{children}</ul>,
-    number: ({ children }) => <ol className="list-decimal list-inside ml-4 my-2">{children}</ol>,
+    bullet: ({ children }: { children: any }) => <ul className="list-disc list-inside ml-4 my-2">{children}</ul>,
+    number: ({ children }: { children: any }) => <ol className="list-decimal list-inside ml-4 my-2">{children}</ol>,
   },
   listItem: {
-    bullet: ({ children }) => <li className="mb-1">{children}</li>,
-    number: ({ children }) => <li className="mb-1">{children}</li>,
+    bullet: ({ children }: { children: any }) => <li className="mb-1">{children}</li>,
+    number: ({ children }: { children: any }) => <li className="mb-1">{children}</li>,
   },
 };
 

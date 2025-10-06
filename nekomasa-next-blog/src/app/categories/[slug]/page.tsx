@@ -1,4 +1,4 @@
-import { client, urlFor } from '../../../lib/sanity';
+import { client, urlFor } from '@/lib/sanity';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -16,7 +16,7 @@ function slugify(text: string) {
 }
 
 // Function to fetch all categories
-async function getAllCategories() {
+async function getAllCategories(): Promise<Array<{ _id: string, title: string }>> {
   const query = `
     *[_type == "category"]{
       _id,
@@ -28,7 +28,14 @@ async function getAllCategories() {
 }
 
 // Function to fetch posts by category title
-async function getPostsByCategoryTitle(categoryTitle: string) {
+async function getPostsByCategoryTitle(categoryTitle: string): Promise<Array<{
+  _id: string;
+  title: string;
+  slug: { current: string };
+  description: string;
+  publishedAt: string;
+  mainImageUrl: string;
+}>> {
   const query = `
     *[_type == "post" && references(*[_type=="category" && title == $categoryTitle]._id)] | order(publishedAt desc) {
       _id,

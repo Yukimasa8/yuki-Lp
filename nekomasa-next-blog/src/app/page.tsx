@@ -1,8 +1,16 @@
-import { client, urlFor } from '../lib/sanity';
+import { client, urlFor } from '@/lib/sanity';
 import Link from 'next/link';
 import Image from 'next/image';
 
-async function getPosts() {
+async function getPosts(): Promise<Array<{
+  _id: string;
+  title: string;
+  slug: { current: string };
+  description: string;
+  publishedAt: string;
+  mainImageUrl: string;
+  categories: Array<{ _id: string, title: string }>;
+}>> {
   const query = `
     *[_type == "post"] | order(publishedAt desc) {
       _id,

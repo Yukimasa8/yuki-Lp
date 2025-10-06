@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { client } from '@/lib/sanity'; // Sanityクライアントのインポート
 
 // Sanityから記事のslugと更新日時を取得する関数
-async function getPostsForSitemap() {
+async function getPostsForSitemap(): Promise<Array<{ slug: string, publishedAt: string }>> {
   const query = `*[_type == "post" && defined(slug.current) && publishedAt < now()] {
     "slug": slug.current,
     "publishedAt": publishedAt

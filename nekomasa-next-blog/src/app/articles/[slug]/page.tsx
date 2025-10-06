@@ -1,5 +1,5 @@
-import { client, urlFor } from '../../../lib/sanity';
-import PortableTextRenderer from '../../../components/PortableTextRenderer';
+import { client, urlFor } from '@/lib/sanity';
+import PortableTextRenderer from '@/components/PortableTextRenderer';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -30,7 +30,7 @@ export async function generateStaticParams() {
       slug
     }
   `;
-  const posts = await client.fetch(query);
+  const posts: Array<{ slug: { current: string } }> = await client.fetch(query);
   return posts.map((post) => ({
     slug: post.slug.current,
   }));
@@ -43,9 +43,9 @@ export default async function ArticlePage({ params }: { params: { slug: string }
     return <div className="container mx-auto p-4 text-center text-red-500">記事が見つかりませんでした。</div>;
   }
 
-  const readingTime = Math.ceil(post.body.reduce((acc, block) => {
+  const readingTime = Math.ceil(post.body.reduce((acc: number, block: any) => {
     if (block._type === 'block' && block.children) {
-      return acc + block.children.reduce((charCount, span) => charCount + span.text.length, 0);
+      return acc + block.children.reduce((charCount: number, span: any) => charCount + span.text.length, 0);
     }
     return acc;
   }, 0) / 500);
@@ -77,7 +77,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
         <div className="mb-6 text-center">
           <h3 className="text-lg font-semibold mb-2">カテゴリー</h3>
           <div className="flex flex-wrap justify-center gap-2">
-            {post.categories.map(category => (
+            {post.categories.map((category: any) => (
               <Link
                 key={category.title} // Using title as key for now, will use _id later
                 href={`/categories/${category.slug?.current || category.title}`} // Fallback to title if slug is null
@@ -99,7 +99,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
         <div className="mt-8 text-center">
           <h3 className="text-lg font-semibold mb-2">関連タグ</h3>
           <div className="flex flex-wrap justify-center gap-2">
-            {post.tags.map(tag => (
+            {post.tags.map((tag: any) => (
               <Link
                 key={tag.slug?.current || tag.title} // Using slug as key, fallback to title
                 href={`/tags/${tag.slug?.current || tag.title}`}
