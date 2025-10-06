@@ -1,1 +1,1 @@
-Add /categories/page.tsx to resolve prerender error
+Add console.log to categories/page.tsx for debugging
