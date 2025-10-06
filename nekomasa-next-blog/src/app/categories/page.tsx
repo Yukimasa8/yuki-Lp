@@ -18,6 +18,7 @@ async function getCategories(): Promise<Array<{
 }
 
 export default async function CategoriesPage() {
+  console.log("CategoriesPage is being processed!");
   const categories = await getCategories();
 
   return (

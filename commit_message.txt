@@ -1,1 +1,1 @@
-Remove "このサイトはバイブコーディングで作成しています" from footer
+Add /categories/page.tsx to resolve prerender error
