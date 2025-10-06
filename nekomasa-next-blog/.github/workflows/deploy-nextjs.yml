@@ -1,0 +1,38 @@
+name: Deploy Next.js to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master # Trigger on pushes to the master branch of nekomasa-next-blog
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout nekomasa-next-blog
+      uses: actions/checkout@v3
+      with:
+        # Fetch all history for .git/subtree-merge to work
+        fetch-depth: 0
+        path: nekomasa-next-blog # Checkout into a subdirectory
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18' # Use a recent Node.js version
+
+    - name: Install dependencies
+      run: npm install
+      working-directory: nekomasa-next-blog
+
+    - name: Build Next.js app
+      run: npm run deploy
+      working-directory: nekomasa-next-blog
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./nekomasa-next-blog/out # The directory where Next.js outputs static files
+        publish_branch: gh-pages # The branch to deploy to
