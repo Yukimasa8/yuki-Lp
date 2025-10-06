@@ -1,24 +1,16 @@
 import { client } from '@/lib/sanity';
 import Link from 'next/link';
 
-// Simple slugify function for Japanese titles
-function slugify(text: string) {
-  return text
-    .toString()
-    .normalize('NFD')
-    .replace(/\p{M}/gu, '')
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, '-')
-    .replace(/[^\w-]+/g, '')
-    .replace(/--+/g, '-');
-}
-
-async function getAllCategories(): Promise<Array<{ _id: string, title: string }>> {
+async function getCategories(): Promise<Array<{
+  _id: string;
+  title: string;
+  slug: { current: string };
+}>> {
   const query = `
-    *[_type == "category"]{
+    *[_type == "category"] | order(title asc) {
       _id,
-      title
+      title,
+      slug,
     }
   `;
   const categories = await client.fetch(query);
@@ -26,19 +18,15 @@ async function getAllCategories(): Promise<Array<{ _id: string, title: string }>
 }
 
 export default async function CategoriesPage() {
-  const categories = await getAllCategories();
+  const categories = await getCategories();
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-8 text-center">カテゴリー一覧</h1>
-      <div className="flex flex-wrap justify-center gap-4">
+      <h1 className="text-4xl font-bold mb-8 text-center">カテゴリー一覧</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {categories.map((category) => (
-          <Link
-            key={category._id}
-            href={`/categories/${slugify(category.title)}`}
-            className="bg-blue-100 text-blue-800 text-lg font-medium px-4 py-2 rounded-full hover:bg-blue-200 transition-colors"
-          >
-            {category.title}
+          <Link href={`/categories/${category.slug.current}`} key={category._id} className="block p-4 border rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center">
+            <h2 className="text-xl font-semibold">{category.title}</h2>
           </Link>
         ))}
       </div>

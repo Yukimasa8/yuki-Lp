@@ -1,1 +1,1 @@
-fix: Correct Google Analytics ID in profile.html
+Remove "このサイトはバイブコーディングで作成しています" from footer
