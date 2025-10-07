@@ -1,1 +1,1 @@
-Add console.log to categories/page.tsx for debugging
+Add @portabletext/react dependency to package.json
