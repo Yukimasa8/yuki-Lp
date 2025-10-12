@@ -63,9 +63,9 @@ export default {
     },
     {
       name: 'gorioshiLevel',
-      title: '熱苦しさ',
+      title: 'ゴリ押し度',
       type: 'number',
-      description: 'この記事の熱苦しさを5段階で評価します。',
+      description: 'この記事のゴリ押し度を5段階で評価します。',
       options: {
         list: [
           {title: '設定なし', value: 0},
