@@ -15,8 +15,7 @@ const components = {
           alt={value.alt || 'Blog Image'}
           width={700} // Adjust width as needed
           height={400} // Adjust height as needed
-          layout="responsive"
-          objectFit="contain"
+          
         />
       );
     },
