@@ -6,11 +6,11 @@ const apiVersion = '2023-05-03';
 // Sanity画像URLを生成するヘルパー関数
 function urlFor(source) {
   console.log("Source object in urlFor:", source); // 追加
-  if (!source || !source.asset || typeof source.asset !== 'string') {
+  if (!source || !source.asset || !source.asset._ref) {
     console.error("Invalid image source for urlFor:", source);
     return ""; // 不正な場合は空文字列を返す
   }
-  return `https://cdn.sanity.io/images/${projectId}/${dataset}/${source.asset.replace('image-', '').replace('-webp', '.webp').replace('-png', '.png').replace('-jpg', '.jpg').replace('-jpeg', '.jpeg')}`;
+  return `https://cdn.sanity.io/images/${projectId}/${dataset}/${source.asset._ref.replace('image-', '').replace('-webp', '.webp').replace('-png', '.png').replace('-jpg', '.jpg').replace('-jpeg', '.jpeg')}`;
 }
 
 // Portable TextをHTMLに変換する高機能な関数
