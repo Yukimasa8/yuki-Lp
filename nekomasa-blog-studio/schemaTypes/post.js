@@ -89,6 +89,15 @@ export default {
       title: 'Author',
       type: 'reference',
       to: {type: 'author'},
+      initialValue: async () => {
+        // Assuming 'NEKOMASA' author has a slug 'nekomasa'
+        // You might need to adjust the _id if it's different in your Sanity project
+        const authorId = 'author-nekomasa'; // Common pattern: 'author-<slug>'
+        return {
+          _ref: authorId,
+          _type: 'reference',
+        };
+      },
     },
     {
       name: 'categories',
