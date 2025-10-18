@@ -6,11 +6,11 @@ const apiVersion = '2023-05-03';
 // Sanity画像URLを生成するヘルパー関数
 function urlFor(source) {
   console.log("Source object in urlFor:", source); // 追加
-  if (!source || !source.asset || !source.asset._ref) {
-    console.error("Invalid image source for urlFor:", source);
-    return ""; // 不正な場合は空文字列を返す
+  if (!source || !source.asset || !source.asset.url) { // Check for source.asset.url
+    console.error("Invalid image source for urlFor: url is missing or null in asset object:", source);
+    return ""; // Return empty string for invalid source
   }
-  return `https://cdn.sanity.io/images/${projectId}/${dataset}/${source.asset._ref.replace('image-', '').replace('-webp', '.webp').replace('-png', '.png').replace('-jpg', '.jpg').replace('-jpeg', '.jpeg')}`;
+  return source.asset.url; // Directly return the fetched URL
 }
 
 // Portable TextをHTMLに変換する高機能な関数
@@ -135,7 +135,7 @@ async function fetchArticleBySlug(slug) {
     body[]{
       ...,
       _type == "image" => {
-        "asset": @.asset->{_ref}
+        "asset": @.asset->{_id, _type, url}
       },
       // リンクのためのmarkDefsを取得
       markDefs[]{
