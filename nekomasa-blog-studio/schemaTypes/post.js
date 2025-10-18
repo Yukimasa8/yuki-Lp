@@ -60,6 +60,7 @@ export default {
         ],
         layout: 'radio'
       },
+      initialValue: 0,
     },
     {
       name: 'gorioshiLevel',
@@ -77,6 +78,7 @@ export default {
         ],
         layout: 'radio'
       },
+      initialValue: 0,
     },
     {
       name: 'body',
