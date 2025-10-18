@@ -11,8 +11,25 @@ const components = {
       }
       const imageUrl = urlFor(value).url();
       const imageAlt = value.alt || 'Blog Image';
-      const imageWidth = value.width || 700; // Use provided width or default
-      const imageHeight = value.height || 400; // Use provided height or default
+
+      let imageWidth: number;
+      let imageHeight: number;
+
+      switch (value.size) {
+        case 'small':
+          imageWidth = 300;
+          imageHeight = 200;
+          break;
+        case 'large':
+          imageWidth = 1000;
+          imageHeight = 600;
+          break;
+        case 'medium':
+        default:
+          imageWidth = 700;
+          imageHeight = 400;
+          break;
+      }
 
       return (
         <Image

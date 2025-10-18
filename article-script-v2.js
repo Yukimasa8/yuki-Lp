@@ -112,12 +112,25 @@ function renderPortableText(blocks) {
         const imageAlt = block.alt || '';
         let imgAttributes = `src="${imageUrl}" alt="${imageAlt}" loading="lazy"`;
 
-        if (block.width) {
-          imgAttributes += ` width="${block.width}"`;
+        let imageWidth = 700; // Default medium
+        let imageHeight = 400; // Default medium
+
+        switch (block.size) {
+          case 'small':
+            imageWidth = 300;
+            imageHeight = 200;
+            break;
+          case 'large':
+            imageWidth = 1000;
+            imageHeight = 600;
+            break;
+          case 'medium':
+          default:
+            // Defaults already set
+            break;
         }
-        if (block.height) {
-          imgAttributes += ` height="${block.height}"`;
-        }
+        
+        imgAttributes += ` width="${imageWidth}" height="${imageHeight}"`;
         html += `<figure><img ${imgAttributes}></figure>`;
       }
     }
@@ -145,8 +158,7 @@ async function fetchArticleBySlug(slug) {
       ...,
       _type == "customImage" => {
         "asset": @.asset->{_id, _type, url},
-        width,
-        height,
+        size,
         alt,
       },
       // リンクのためのmarkDefsを取得

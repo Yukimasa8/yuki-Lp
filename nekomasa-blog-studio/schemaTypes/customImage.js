@@ -14,16 +14,19 @@ export default {
       validation: Rule => Rule.error('Alternative text is required').required(),
     },
     {
-      name: 'width',
-      type: 'number',
-      title: 'Width (pixels)',
-      description: 'Optional: Set a custom width for the image.',
-    },
-    {
-      name: 'height',
-      type: 'number',
-      title: 'Height (pixels)',
-      description: 'Optional: Set a custom height for the image.',
+      name: 'size',
+      type: 'string',
+      title: 'Image Size',
+      options: {
+        list: [
+          { title: 'Small', value: 'small' },
+          { title: 'Medium', value: 'medium' },
+          { title: 'Large', value: 'large' },
+        ],
+        layout: 'radio', // Display as radio buttons
+      },
+      initialValue: 'medium', // Default to medium
+      description: 'Select the display size for the image.',
     },
   ],
   preview: {

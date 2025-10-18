@@ -18,8 +18,7 @@ async function getPostBySlug(slug: string) {
         ...,
         _type == "customImage" => {
           asset->{_ref, _type, url},
-          width,
-          height,
+          size,
           alt,
         },
       },
