@@ -42,6 +42,7 @@ export default {
         timeFormat: 'HH:mm',
         calendarTodayLabel: 'Today'
       },
+      initialValue: () => new Date().toISOString(),
       validation: Rule => Rule.required(),
     },
     {
