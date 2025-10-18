@@ -104,12 +104,21 @@ function renderPortableText(blocks) {
       }
     }
     // 他のカスタムブロックタイプ（例：画像）の処理をここに追加できる
-    else if (block._type === 'image') {
+    else if (block._type === 'customImage') {
       closeList();
       
-      if (block.asset) {
+      if (block.asset && block.asset.url) { // Ensure asset.url exists
         const imageUrl = urlFor(block);
-        html += `<figure><img src="${imageUrl}" alt="${block.alt || ''}" loading="lazy"></figure>`;
+        const imageAlt = block.alt || '';
+        let imgAttributes = `src="${imageUrl}" alt="${imageAlt}" loading="lazy"`;
+
+        if (block.width) {
+          imgAttributes += ` width="${block.width}"`;
+        }
+        if (block.height) {
+          imgAttributes += ` height="${block.height}"`;
+        }
+        html += `<figure><img ${imgAttributes}></figure>`;
       }
     }
   });
@@ -134,8 +143,11 @@ async function fetchArticleBySlug(slug) {
     "tags": tags[]->{title, slug},
     body[]{
       ...,
-      _type == "image" => {
-        "asset": @.asset->{_id, _type, url}
+      _type == "customImage" => {
+        "asset": @.asset->{_id, _type, url},
+        width,
+        height,
+        alt,
       },
       // リンクのためのmarkDefsを取得
       markDefs[]{
