@@ -5,7 +5,7 @@ const apiVersion = '2023-05-03';
 
 // Sanity画像URLを生成するヘルパー関数
 function urlFor(source) {
-  console.log("Source object in urlFor:", source); // 追加
+  
   if (!source || !source.asset || !source.asset.url) { // Check for source.asset.url
     console.error("Invalid image source for urlFor: url is missing or null in asset object:", source);
     return ""; // Return empty string for invalid source
@@ -106,7 +106,7 @@ function renderPortableText(blocks) {
     // 他のカスタムブロックタイプ（例：画像）の処理をここに追加できる
     else if (block._type === 'image') {
       closeList();
-      console.log("Image block before urlFor:", block); // 追加
+      
       if (block.asset) {
         const imageUrl = urlFor(block);
         html += `<figure><img src="${imageUrl}" alt="${block.alt || ''}" loading="lazy"></figure>`;
