@@ -11,7 +11,6 @@ export default {
       type: 'string',
       title: 'Alternative text',
       description: 'Important for SEO and accessibility.',
-      validation: Rule => Rule.error('Alternative text is required').required(),
     },
     {
       name: 'size',
