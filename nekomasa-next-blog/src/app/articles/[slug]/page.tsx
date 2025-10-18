@@ -14,7 +14,15 @@ async function getPostBySlug(slug: string) {
       publishedAt,
       _updatedAt,
       "mainImageUrl": mainImage.asset->url,
-      body,
+      body[]{
+        ...,
+        _type == "customImage" => {
+          asset->{_ref, _type, url},
+          width,
+          height,
+          alt,
+        },
+      },
       "categories": categories[]->{title, "slug": slug.current},
       "tags": tags[]->{title, slug},
     }

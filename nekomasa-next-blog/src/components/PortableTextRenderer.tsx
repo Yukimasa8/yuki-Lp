@@ -9,13 +9,17 @@ const components = {
       if (!value?.asset?._ref) {
         return null;
       }
+      const imageUrl = urlFor(value).url();
+      const imageAlt = value.alt || 'Blog Image';
+      const imageWidth = value.width || 700; // Use provided width or default
+      const imageHeight = value.height || 400; // Use provided height or default
+
       return (
         <Image
-          src={urlFor(value).url()}
-          alt={value.alt || 'Blog Image'}
-          width={700} // Adjust width as needed
-          height={400} // Adjust height as needed
-          
+          src={imageUrl}
+          alt={imageAlt}
+          width={imageWidth}
+          height={imageHeight}
         />
       );
     },
