@@ -205,7 +205,7 @@ async function renderArticle() {
   if (!slug) {
     document.getElementById('article-title').textContent = '記事が見つかりません';
     document.getElementById('article-body').innerHTML = '<p>記事のURLが無効です。</p>';
-    addNoIndexTag();
+    // addNoIndexTag();
     return;
   }
 
@@ -216,7 +216,7 @@ async function renderArticle() {
   if (!article) {
     document.getElementById('article-title').textContent = '記事が見つかりません';
     document.getElementById('article-body').innerHTML = '<p>お探しの記事は見つかりませんでした。</p>';
-    addNoIndexTag();
+    // addNoIndexTag();
     return;
   }
 
