@@ -2,6 +2,7 @@
 const nextConfig = {
   output: 'export', // Enables static HTML export
   images: {
+    unoptimized: true,
     domains: ['cdn.sanity.io'],
   },
   

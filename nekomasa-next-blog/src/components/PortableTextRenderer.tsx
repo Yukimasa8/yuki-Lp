@@ -40,6 +40,12 @@ const components = {
         />
       );
     },
+    affiliate: ({ value }: { value: { code: string } }) => {
+      if (!value?.code) {
+        return null;
+      }
+      return <div dangerouslySetInnerHTML={{ __html: value.code }} />;
+    },
   },
   block: {
     // Customize block types if needed, otherwise default rendering

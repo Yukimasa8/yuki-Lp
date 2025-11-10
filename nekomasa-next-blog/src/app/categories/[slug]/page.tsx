@@ -2,33 +2,21 @@ import { client, urlFor } from '@/lib/sanity';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Simple slugify function for Japanese titles
-function slugify(text: string) {
-  return text
-    .toString()
-    .normalize('NFD')
-    .replace(/\p{M}/gu, '')
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, '-')
-    .replace(/[^\w-]+/g, '')
-    .replace(/--+/g, '-');
-}
-
-// Function to fetch all categories
-async function getAllCategories(): Promise<Array<{ _id: string, title: string }>> {
+// Function to fetch all categories with their slugs
+async function getAllCategories(): Promise<Array<{ _id: string, title: string, slug: { current: string } }>> {
   const query = `
     *[_type == "category"]{
       _id,
-      title
+      title,
+      slug
     }
   `;
   const categories = await client.fetch(query);
   return categories;
 }
 
-// Function to fetch posts by category title
-async function getPostsByCategoryTitle(categoryTitle: string): Promise<Array<{
+// Function to fetch posts by category slug
+async function getPostsByCategorySlug(slug: string): Promise<Array<{
   _id: string;
   title: string;
   slug: { current: string };
@@ -37,7 +25,7 @@ async function getPostsByCategoryTitle(categoryTitle: string): Promise<Array<{
   mainImageUrl: string;
 }>> {
   const query = `
-    *[_type == "post" && references(*[_type=="category" && title == $categoryTitle]._id)] | order(publishedAt desc) {
+    *[_type == "post" && references(*[_type=="category" && slug.current == $slug]._id)] | order(publishedAt desc) {
       _id,
       title,
       slug,
@@ -46,27 +34,30 @@ async function getPostsByCategoryTitle(categoryTitle: string): Promise<Array<{
       "mainImageUrl": mainImage.asset->url,
     }
   `;
-  const posts = await client.fetch(query, { categoryTitle });
+  const posts = await client.fetch(query, { slug });
   return posts;
 }
 
 // Function to generate static paths for all categories
 export async function generateStaticParams() {
   const categories = await getAllCategories();
-  return categories.map((category) => ({
-    slug: slugify(category.title),
-  }));
+  // Filter out categories that might not have a slug
+  return categories
+    .filter(category => category.slug && category.slug.current)
+    .map((category) => ({
+      slug: category.slug.current,
+    }));
 }
 
 export default async function CategoryPage({ params }: { params: { slug: string } }) {
   const allCategories = await getAllCategories();
-  const currentCategory = allCategories.find(cat => slugify(cat.title) === params.slug);
+  const currentCategory = allCategories.find(cat => cat.slug && cat.slug.current === params.slug);
 
   if (!currentCategory) {
     return <div className="container mx-auto p-4 text-center text-red-500">カテゴリーが見つかりませんでした。</div>;
   }
 
-  const posts = await getPostsByCategoryTitle(currentCategory.title);
+  const posts = await getPostsByCategorySlug(params.slug);
 
   return (
     <div className="container mx-auto p-4">
@@ -76,7 +67,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
           <p className="col-span-full text-center text-gray-600">このカテゴリーに関連する記事はまだありません。</p>
         ) : (
           posts.map((post) => (
-            <Link href={`/articles/${post.slug.current}`} key={post._id} className="block border rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+            <Link href={`/articles/${post.slug.current}/`} key={post._id} className="block border rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
               {post.mainImageUrl && (
                 <div className="relative w-full h-48">
                   <Image
