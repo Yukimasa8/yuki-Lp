@@ -634,7 +634,6 @@ a.tag:hover {
   /* 段落やリストの文字色と行間を統一します */
   color: #e0e0e0;
   line-height: 1.8;
-  font-weight: 300; /* 文字を少し細くする */
 }
 
 #article-body p {
