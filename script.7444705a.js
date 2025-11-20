@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function getPosts(categoryTitle = null, tagSlug = null) {
       let filter = '_type == "post"';
-      if (categoryTitle) {
+      if (categoryTitle && categoryTitle.trim() !== '') {
         filter += ` && "${categoryTitle}" in categories[]->title`;
       }
       if (tagSlug) {
