@@ -79,6 +79,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
 
       posts.forEach((post) => {
+        if (!post || !post.slug || !post.slug.current) {
+          console.warn('Skipping post with missing slug:', post);
+          return;
+        }
         const postCardLink = document.createElement('a');
         postCardLink.href = `article.html?slug=${post.slug.current}`;
         postCardLink.classList.add('post-card');
