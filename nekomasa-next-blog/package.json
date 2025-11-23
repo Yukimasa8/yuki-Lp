@@ -4,20 +4,23 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "prebuild:rss": "node scripts/generate-rss.cjs",
+    "build": "npm run prebuild:rss && next build",
     "start": "next start",
     "lint": "eslint",
     "deploy": "next build"
   },
   "dependencies": {
     "@portabletext/react": "^2.0.0",
-    "@sanity/client": "^7.11.2",
+    "@sanity/client": "^6.0.0",
     "@sanity/image-url": "^1.2.0",
     "geist": "^1.5.1",
     "next": "^14.2.5",
+    "node-fetch": "^3.3.2",
     "react": "^18",
     "react-dom": "^18",
-    "rss": "^1.2.2"
+    "rss": "^1.2.2",
+    "through2": "^4.0.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -29,6 +32,7 @@
     "eslint": "^8",
     "eslint-config-next": "^14.2.5",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
