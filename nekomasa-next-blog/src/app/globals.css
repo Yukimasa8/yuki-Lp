@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 /* note.com風のスタイルを適用 */
-@layer base {
   .prose {
     color: #333;
   }
@@ -101,4 +100,3 @@
     border-radius: 0;
     font-size: inherit;
   }
-}
