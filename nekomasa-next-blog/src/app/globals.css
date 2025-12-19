@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* note.com風のスタイルを適用 */
+@layer base {
+  .prose {
+    color: #333;
+  }
+
+  /* 見出しのスタイル */
+  .prose h2 {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 700;
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.4em;
+  }
+
+  .prose h3 {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600;
+    margin-top: 2em;
+    margin-bottom: 0.8em;
+  }
+
+  /* 段落のスタイル */
+  .prose p {
+    font-size: 1rem; /* 16px */
+    line-height: 1.8;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  /* リンクのスタイル */
+  .prose a {
+    color: #0ea5e9; /* sky-500 */
+    text-decoration: none;
+    transition: text-decoration 0.2s ease-in-out;
+  }
+
+  .prose a:hover {
+    text-decoration: underline;
+  }
+
+  /* リストのスタイル */
+  .prose ul,
+  .prose ol {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+  }
+
+  .prose li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.8;
+  }
+
+  /* 引用のスタイル */
+  .prose blockquote {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding-left: 1em;
+    border-left: 3px solid #cbd5e1; /* coolGray-300 */
+    color: #64748b; /* coolGray-500 */
+  }
+
+  .prose blockquote p {
+    margin: 0;
+  }
+
+  /* 画像のスタイル */
+  .prose img {
+    border-radius: 0.5rem; /* 8px */
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  /* コードのスタイル */
+  .prose pre {
+    background-color: #f3f4f6; /* gray-100 */
+    border-radius: 0.5rem;
+    padding: 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    overflow-x: auto;
+  }
+
+  .prose code {
+    background-color: #f3f4f6; /* gray-100 */
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+  }
+  
+  .prose pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+  }
+}
