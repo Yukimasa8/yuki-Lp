@@ -1,368 +1,490 @@
 body {
-      font-family: 'Noto Sans JP', 'Roboto', sans-serif;
-      line-height: 1.8;
-      margin: 0;
-      background-color: #1a1a1a;
-      background: linear-gradient(to right, #200d40, #100620);
-      background-attachment: fixed;
-      color: #fff;
-    }
-    .container {
+  font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  background-color: #ffffff;
+  /* Changed to white */
+  color: #333;
+  /* Changed to dark grey */
+}
+
+.container {
   max-width: 960px;
   margin: 0 auto;
   padding: 20px;
 }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      border-bottom: 1px solid #444;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-    .logo {
-      /* font-size: 1.8em; */ /* Replaced by image logo */
-      font-weight: bold;
-    }
-    .logo, nav ul li a { /* Common gradient and glow styles */
-      text-decoration: none;
-      font-weight: bold;
-      background-image: linear-gradient(to right, #00aaff, #8a2be2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
-      text-shadow: 0 0 15px rgba(0, 170, 255, 0.8);
-      transition: all 0.3s ease;
-    }
 
-    .logo:hover, nav ul li a:hover { /* Common hover styles */
-      text-shadow: 0 0 25px rgba(0, 170, 255, 1);
-      transform: scale(1.05);
-    }
-
-    .logo-image {
-      height: 60px; /* Adjust height as needed */
-      width: auto;
-      vertical-align: middle; /* Helps align with other header items if any */
-    }
-
-    nav ul li a {
-        font-size: 1.1em; /* Adjust size for menu items */
-        color: #fff; /* Fallback color */
-    }
-
-    /* Header Navigation Layout */
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
-
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-    nav ul li {
-      margin-left: 30px;
-    }
-    .main-content {
-      padding: 30px 0;
-    }
-    .section-title {
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 40px;
-            font-family: 'Noto Sans JP', 'Roboto', 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
-            color: inherit; /* Ensure color is inherited normally */
-            text-shadow: none; /* Remove any potential text shadow interference */
-        }
-        .profile-card {
-    text-align: center; /* Center text content within the card */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(to right, #200d40, #100620);
+  /* Moved gradient here */
+  border-bottom: 1px solid #444;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  /* Ensure header text is white */
 }
+
+.logo {
+  /* font-size: 1.8em; */
+  /* Replaced by image logo */
+  font-weight: bold;
+}
+
+.logo,
+nav ul li a {
+  /* Common gradient and glow styles */
+  text-decoration: none;
+  font-weight: bold;
+  background-image: linear-gradient(to right, #00aaff, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(0, 170, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.logo:hover,
+nav ul li a:hover {
+  /* Common hover styles */
+  text-shadow: 0 0 25px rgba(0, 170, 255, 1);
+  transform: scale(1.05);
+}
+
+.logo-image {
+  height: 60px;
+  /* Adjust height as needed */
+  width: auto;
+  vertical-align: middle;
+  /* Helps align with other header items if any */
+}
+
+nav ul li a {
+  font-size: 1.1em;
+  /* Adjust size for menu items */
+  color: #fff;
+  /* Fallback color */
+}
+
+/* Header Navigation Layout */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+.main-content {
+  padding: 30px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 40px;
+  font-family: 'Noto Sans JP', 'Roboto', 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+  color: inherit;
+  /* Ensure color is inherited normally */
+  text-shadow: none;
+  /* Remove any potential text shadow interference */
+}
+
+.profile-card {
+  text-align: center;
+  /* Center text content within the card */
+}
+
 .profile-card ul {
-    list-style: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
+  list-style: none;
+  /* Remove bullet points */
+  padding: 0;
+  /* Remove default padding */
 }
+
 .profile-card ul li {
   margin-bottom: 30px;
 }
-    .category-buttons {
-        text-align: center;
-        margin-bottom: 30px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-    .category-button {
-        background-color: #00aaff;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1em;
-        transition: background-color 0.3s, transform 0.2s;
-    }
-    .category-button:hover {
-        background-color: #0088cc;
-        transform: translateY(-2px);
-    }
-    .category-button.active {
-        background-color: #8a2be2; /* Active color */
-        box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
-    }
-    .post-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-    }
-    a.post-card {
-      display: block;
-      /* padding has been moved to .post-card-content */
-      background-color: #2b2b2b;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: transform 0.3s;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-      text-decoration: none;
-      color: #fff;
-    }
 
-    .post-card-content {
-      padding: 20px;
-    }
-    a.post-card:hover {
-        transform: translateY(-5px);
-    }
-    .post-details-container.hidden {
-        display: none;
-    }
-    .post-toggle-button {
-        background-color: #00aaff;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1em;
-        margin: 20px auto 0; /* 上の余白と中央揃え */
-        display: block;
-        transition: background-color 0.3s;
-    }
-    .post-toggle-button:hover {
-        background-color: #0088cc;
-    }
-    .article-toc {
-        background-color: #3a3a3a;
-        border-radius: 8px;
-        padding: 20px;
-        margin-bottom: 30px;
-    }
-    .article-toc h3 {
-        font-size: 1.2em;
-        color: #00aaff;
-        margin-top: 0;
-        margin-bottom: 15px;
-        text-align: center; /* 目次タイトルを中央に */
-    }
-    .article-toc ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Center items horizontally */
-    }
-    .article-toc li {
-        margin-bottom: 8px;
-    }
-    .article-toc a {
-        color: #ccc;
-        text-decoration: none;
-        transition: color 0.2s;
-        display: inline;
-        padding: 0;
-    }
-    .article-toc a:hover {
-        color: #fff;
-    }
-    .post-card h2 {
-      font-size: 1.3em; /* タイトルをやや小さく */
-      margin: 0 0 10px 0;
-      background-image: linear-gradient(to right, #00aaff, #8a2be2); /* 青から紫のグラデーション */
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent; /* fallback for browsers that don't support text-fill-color */
-    }
-    .post-main-image {
-        width: 100%; /* カードの幅いっぱいに表示 */
-        height: 200px; /* 高さを200pxに固定 */
-        object-fit: cover; /* 画像の比率を保ったままトリミング */
-        display: block;
-        margin-bottom: 15px; /* 画像の下に余白を確保 */
-    }
-    .post-card p {
-        margin: 0;
-        color: #ccc;
-    }
-    .post-content p {
-        font-size: 1em; /* やや小さく */
-        line-height: 1.7; /* 行間を調整 */
-        margin-top: 10px;
-        margin-bottom: 1em;
-        color: #e0e0e0;
-    }
-    .post-content h1 {
-        font-size: 1.6em;
-        margin-top: 1.6em;
-        margin-bottom: 0.8em;
-        color: #00aaff;
-    }
-    .post-content h2 {
-        font-size: 1.3em;
-        margin-top: 1.3em;
-        margin-bottom: 0.7em;
-        color: #00aaff;
-    }
-    .post-content h3 {
-        font-size: 1.1em;
-        margin-top: 1.1em;
-        margin-bottom: 0.2em;
-        color: #00aaff;
-    }
-    .post-content h4 {
-        font-size: 1em;
-        margin-top: 0.9em;
-        margin-bottom: 0.4em;
-        color: #00aaff;
-    }
-    .post-content h5 {
-        font-size: 0.9em;
-        margin-top: 0.7em;
-        margin-bottom: 0.3em;
-        color: #00aaff;
-    }
-    .post-content h6 {
-        font-size: 0.8em;
-        margin-top: 0.5em;
-        margin-bottom: 0.2em;
-        color: #00aaff;
-    }
-    .article-content a {
-        color: #ccc; /* グレーに変更 */
-        text-decoration: underline; /* 下線を追加 */
-        transition: color 0.3s ease; /* ホバー時のアニメーション */
-    }
-    .article-content a:hover {
-    color: #eee; /* ホバー時に少し明るいグレー */
+.category-buttons {
+  text-align: center;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
-.main-content a {
-  color: #00aaff; /* 明るい青色に変更 */
-  text-decoration: underline; /* 下線を追加 */
+.category-button {
+  background-color: #00aaff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-.main-content a:hover {
-  color: #8a2be2; /* ホバー時に紫に変更 */
+.category-button:hover {
+  background-color: #0088cc;
+  transform: translateY(-2px);
 }
 
-a.category-button {
-  color: #fff; /* ボタン内のリンク文字を白に強制 */
+.category-button.active {
+  background-color: #8a2be2;
+  /* Active color */
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 a.post-card {
-  text-decoration: none; /* ブログカードのタイトルから下線を削除 */
+  display: block;
+  /* padding has been moved to .post-card-content */
+  background-color: #ffffff;
+  /* White background */
+  border: 1px solid #eaeaea;
+  /* Light border */
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  color: #333;
+  /* Dark text */
 }
-    .article-content img {
-    max-width: 70%;
-    height: auto;
-    display: block;
-    margin: 20px auto; /* Add some vertical margin and center */
-    border-radius: 8px; /* Consistent with other images */
+
+.post-card-content {
+  padding: 20px;
+}
+
+a.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-details-container.hidden {
+  display: none;
+}
+
+.post-toggle-button {
+  background-color: #00aaff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 20px auto 0;
+  /* 上の余白と中央揃え */
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.post-toggle-button:hover {
+  background-color: #0088cc;
+}
+
+.article-toc {
+  background-color: #f9f9f9;
+  /* Light grey */
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.article-toc h3 {
+  font-size: 1.2em;
+  color: #00aaff;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  /* 目次タイトルを中央に */
+}
+
+.article-toc ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center items horizontally */
+}
+
+.article-toc li {
+  margin-bottom: 8px;
+}
+
+.article-toc a {
+  color: #555;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: inline;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.article-toc a:hover {
+  color: #00aaff;
+  border-bottom-color: #00aaff;
+}
+
+.post-card h2 {
+  font-size: 1.3em;
+  /* タイトルをやや小さく */
+  margin: 0 0 10px 0;
+  background-image: linear-gradient(to right, #00aaff, #8a2be2);
+  /* 青から紫のグラデーション */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  /* fallback for browsers that don't support text-fill-color */
+}
+
+.post-main-image {
+  width: 100%;
+  /* カードの幅いっぱいに表示 */
+  height: 200px;
+  /* 高さを200pxに固定 */
+  object-fit: cover;
+  /* 画像の比率を保ったままトリミング */
+  display: block;
+  margin-bottom: 15px;
+  /* 画像の下に余白を確保 */
+}
+
+.post-card p {
+  margin: 0;
+  color: #ccc;
+}
+
+.post-content p {
+  font-size: 1em;
+  /* やや小さく */
+  line-height: 1.7;
+  /* 行間を調整 */
+  margin-top: 10px;
+  margin-bottom: 1em;
+  color: #444;
+  /* Darker text */
+}
+
+.post-content h1 {
+  font-size: 1.6em;
+  margin-top: 1.6em;
+  margin-bottom: 0.8em;
+  color: #00aaff;
+}
+
+.post-content h2 {
+  font-size: 1.3em;
+  margin-top: 1.3em;
+  margin-bottom: 0.7em;
+  color: #00aaff;
+}
+
+.post-content h3 {
+  font-size: 1.1em;
+  margin-top: 1.1em;
+  margin-bottom: 0.2em;
+  color: #00aaff;
+}
+
+.post-content h4 {
+  font-size: 1em;
+  margin-top: 0.9em;
+  margin-bottom: 0.4em;
+  color: #00aaff;
+}
+
+.post-content h5 {
+  font-size: 0.9em;
+  margin-top: 0.7em;
+  margin-bottom: 0.3em;
+  color: #00aaff;
+}
+
+.post-content h6 {
+  font-size: 0.8em;
+  margin-top: 0.5em;
+  margin-bottom: 0.2em;
+  color: #00aaff;
+}
+
+.article-content a {
+  color: #007bff;
+  /* Readable blue */
+  text-decoration: underline;
+  /* 下線を追加 */
+  transition: color 0.3s ease;
+  /* ホバー時のアニメーション */
+}
+
+.article-content a:hover {
+  color: #0056b3;
+  /* Darker blue on hover */
+}
+
+.main-content a {
+  color: #00aaff;
+  /* 明るい青色に変更 */
+  text-decoration: underline;
+  /* 下線を追加 */
+}
+
+.main-content a:hover {
+  color: #8a2be2;
+  /* ホバー時に紫に変更 */
+}
+
+a.category-button {
+  color: #fff;
+  /* ボタン内のリンク文字を白に強制 */
+}
+
+a.post-card {
+  text-decoration: none;
+  /* ブログカードのタイトルから下線を削除 */
+}
+
+.article-content img {
+  max-width: 70%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  /* Add some vertical margin and center */
+  border-radius: 8px;
+  /* Consistent with other images */
 }
 
 /* If there's a figure tag, apply some styling to it as well */
 .article-content figure {
-    margin: 20px 0; /* Adjust margin for figure element */
-    text-align: center; /* Center content within figure */
+  margin: 20px 0;
+  /* Adjust margin for figure element */
+  text-align: center;
+  /* Center content within figure */
 }
 
-        .share-buttons {
-    text-align: center; /* Center the buttons */
-    margin-top: 50px; /* Add more space above */
-    margin-bottom: 30px; /* Keep some space below */
+.share-buttons {
+  text-align: center;
+  /* Center the buttons */
+  margin-top: 50px;
+  /* Add more space above */
+  margin-bottom: 30px;
+  /* Keep some space below */
 }
 
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      padding-top: 30px;
-      border-top: 1px solid #444;
-      color: #888;
-    }
+footer {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: linear-gradient(to right, #200d40, #100620);
+  /* Dark footer */
+  border-top: none;
+  color: #aaa;
+}
 
-    @media (max-width: 768px) {
-        header {
-            padding: 10px 15px;
-        }
-        nav ul li {
-            margin-left: 10px;
-        }
-        nav ul li a {
-            font-size: 0.9em;
-        }
-    }
+@media (max-width: 768px) {
+  header {
+    padding: 10px 15px;
+  }
 
-    @media (max-width: 480px) {
-        nav ul {
-            flex-direction: column;
-            align-items: center;
-            display: flex !important; /* 強制的に表示 */
-        }
-        nav ul li {
-            margin-left: 0;
-            margin-bottom: 10px;
-        }
-        .profile-card ul li {
-            font-size: 0.9em; /* スマホ表示で少しフォントを小さくして改行を調整 */
-        }
-        .br-sp {
-            display: block; /* スマホ表示でのみ改行を有効にする */
-        }
-        .site-credit-line2 {
-            display: block;
-        }
-        .text-gradient {
-          /* Re-apply gradient for mobile view to ensure it's not overridden */
-          color: #fff;
-          background-image: linear-gradient(to right, #00aaff, #8a2be2);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-fill-color: transparent;
-          text-shadow: 0 0 15px rgba(0, 170, 255, 0.8);
-        }
-        .hamburger { /* スマホ表示でハンバーガーメニューを非表示 */
-            display: none;
-        }
-        .site-credit {
-            font-size: 0.8em !important; /* スマホ表示でフォントを少し小さくする */
-        }
-        .post-content h1 { /* 記事タイトル */
-            font-size: 1.1em !important; /* さらに小さく */
-            word-break: keep-all; /* 日本語の自然な改行を優先 */
-            overflow-wrap: break-word; /* はみ出し対策 */
-        }
-        .post-card h2 { /* 各記事カードのタイトル */
-            font-size: 1.2em !important; /* さらに大きく調整 */
-            word-break: normal; /* 日本語のデフォルト改行ルールに戻す */
-            overflow-wrap: break-word; /* はみ出し対策 */
-        }
-    }
+  nav ul li {
+    margin-left: 10px;
+  }
+
+  nav ul li a {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    display: flex !important;
+    /* 強制的に表示 */
+  }
+
+  nav ul li {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .profile-card ul li {
+    font-size: 0.9em;
+    /* スマホ表示で少しフォントを小さくして改行を調整 */
+  }
+
+  .br-sp {
+    display: block;
+    /* スマホ表示でのみ改行を有効にする */
+  }
+
+  .site-credit-line2 {
+    display: block;
+  }
+
+  .text-gradient {
+    /* Re-apply gradient for mobile view to ensure it's not overridden */
+    color: #fff;
+    background-image: linear-gradient(to right, #00aaff, #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(0, 170, 255, 0.8);
+  }
+
+  .hamburger {
+    /* スマホ表示でハンバーガーメニューを非表示 */
+    display: none;
+  }
+
+  .site-credit {
+    font-size: 0.8em !important;
+    /* スマホ表示でフォントを少し小さくする */
+  }
+
+  .post-content h1 {
+    /* 記事タイトル */
+    font-size: 1.1em !important;
+    /* さらに小さく */
+    word-break: keep-all;
+    /* 日本語の自然な改行を優先 */
+    overflow-wrap: break-word;
+    /* はみ出し対策 */
+  }
+
+  .post-card h2 {
+    /* 各記事カードのタイトル */
+    font-size: 1.2em !important;
+    /* さらに大きく調整 */
+    word-break: normal;
+    /* 日本語のデフォルト改行ルールに戻す */
+    overflow-wrap: break-word;
+    /* はみ出し対策 */
+  }
+}
 
 /* Responsive line break utility */
 .br-sp {
@@ -382,20 +504,25 @@ a.post-card {
 
 
 footer a {
-  color: #ccc; /* 少し明るいグレー */
-  text-decoration: underline; /* 下線を追加 */
+  color: #ccc;
+  /* 少し明るいグレー */
+  text-decoration: underline;
+  /* 下線を追加 */
 }
 
 footer p {
-  display: block; /* 強制的にブロック要素にする */
+  display: block;
+  /* 強制的にブロック要素にする */
 }
 
 .updated-date {
   display: inline-block;
-  background-color: #8a2be2; /* 紫色のアクセントカラー */
+  background-color: #8a2be2;
+  /* 紫色のアクセントカラー */
   color: #fff;
   padding: 5px 15px;
-  border-radius: 15px; /* 角を丸くする */
+  border-radius: 15px;
+  /* 角を丸くする */
   font-size: 0.9em;
   margin-top: 10px;
 }
@@ -408,17 +535,17 @@ footer p {
 }
 
 .logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }
 
 .site-description {
-    color: #ccc;
-    font-size: 0.9em;
-    margin: 0;
-    text-align: center;
+  color: #ccc;
+  font-size: 0.9em;
+  margin: 0;
+  text-align: center;
 }
 
 #blog-posts {
@@ -445,10 +572,11 @@ footer p {
   border-radius: 15px;
   overflow: hidden;
   border: 2px solid #555;
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.tsun-bar, .dere-bar {
+.tsun-bar,
+.dere-bar {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -459,11 +587,13 @@ footer p {
 }
 
 .tsun-bar {
-  background-color: #6a5acd; /* "Tsun" purple */
+  background-color: #6a5acd;
+  /* "Tsun" purple */
 }
 
 .dere-bar {
-  background-color: #ff69b4; /* "Dere" pink */
+  background-color: #ff69b4;
+  /* "Dere" pink */
 }
 
 
@@ -473,30 +603,47 @@ footer p {
 }
 
 @media (max-width: 480px) {
-  .tsun-bar span, .dere-bar span {
+
+  .tsun-bar span,
+  .dere-bar span {
     font-size: 0.7em;
   }
+
   .dajare-table {
-    table-layout: fixed !important; /* 列幅を固定 */
-    width: 100% !important; /* テーブルの幅を100%に固定 */
+    table-layout: fixed !important;
+    /* 列幅を固定 */
+    width: 100% !important;
+    /* テーブルの幅を100%に固定 */
   }
-  .dajare-table th, .dajare-table td {
-    font-size: 0.75em !important; /* さらに小さく */
-    padding: 8px 5px !important; /* パディングも調整 */
-    word-break: break-word !important; /* 長い単語の折り返し */
+
+  .dajare-table th,
+  .dajare-table td {
+    font-size: 0.75em !important;
+    /* さらに小さく */
+    padding: 8px 5px !important;
+    /* パディングも調整 */
+    word-break: break-word !important;
+    /* 長い単語の折り返し */
   }
+
   .dajare-table th:nth-child(1),
   .dajare-table td:nth-child(1) {
-    width: 15% !important; /* 星の列の幅を調整 */
+    width: 15% !important;
+    /* 星の列の幅を調整 */
   }
+
   .dajare-table th:nth-child(2),
   .dajare-table td:nth-child(2) {
-    width: 30% !important; /* レベル名列の幅を調整 */
-    white-space: normal !important; /* レベル名の折り返しを許可 */
+    width: 30% !important;
+    /* レベル名列の幅を調整 */
+    white-space: normal !important;
+    /* レベル名の折り返しを許可 */
   }
+
   .dajare-table th:nth-child(3),
   .dajare-table td:nth-child(3) {
-    width: 55% !important; /* 特徴列の幅を調整 */
+    width: 55% !important;
+    /* 特徴列の幅を調整 */
   }
 }
 
@@ -536,14 +683,14 @@ a.tag {
   font-size: 12px;
   text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease-in-out;
 }
 
 a.tag:hover {
   background-color: #e0e0e0;
   border-color: #ccc;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   transform: translateY(-1px);
 }
 
@@ -555,20 +702,26 @@ a.tag:hover {
 
 /* ヘッダーの説明文の中のリンクスタイル */
 .site-description a {
-  color: #ccc; /* 周りのテキストと同じ明るめのグレー */
-  text-decoration: underline; /* リンクであることを示す下線 */
+  color: #ccc;
+  /* 周りのテキストと同じ明るめのグレー */
+  text-decoration: underline;
+  /* リンクであることを示す下線 */
 }
 
 /* ホバー時のスタイル */
 .site-description a:hover {
-  color: #fff; /* 少し明るくしてフィードバックを返す */
-  text-decoration: none; /* ホバー時に下線を消す */
+  color: #fff;
+  /* 少し明るくしてフィードバックを返す */
+  text-decoration: none;
+  /* ホバー時に下線を消す */
 }
 
 /* プロフィールページのリストを見やすくする */
 .profile-card ul li strong {
-  display: block; /* ラベルをブロック要素にして改行させる */
-  margin-bottom: 5px; /* ラベルと内容の間に少し余白を追加 */
+  display: block;
+  /* ラベルをブロック要素にして改行させる */
+  margin-bottom: 5px;
+  /* ラベルと内容の間に少し余白を追加 */
 }
 
 /* ダジャレベル早見表のスタイル */
@@ -579,46 +732,62 @@ a.tag:hover {
   text-align: left;
   font-size: 0.9em;
 }
-.dajare-table th, .dajare-table td {
-  border: 1px solid #555;
+
+.dajare-table th,
+.dajare-table td {
+  border: 1px solid #ddd;
   padding: 12px 15px;
   vertical-align: middle;
 }
+
 .dajare-table th {
-  background-color: #333;
-  color: #00aaff;
+  background-color: #444;
+  color: #fff;
   font-weight: bold;
-  text-align: center; /* ヘッダーを中央揃え */
+  text-align: center;
+  /* ヘッダーを中央揃え */
 }
-.dajare-table td:first-child { /* 星の列 */
+
+.dajare-table td:first-child {
+  /* 星の列 */
   text-align: center;
   font-size: 1.2em;
   color: #ffc107;
   white-space: nowrap;
 }
+
 .dajare-table tbody tr:nth-child(odd) {
-  background-color: #2a2a2a;
+  background-color: #f9f9f9;
+  /* Light stripe */
 }
 
 .dajare-table th:nth-child(2),
 .dajare-table td:nth-child(2) {
-  white-space: nowrap; /* レベル名のテキストを折り返さない */
-  text-align: center; /* 中央揃えを追加 */
+  white-space: nowrap;
+  /* レベル名のテキストを折り返さない */
+  text-align: center;
+  /* 中央揃えを追加 */
 }
 
 .table-wrapper {
-  overflow-x: auto; /* テーブルがはみ出した場合に横スクロールを有効にする */
+  overflow-x: auto;
+  /* テーブルがはみ出した場合に横スクロールを有効にする */
 }
 
 .dajare-table td:nth-child(2) {
-  white-space: nowrap; /* レベル名のテキストを折り返さない */
+  white-space: nowrap;
+  /* レベル名のテキストを折り返さない */
 }
 
 .dajare-intro-text {
-  color: #fff; /* 白文字 */
-  font-size: 0.9em; /* 小さめのフォントサイズ */
-  text-align: center; /* 中央揃え */
-  margin-top: -20px; /* タイトルとの間隔を調整 */
+  color: #666;
+  /* Dark grey */
+  font-size: 0.9em;
+  /* 小さめのフォントサイズ */
+  text-align: center;
+  /* 中央揃え */
+  margin-top: -20px;
+  /* タイトルとの間隔を調整 */
   margin-bottom: 30px;
 }
 
@@ -632,9 +801,11 @@ a.tag:hover {
 #article-body ul,
 #article-body ol {
   /* 段落やリストの文字色と行間を統一します */
-  color: #e0e0e0;
+  color: #444;
+  /* Dark text */
   line-height: 1.8;
-  font-weight: 300; /* 文字を少し細くする */
+  font-weight: 400;
+  /* Regular weight */
 }
 
 #article-body p {
@@ -651,30 +822,39 @@ a.tag:hover {
 #article-title {
   font-size: 24px;
   margin-bottom: 40px;
-  text-align: center; /* これを追加 */
+  text-align: center;
+  /* これを追加 */
 }
 
 /* --- 日付と読了時間の行間調整 --- */
 #article-date {
-  line-height: 1.0; /* 日付と読了時間の行の高さを調整 */
+  line-height: 1.0;
+  /* 日付と読了時間の行の高さを調整 */
 }
+
 .article-date-container {
-  margin-bottom: 20px; /* 日付とレベルセクションの間に余白を増やす */
+  margin-bottom: 20px;
+  /* 日付とレベルセクションの間に余白を増やす */
 }
 
 /* --- ダジャレベルと熱苦しさの体裁調整 --- */
 .level-row {
-  margin-bottom: 0px; /* 各レベル行の間に余白 */
-  line-height: 1.0; /* レベル行の行の高さを調整 */
+  margin-bottom: 0px;
+  /* 各レベル行の間に余白 */
+  line-height: 1.0;
+  /* レベル行の行の高さを調整 */
 }
 
 .level-row span {
-  /* font-size: 0.9em; */ /* レベル行内のテキストのフォントサイズを調整 */
-  line-height: 1.0; /* レベル行内のテキストの行の高さを調整 */
+  /* font-size: 0.9em; */
+  /* レベル行内のテキストのフォントサイズを調整 */
+  line-height: 1.0;
+  /* レベル行内のテキストの行の高さを調整 */
 }
 
 .level-row:last-child {
-  margin-bottom: 0; /* 最後のレベル行の下には余白なし */
+  margin-bottom: 0;
+  /* 最後のレベル行の下には余白なし */
 }
 
 /* 既存の#dajare-levelと#gorioshi-levelのスタイルは、.level-rowに移行したため不要になる可能性がありますが、
@@ -682,13 +862,16 @@ a.tag:hover {
 #dajare-level,
 #gorioshi-level {
   text-align: center;
-  /* margin-top: 10px; */ /* .level-rowで制御 */
-  /* margin-bottom: 10px; */ /* .level-rowで制御 */
+  /* margin-top: 10px; */
+  /* .level-rowで制御 */
+  /* margin-bottom: 10px; */
+  /* .level-rowで制御 */
 }
 
 /* ダジャレベルの下に少し多めに余白を取る */
 /* #dajare-level { */
-  /* margin-bottom: 20px; */ /* .level-rowで制御 */
+/* margin-bottom: 20px; */
+/* .level-rowで制御 */
 /* } */
 
 /* --- ヘッダーロゴのサイズ修正 --- */
@@ -698,34 +881,48 @@ header .logo-container .logo-image {
 }
 
 .level-paw-icon {
-  width: 1em; /* Adjust size to match text */
+  width: 1em;
+  /* Adjust size to match text */
   height: 1em;
-  vertical-align: middle; /* Align with text */
-  margin: 0 0.1em; /* Add some spacing between icons */
+  vertical-align: middle;
+  /* Align with text */
+  margin: 0 0.1em;
+  /* Add some spacing between icons */
 }
 
-.dajare-stars, .gorioshi-stars {
+.dajare-stars,
+.gorioshi-stars {
   display: flex;
-  align-items: center; /* Vertically align the paw icons */
-  justify-content: flex-start; /* Align icons to the start within their container */
+  align-items: center;
+  /* Vertically align the paw icons */
+  justify-content: flex-start;
+  /* Align icons to the start within their container */
 }
 
 /* カテゴリーとタグのコンテナを中央揃えにする */
 .article-categories-container,
 .article-tags-container {
-  margin-top: 30px; /* 上部に余白 */
-  margin-bottom: 30px; /* 下部に余白 */
-  text-align: center; /* コンテナ内の要素を中央揃え */
+  margin-top: 30px;
+  /* 上部に余白 */
+  margin-bottom: 30px;
+  /* 下部に余白 */
+  text-align: center;
+  /* コンテナ内の要素を中央揃え */
 }
 
 /* カテゴリーとタグのボタンを囲むラッパー */
 .categories-wrapper,
 .tags-wrapper {
-  display: flex; /* Flexboxを使って横並びにする */
-  flex-wrap: wrap; /* 画面幅が狭い場合に折り返す */
-  justify-content: center; /* 中央揃え */
-  gap: 10px; /* ボタン間の余白 */
-  margin-top: 15px; /* タイトルとの余白 */
+  display: flex;
+  /* Flexboxを使って横並びにする */
+  flex-wrap: wrap;
+  /* 画面幅が狭い場合に折り返す */
+  justify-content: center;
+  /* 中央揃え */
+  gap: 10px;
+  /* ボタン間の余白 */
+  margin-top: 15px;
+  /* タイトルとの余白 */
 }
 
 /* カテゴリーとタグのボタンの共通スタイル */
@@ -733,7 +930,8 @@ header .logo-container .logo-image {
 .tag-link {
   display: inline-block;
   padding: 8px 16px;
-  border-radius: 20px; /* 角を丸くする */
+  border-radius: 20px;
+  /* 角を丸くする */
   text-decoration: none;
   font-size: 0.9em;
   transition: all 0.3s ease;
@@ -742,7 +940,8 @@ header .logo-container .logo-image {
 
 /* カテゴリーボタンのスタイル */
 .category-link {
-  background-color: #007bff; /* 青系の背景色 */
+  background-color: #007bff;
+  /* 青系の背景色 */
   color: #fff;
 }
 
@@ -753,7 +952,8 @@ header .logo-container .logo-image {
 
 /* タグボタンのスタイル */
 .tag-link {
-  background-color: #6c757d; /* グレー系の背景色 */
+  background-color: #6c757d;
+  /* グレー系の背景色 */
   color: #fff;
 }
 
@@ -770,13 +970,15 @@ header .logo-container .logo-image {
 }
 
 .article-main-image {
-  margin-bottom: 50px; /* 画像と目次の間に余白を追加 */
+  margin-bottom: 50px;
+  /* 画像と目次の間に余白を追加 */
 }
 
 .share-buttons span {
   display: block;
   margin-bottom: 15px;
-  font-size: 0.95em; /* Adjusted font size */
+  font-size: 0.95em;
+  /* Adjusted font size */
   color: #ccc;
 }
 
@@ -811,9 +1013,10 @@ header .logo-container .logo-image {
   height: 50px;
   font-size: 24px;
   cursor: pointer;
-  display: none; /* Initially hidden */
+  display: none;
+  /* Initially hidden */
   z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s, opacity 0.3s, visibility 0.3s;
 }
 
@@ -822,10 +1025,13 @@ header .logo-container .logo-image {
 }
 
 .paw-icon {
-  width: 1em; /* Adjust size to match text */
+  width: 1em;
+  /* Adjust size to match text */
   height: 1em;
-  vertical-align: -0.15em; /* Fine-tune vertical alignment */
-  margin: 0 0.1em; /* Add some spacing */
+  vertical-align: -0.15em;
+  /* Fine-tune vertical alignment */
+  margin: 0 0.1em;
+  /* Add some spacing */
 }
 
 .dajare-version-button {
@@ -866,38 +1072,46 @@ header .logo-container .logo-image {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px; /* Reduced gap */
+  gap: 10px;
+  /* Reduced gap */
 }
 
 .share-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 15px; /* Reduced padding */
+  padding: 8px 15px;
+  /* Reduced padding */
   border-radius: 5px;
   text-decoration: none;
-  font-size: 0.85em; /* Reduced font size */
+  font-size: 0.85em;
+  /* Reduced font size */
   font-weight: bold;
-  
+
   /* Ghost button styles */
   background-color: transparent;
-  border: 2px solid #00aaff; /* Accent color border */
-  color: #00aaff; /* Accent color text */
+  border: 2px solid #00aaff;
+  /* Accent color border */
+  color: #00aaff;
+  /* Accent color text */
   transition: all 0.3s ease;
 }
 
 .share-btn:hover {
-  background-color: #00aaff; /* Fill with accent color on hover */
-  color: #fff; /* White text on hover */
+  background-color: #00aaff;
+  /* Fill with accent color on hover */
+  color: #fff;
+  /* White text on hover */
 }
 
 .share-btn i {
   margin-right: 8px;
-  font-size: 1em; /* Reduced icon size */
+  font-size: 1em;
+  /* Reduced icon size */
   /* Color will be inherited from the parent .share-btn */
 }
 
 /* --- Hide old button styles to avoid conflict --- */
 .share-buttons button {
-    display: none;
+  display: none;
 }
