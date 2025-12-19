@@ -12,7 +12,8 @@
     --border-color: #e0e0e0;
     --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     /* Very subtle shadow */
-    --font-main: 'Noto Sans JP', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    /* note.com likely system font stack */
+    --font-main: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
     --max-width: 840px;
     /* Standard readable width */
 }
