@@ -39,4 +39,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-\"/nekomasa-next-blog/src/app/rss.xml/\" 
+/public/rss.xml

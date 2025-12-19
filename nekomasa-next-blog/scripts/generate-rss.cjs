@@ -17,7 +17,7 @@ const fetch = require('node-fetch').default; // Using node-fetch for simplicity
 const projectId = 'xm3dmjar';
 const dataset = 'production';
 const apiVersion = '2023-05-03';
-const sanityApiUrl = `https://${projectId}.sanity.io/v${apiVersion}/data/query/${dataset}`;
+const sanityApiUrl = `https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}`;
 
 // サイトのドメイン
 const siteUrl = 'https://nekomasa.com';
