@@ -49,14 +49,14 @@ const components = {
   },
   block: {
     // Customize block types if needed, otherwise default rendering
-    h1: ({children}: any) => <h1 className="text-4xl font-bold my-4">{children}</h1>,
-    h2: ({children}: any) => <h2 className="text-3xl font-bold my-3">{children}</h2>,
-    h3: ({children}: any) => <h3 className="text-2xl font-bold my-2">{children}</h3>,
-    normal: ({children}: any) => <p className="my-2">{children}</p>,
+    h1: ({children}: any) => <h1>{children}</h1>,
+    h2: ({children}: any) => <h2>{children}</h2>,
+    h3: ({children}: any) => <h3>{children}</h3>,
+    normal: ({children}: any) => <p>{children}</p>,
   },
   list: {
-    bullet: ({children}: any) => <ul className="list-disc list-inside my-2">{children}</ul>,
-    number: ({children}: any) => <ol className="list-decimal list-inside my-2">{children}</ol>,
+    bullet: ({children}: any) => <ul>{children}</ul>,
+    number: ({children}: any) => <ol>{children}</ol>,
   },
   listItem: {
     bullet: ({children}: any) => <li>{children}</li>,
