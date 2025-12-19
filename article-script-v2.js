@@ -273,10 +273,10 @@ async function renderArticle() {
           if (article.dajareLevel) {
               let dajareIcons = '';
               for (let i = 0; i < 5; i++) {
-                  if (i < article.dajareLevel) {
-                      dajareIcons += `<img src="assets/paw-filled.svg" class="level-paw-icon" alt="filled paw">`;
+                  if (i < 5 - article.dajareLevel) {
+                      dajareIcons += `☆`;
                   } else {
-                      dajareIcons += `<img src="assets/paw-empty.svg" class="level-paw-icon" alt="empty paw">`;
+                      dajareIcons += `★`;
                   }
               }
               levelItems.push(`<span style="display: inline-flex; align-items: center; white-space: nowrap;">ダジャレベル <span class="dajare-stars">${dajareIcons}</span></span>`);
@@ -285,10 +285,10 @@ async function renderArticle() {
           if (article.gorioshiLevel) {
               let gorioshiIcons = '';
               for (let i = 0; i < 5; i++) {
-                  if (i < article.gorioshiLevel) {
-                      gorioshiIcons += `<img src="assets/paw-filled.svg" class="level-paw-icon" alt="filled paw">`;
+                  if (i < 5 - article.gorioshiLevel) {
+                      gorioshiIcons += `☆`;
                   } else {
-                      gorioshiIcons += `<img src="assets/paw-empty.svg" class="level-paw-icon" alt="empty paw">`;
+                      gorioshiIcons += `★`;
                   }
               }
               levelItems.push(`<span style="display: inline-flex; align-items: center; white-space: nowrap;">ゴリ押し度 <span class="gorioshi-stars">${gorioshiIcons}</span></span>`);
