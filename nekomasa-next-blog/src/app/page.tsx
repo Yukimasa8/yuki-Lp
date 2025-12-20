@@ -60,27 +60,40 @@ export default async function HomePage() {
       <div className="text-center py-12 px-4 my-8">
         <div className="max-w-[800px] mx-auto leading-[2.8] font-bold text-sm md:text-[1.1em] text-[#222]">
           <p className="mb-8 text-base md:text-[1.3em]">
-            Nekomasa.com は、<br className="hidden md:inline" />
-            日常に「クスっ」と笑える余白を。
+            Nekomasa.com は、<br />
+            日常に「クスっ」と<br />
+            笑える余白を。
           </p>
           <p className="mb-8">
-            ネコマサは、ダジャレというユーモアが<br className="hidden md:inline" />
-            忙しい日々の中で心をゆるめ、<br className="hidden md:inline" />
-            ちょっとした潤いや活力を<br className="md:hidden" />与えてくれると信じています。
+            ネコマサは、<br />
+            ダジャレというユーモアが<br />
+            忙しい日々の中で心をゆるめ、<br />
+            ちょっとした潤いや活力を<br />
+            与えてくれると信じています。
           </p>
           <p className="mt-10 mb-8">
-            本サイトは、皆さまにとっての<br className="hidden md:inline" />
-            いわば「ダジャレのサードプレイス」として、<br className="hidden md:inline" />
-            気軽に立ち寄り、気づけば笑っている――<br className="hidden md:inline" />
+            本サイトは、<br />
+            皆さまにとっての<br />
+            いわば<br />
+            「ダジャレのサードプレイス」<br />
+            として、<br />
+            気軽に立ち寄り、<br />
+            気づけば笑っている<br />
             そんな、心の休憩所を目指しています。
           </p>
           <p className="mt-10 mb-8">
-            便利用品の活用術や<br className="md:hidden" />生活のちょっとした改善アイデアを、<br className="hidden md:inline" />
-            ネコマサ独自の観点と<br className="md:hidden" />ダジャレを添えてお届けしながら、<br className="hidden md:inline" />
-            楽しく・愛しく・<br className="md:hidden" />前向きな気分をお届けします。
+            便利用品の活用術や<br />
+            生活のちょっとした<br />
+            改善アイデアを、<br />
+            ネコマサ独自の観点と<br />
+            ダジャレを添えてお届けしながら、<br />
+            楽しく・愛しく・前向きな<br />
+            気分をお届けします。
           </p>
           <p className="mt-10">
-            今日もあなたが、<br className="md:hidden" />ひと笑いできるきっかけとなれますように。
+            今日もあなたが、<br />
+            ひと笑いできる<br />
+            きっかけとなれますように。
           </p>
         </div>
         <p className="text-xl md:text-[1.5em] font-bold mt-12 tracking-widest text-[#111]">笑う門には福来る</p>
