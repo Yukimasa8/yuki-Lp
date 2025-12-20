@@ -19,12 +19,14 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background: linear-gradient(to right, #200d40, #100620);
-  /* Moved gradient here */
-  border-bottom: 1px solid #444;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  color: #fff;
-  /* Ensure header text is white */
+  background-color: #ffffff;
+  /* White background */
+  border-bottom: 1px solid #eaeaea;
+  /* Light border */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  /* Softer shadow */
+  color: #333;
+  /* Dark text */
 }
 
 .logo {
@@ -60,13 +62,15 @@ nav ul li a:hover {
   width: auto;
   vertical-align: middle;
   /* Helps align with other header items if any */
+  filter: invert(1) grayscale(1) contrast(9);
+  /* Make it black */
 }
 
 nav ul li a {
   font-size: 1.1em;
   /* Adjust size for menu items */
-  color: #fff;
-  /* Fallback color */
+  color: #333;
+  /* Dark link color */
 }
 
 /* Header Navigation Layout */
@@ -397,10 +401,10 @@ footer {
   margin-top: 60px;
   padding-top: 30px;
   padding-bottom: 30px;
-  background: linear-gradient(to right, #200d40, #100620);
-  /* Dark footer */
-  border-top: none;
-  color: #aaa;
+  background-color: #ffffff;
+  /* White background */
+  border-top: 1px solid #eaeaea;
+  color: #888;
 }
 
 @media (max-width: 768px) {
