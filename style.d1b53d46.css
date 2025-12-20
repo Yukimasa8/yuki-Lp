@@ -39,21 +39,16 @@ header {
 nav ul li a {
   /* Common gradient and glow styles */
   text-decoration: none;
-  font-weight: bold;
-  background-image: linear-gradient(to right, #00aaff, #8a2be2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-  text-shadow: 0 0 15px rgba(0, 170, 255, 0.8);
+  /* font-weight: bold; */
+  /* background-image: linear-gradient(to right, #00aaff, #8a2be2); */
   transition: all 0.3s ease;
 }
 
 .logo:hover,
 nav ul li a:hover {
   /* Common hover styles */
-  text-shadow: 0 0 25px rgba(0, 170, 255, 1);
-  transform: scale(1.05);
+  color: #00aaff;
+  transform: translateY(-1px);
 }
 
 .logo-image {
@@ -67,10 +62,11 @@ nav ul li a:hover {
 }
 
 nav ul li a {
-  font-size: 1.1em;
-  /* Adjust size for menu items */
-  color: #333;
-  /* Dark link color */
+  font-size: 1.0em;
+  /* Slightly smaller */
+  color: #444;
+  /* Dark grey */
+  font-weight: 500;
 }
 
 /* Header Navigation Layout */
@@ -546,10 +542,12 @@ footer p {
 }
 
 .site-description {
-  color: #ccc;
+  color: #666;
+  /* Note-style grey */
   font-size: 0.9em;
   margin: 0;
   text-align: center;
+  font-weight: 400;
 }
 
 #blog-posts {
@@ -706,18 +704,14 @@ a.tag:hover {
 
 /* ヘッダーの説明文の中のリンクスタイル */
 .site-description a {
-  color: #ccc;
-  /* 周りのテキストと同じ明るめのグレー */
+  color: #00aaff;
   text-decoration: underline;
-  /* リンクであることを示す下線 */
 }
 
 /* ホバー時のスタイル */
 .site-description a:hover {
-  color: #fff;
-  /* 少し明るくしてフィードバックを返す */
+  color: #0088cc;
   text-decoration: none;
-  /* ホバー時に下線を消す */
 }
 
 /* プロフィールページのリストを見やすくする */
