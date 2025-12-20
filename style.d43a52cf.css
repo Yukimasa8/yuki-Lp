@@ -64,8 +64,8 @@ nav ul li a:hover {
   /* Helps align with other header items if any */
   /* filter: invert(1); */
   /* Assuming logo is already workable or needs specific adjustment. If white logo, use invert(1) to make it black. */
-  filter: invert(1) grayscale(1) contrast(9);
-  /* Make it black if it was white/light */
+  filter: brightness(0);
+  /* Force entire logo to black */
 }
 
 nav ul li a {

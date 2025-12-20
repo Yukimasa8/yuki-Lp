@@ -62,7 +62,7 @@ nav ul li a:hover {
   width: auto;
   vertical-align: middle;
   /* Helps align with other header items if any */
-  filter: invert(1) grayscale(1) contrast(9);
+  filter: brightness(0);
   /* Make it black */
 }
 
