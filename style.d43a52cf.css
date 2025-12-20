@@ -1051,3 +1051,32 @@ header .logo-container .logo-image {
   }
 }
 
+
+/* Concept Message Responsive Styles - Updated Fonts */
+.concept-message {
+  font-size: 16px !important;
+}
+.concept-lead {
+  font-size: 18px !important;
+}
+.concept-slogan-main {
+  font-size: 1.5rem !important;
+}
+.concept-slogan-sub {
+  font-size: 1.125rem !important;
+}
+@media (min-width: 768px) {
+  .concept-message {
+    font-size: 1.1em !important;
+  }
+  .concept-lead {
+    font-size: 1.3em !important;
+  }
+  .concept-slogan-main {
+    font-size: 1.5em !important;
+  }
+  .concept-slogan-sub {
+    font-size: 1.2em !important;
+  }
+}
+
