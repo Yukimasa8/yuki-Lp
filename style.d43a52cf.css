@@ -1023,3 +1023,31 @@ header .logo-container .logo-image {
   max-width: 150px;
   /* Add this line */
 }
+/* Concept Message Responsive Styles */
+.concept-message {
+  font-size: 14px;
+}
+.concept-lead {
+  font-size: 16px;
+}
+.concept-slogan-main {
+  font-size: 1.25rem;
+}
+.concept-slogan-sub {
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .concept-message {
+    font-size: 1.1em;
+  }
+  .concept-lead {
+    font-size: 1.3em;
+  }
+  .concept-slogan-main {
+    font-size: 1.5em;
+  }
+  .concept-slogan-sub {
+    font-size: 1.2em;
+  }
+}
+
