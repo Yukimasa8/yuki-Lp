@@ -13,6 +13,8 @@ async function getPostBySlug(slug: string) {
       description,
       publishedAt,
       _updatedAt,
+      dajareLevel,
+      gorioshiLevel,
       "mainImageUrl": mainImage.asset->url,
       body[]{
         ...,
@@ -78,6 +80,28 @@ export default async function ArticlePage({ params }: { params: { slug: string }
           <p className="mt-1">更新日: {new Date(post._updatedAt).toLocaleDateString('ja-JP')}</p>
         )}
       </div>
+
+      {/* Dajare and Gorioshi Levels */}
+      {(post.dajareLevel || post.gorioshiLevel) && (
+        <div className="flex justify-center items-center gap-6 mb-8 text-sm md:text-base">
+          {post.dajareLevel && (
+            <div className="flex items-center">
+              <span className="mr-2 font-bold text-gray-700">ダジャレベル</span>
+              <span className="text-yellow-500 tracking-widest text-lg">
+                {'★'.repeat(post.dajareLevel)}{'☆'.repeat(5 - post.dajareLevel)}
+              </span>
+            </div>
+          )}
+          {post.gorioshiLevel && (
+            <div className="flex items-center">
+              <span className="mr-2 font-bold text-gray-700">ゴリ押し度</span>
+              <span className="text-red-500 tracking-widest text-lg">
+                {'★'.repeat(post.gorioshiLevel)}{'☆'.repeat(5 - post.gorioshiLevel)}
+              </span>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Categories */}
       {post.categories && post.categories.length > 0 && (
