@@ -144,7 +144,8 @@ nav ul li {
 }
 
 .category-button {
-  background-color: #00aaff;
+  background-color: #ef810f;
+  /* Calico Orange */
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -157,7 +158,8 @@ nav ul li {
 }
 
 .category-button:hover {
-  background-color: #0088cc;
+  background-color: #d35400;
+  /* Darker Orange */
   transform: translateY(-2px);
 }
 
@@ -212,7 +214,8 @@ a.post-card:hover {
 }
 
 .post-toggle-button {
-  background-color: #00aaff;
+  background-color: #ef810f;
+  /* Calico Orange */
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -226,7 +229,8 @@ a.post-card:hover {
 }
 
 .post-toggle-button:hover {
-  background-color: #0088cc;
+  background-color: #d35400;
+  /* Darker Orange */
 }
 
 .article-toc {
@@ -239,7 +243,8 @@ a.post-card:hover {
 
 .article-toc h3 {
   font-size: 1.2em;
-  color: #00aaff;
+  color: #ef810f;
+  /* Calico Orange */
   margin-top: 0;
   margin-bottom: 15px;
   text-align: center;
@@ -270,8 +275,9 @@ a.post-card:hover {
 }
 
 .article-toc a:hover {
-  color: #00aaff;
-  border-bottom-color: #00aaff;
+  color: #ef810f;
+  /* Calico Orange */
+  border-bottom-color: #ef810f;
 }
 
 .post-card h2 {
@@ -325,42 +331,48 @@ a.post-card:hover {
   font-size: 1.6em;
   margin-top: 1.6em;
   margin-bottom: 0.8em;
-  color: #00aaff;
+  color: #ef810f;
+  /* Calico Orange */
 }
 
 .post-content h2 {
   font-size: 1.3em;
   margin-top: 1.3em;
   margin-bottom: 0.7em;
-  color: #00aaff;
+  color: #ef810f;
+  /* Calico Orange */
 }
 
 .post-content h3 {
   font-size: 1.1em;
   margin-top: 1.1em;
   margin-bottom: 0.2em;
-  color: #00aaff;
+  color: #ef810f;
+  /* Calico Orange */
 }
 
 .post-content h4 {
   font-size: 1em;
   margin-top: 0.9em;
   margin-bottom: 0.4em;
-  color: #00aaff;
+  color: #ef810f;
+  /* Calico Orange */
 }
 
 .post-content h5 {
   font-size: 0.9em;
   margin-top: 0.7em;
   margin-bottom: 0.3em;
-  color: #00aaff;
+  color: #ef810f;
+  /* Calico Orange */
 }
 
 .post-content h6 {
   font-size: 0.8em;
   margin-top: 0.5em;
   margin-bottom: 0.2em;
-  color: #00aaff;
+  color: #ef810f;
+  /* Calico Orange */
 }
 
 .article-content a {
@@ -378,7 +390,8 @@ a.post-card:hover {
 }
 
 .main-content a {
-  color: #00aaff;
+  color: #ef810f;
+  /* Calico Orange */
   /* 明るい青色に変更 */
   text-decoration: underline;
   /* 下線を追加 */
@@ -539,7 +552,7 @@ footer {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  /* text-shadow: 0 0 15px rgba(0, 170, 255, 0.8); Removed shadow for cleaner look on white */
+  /* text-shadow: 0 0 15px rgba(239, 129, 15, 0.8); Removed shadow for cleaner look on white */
 }
 
 .concept-message {
@@ -558,7 +571,7 @@ footer {
 }
 
 .concept-highlight {
-  background-image: linear-gradient(to right, #00aaff, #8a2be2);
+  background-image: linear-gradient(to right, #ef810f, #8a2be2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -771,8 +784,8 @@ a.tag:hover {
   text-decoration: underline;
   font-weight: normal;
   /* Remove bold */
-  color: #007bff;
-  /* Standard readable blue */
+  color: #ef810f;
+  /* Calico Orange */
   transition: all 0.3s ease;
   background-image: none;
   -webkit-text-fill-color: initial;
@@ -784,7 +797,8 @@ a.tag:hover {
 .site-description a:hover {
   text-shadow: none;
   transform: scale(1.05);
-  color: #0088cc;
+  color: #d35400;
+  /* Darker Orange */
 }
 
 /* プロフィールページのリストを見やすくする */
