@@ -58,8 +58,8 @@ export default async function HomePage() {
       </header>
 
       <div className="text-center py-12 px-4 my-8">
-        <div className="max-w-[800px] mx-auto leading-[2.8] font-bold text-[1.1em] text-[#222]">
-          <p className="mb-8 text-[1.3em]">
+        <div className="max-w-[800px] mx-auto leading-[2.8] font-bold text-sm md:text-[1.1em] text-[#222]">
+          <p className="mb-8 text-base md:text-[1.3em]">
             Nekomasa.com は、<br className="hidden md:inline" />
             日常に「クスっ」と笑える余白を。
           </p>
@@ -83,8 +83,8 @@ export default async function HomePage() {
             今日もあなたが、<br className="md:hidden" />ひと笑いできるきっかけとなれますように。
           </p>
         </div>
-        <p className="text-[1.5em] font-bold mt-12 tracking-widest text-[#111]">笑う門には福来る</p>
-        <p className="text-[1.2em] font-bold mt-2 tracking-widest text-[#111]">(企業理念風)</p>
+        <p className="text-xl md:text-[1.5em] font-bold mt-12 tracking-widest text-[#111]">笑う門には福来る</p>
+        <p className="text-base md:text-[1.2em] font-bold mt-2 tracking-widest text-[#111]">(企業理念風)</p>
       </div>
 
       <h2 className="text-2xl font-bold mb-10 text-center text-[#222]">最新記事</h2>
