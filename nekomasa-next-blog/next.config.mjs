@@ -1,13 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Enables static HTML export
-  basePath: '/yuki-Lp',
-  assetPrefix: '/yuki-Lp/',
   images: {
-    unoptimized: true,
-    domains: ['cdn.sanity.io'],
+    domains: ['cdn.sanity.io'], // Keep this if you use optimized images, but 'unoptimized: true' is often needed if not using Vercel Image Optimization quota
   },
-  
+
   /* config options here */
 };
 
