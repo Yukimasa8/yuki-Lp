@@ -5,7 +5,7 @@ const apiVersion = '2023-05-03';
 
 // Sanity画像URLを生成するヘルパー関数
 function urlFor(source) {
-  
+
   if (!source || !source.asset || !source.asset.url) { // Check for source.asset.url
     console.error("Invalid image source for urlFor: url is missing or null in asset object:", source);
     return ""; // Return empty string for invalid source
@@ -44,7 +44,7 @@ function renderPortableText(blocks) {
       });
 
       const style = block.style || 'normal';
-      
+
       // テキストコンテンツの生成
       const childrenHtml = block.children.map(span => {
         let text = span.text.replace(/\n/g, '<br>'); // ソフトブレークを<br>に変換
@@ -57,11 +57,11 @@ function renderPortableText(blocks) {
             if (mark === 'strike-through') return `<s>${acc}</s>`;
             // リンクの処理
             if (typeof mark === 'string' && block.markDefs) {
-               const markDef = block.markDefs.find(def => def._key === mark);
-               if (markDef && markDef._type === 'link') {
-                 // 外部リンクにsponsored属性を付与する
-                 return `<a href="${markDef.href}" target="_blank" rel="noopener noreferrer sponsored">${acc}</a>`;
-               }
+              const markDef = block.markDefs.find(def => def._key === mark);
+              if (markDef && markDef._type === 'link') {
+                // 外部リンクにsponsored属性を付与する
+                return `<a href="${markDef.href}" target="_blank" rel="noopener noreferrer sponsored">${acc}</a>`;
+              }
             }
             return acc;
           }, text);
@@ -76,7 +76,7 @@ function renderPortableText(blocks) {
         const id = `heading-${headingCounter++}`;
         headings.push({ id: id, text: block.children.map(c => c.text).join(''), level: level });
         html += `<h${level} id="${id}">${childrenHtml}</h${level}>`;
-      } 
+      }
       // リストの処理
       else if (block.listItem) {
         const newListTag = block.listItem === 'bullet' ? 'ul' : 'ol';
@@ -106,7 +106,7 @@ function renderPortableText(blocks) {
     // 他のカスタムブロックタイプ（例：画像）の処理をここに追加できる
     else if (block._type === 'customImage') {
       closeList();
-      
+
       if (block.asset && block.asset.url) { // Ensure asset.url exists
         const imageUrl = urlFor(block);
         const imageAlt = block.alt || '';
@@ -129,7 +129,7 @@ function renderPortableText(blocks) {
             // Defaults already set
             break;
         }
-        
+
         imgAttributes += ` width="${imageWidth}" height="${imageHeight}"`;
         html += `<figure><img ${imgAttributes}></figure>`;
       }
@@ -211,7 +211,7 @@ async function renderArticle() {
 
   const article = await fetchArticleBySlug(slug);
 
-  
+
 
   if (!article) {
     document.getElementById('article-title').textContent = '記事が見つかりません';
@@ -258,68 +258,68 @@ async function renderArticle() {
     }
     dateElement.textContent = dateString;
 
-    
+
 
   } else {
-        dateElement.style.display = 'none';
+    dateElement.style.display = 'none';
+  }
+
+  // Combined Dajare and Gorioshi Level rendering
+  const articleLevelsContainer = document.getElementById('article-levels');
+  if (articleLevelsContainer && (article.dajareLevel || article.gorioshiLevel)) {
+    let levelsHtml = '';
+    let levelItems = []; // Array to hold HTML for each level display
+
+    if (article.dajareLevel) {
+      let dajareIcons = '';
+      for (let i = 0; i < 5; i++) {
+        if (i < article.dajareLevel) {
+          dajareIcons += `★`;
+        } else {
+          dajareIcons += `☆`;
+        }
       }
+      levelItems.push(`<span style="display: inline-flex; align-items: center; white-space: nowrap;">ダジャレベル <span class="dajare-stars">${dajareIcons}</span></span>`);
+    }
 
-      // Combined Dajare and Gorioshi Level rendering
-      const articleLevelsContainer = document.getElementById('article-levels');
-      if (articleLevelsContainer && (article.dajareLevel || article.gorioshiLevel)) {
-          let levelsHtml = '';
-          let levelItems = []; // Array to hold HTML for each level display
-
-          if (article.dajareLevel) {
-              let dajareIcons = '';
-              for (let i = 0; i < 5; i++) {
-                  if (i < 5 - article.dajareLevel) {
-                      dajareIcons += `☆`;
-                  } else {
-                      dajareIcons += `★`;
-                  }
-              }
-              levelItems.push(`<span style="display: inline-flex; align-items: center; white-space: nowrap;">ダジャレベル <span class="dajare-stars">${dajareIcons}</span></span>`);
-          }
-
-          if (article.gorioshiLevel) {
-              let gorioshiIcons = '';
-              for (let i = 0; i < 5; i++) {
-                  if (i < 5 - article.gorioshiLevel) {
-                      gorioshiIcons += `☆`;
-                  } else {
-                      gorioshiIcons += `★`;
-                  }
-              }
-              levelItems.push(`<span style="display: inline-flex; align-items: center; white-space: nowrap;">ゴリ押し度 <span class="gorioshi-stars">${gorioshiIcons}</span></span>`);
-          }
-
-          if (levelItems.length > 0) {
-              // Join the level items with a separator
-              const combinedContent = levelItems.join(`&nbsp;&nbsp;&nbsp;&nbsp;`);
-              levelsHtml += `<div class="level-row" style="display: flex; justify-content: center; align-items: center;">${combinedContent}</div>`;
-          }
-          
-          articleLevelsContainer.innerHTML = levelsHtml;
-          articleLevelsContainer.style.marginBottom = '20px'; // Increased margin for better spacing
-      } else if (articleLevelsContainer) {
-          articleLevelsContainer.style.display = 'none';
+    if (article.gorioshiLevel) {
+      let gorioshiIcons = '';
+      for (let i = 0; i < 5; i++) {
+        if (i < article.gorioshiLevel) {
+          gorioshiIcons += `★`;
+        } else {
+          gorioshiIcons += `☆`;
+        }
       }
+      levelItems.push(`<span style="display: inline-flex; align-items: center; white-space: nowrap;">ゴリ押し度 <span class="gorioshi-stars">${gorioshiIcons}</span></span>`);
+    }
+
+    if (levelItems.length > 0) {
+      // Join the level items with a separator
+      const combinedContent = levelItems.join(`&nbsp;&nbsp;&nbsp;&nbsp;`);
+      levelsHtml += `<div class="level-row" style="display: flex; justify-content: center; align-items: center;">${combinedContent}</div>`;
+    }
+
+    articleLevelsContainer.innerHTML = levelsHtml;
+    articleLevelsContainer.style.marginBottom = '20px'; // Increased margin for better spacing
+  } else if (articleLevelsContainer) {
+    articleLevelsContainer.style.display = 'none';
+  }
 
   // Updated date
   if (article._updatedAt && article.publishedAt) {
-      const publishedDate = new Date(article.publishedAt);
-      const updatedDate = new Date(article._updatedAt);
-      publishedDate.setHours(0, 0, 0, 0);
-      updatedDate.setHours(0, 0, 0, 0);
+    const publishedDate = new Date(article.publishedAt);
+    const updatedDate = new Date(article._updatedAt);
+    publishedDate.setHours(0, 0, 0, 0);
+    updatedDate.setHours(0, 0, 0, 0);
 
-      if (updatedDate > publishedDate) {
-          const options = { year: 'numeric', month: 'long', day: 'numeric' };
-          const updatedDateElement = document.createElement('p');
-          updatedDateElement.classList.add('updated-date');
-          updatedDateElement.textContent = `更新日: ${updatedDate.toLocaleDateString('ja-JP', options)}`;
-          dateElement.parentNode.insertBefore(updatedDateElement, dateElement.nextSibling);
-      }
+    if (updatedDate > publishedDate) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const updatedDateElement = document.createElement('p');
+      updatedDateElement.classList.add('updated-date');
+      updatedDateElement.textContent = `更新日: ${updatedDate.toLocaleDateString('ja-JP', options)}`;
+      dateElement.parentNode.insertBefore(updatedDateElement, dateElement.nextSibling);
+    }
   }
 
   // Main image
@@ -477,7 +477,7 @@ function setupShareButtons(title) {
     });
   }
 
-  
+
 }
 
 renderArticle();
