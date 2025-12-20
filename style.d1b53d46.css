@@ -553,6 +553,13 @@ footer p {
   font-weight: 400;
 }
 
+.site-description a {
+  text-decoration: underline;
+  font-weight: normal;
+  color: #007bff;
+  transition: all 0.3s ease;
+}
+
 #blog-posts {
   margin-bottom: 10px;
   margin-top: 30px;

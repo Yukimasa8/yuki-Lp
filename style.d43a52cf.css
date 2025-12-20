@@ -769,12 +769,12 @@ a.tag:hover {
 /* ヘッダーの説明文の中のリンクスタイル */
 .site-description a {
   text-decoration: underline;
-  font-weight: bold;
-  color: #00aaff;
-  /* Keep accent color but ensure readability or change to dark */
+  font-weight: normal;
+  /* Remove bold */
+  color: #007bff;
+  /* Standard readable blue */
   transition: all 0.3s ease;
   background-image: none;
-  /* Remove gradient text */
   -webkit-text-fill-color: initial;
   background-clip: border-box;
   text-shadow: none;
