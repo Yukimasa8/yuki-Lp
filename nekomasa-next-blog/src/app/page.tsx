@@ -34,8 +34,46 @@ export default async function HomePage() {
   console.log("Fetched posts:", JSON.stringify(posts, null, 2));
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-4xl font-bold mb-8 text-center">ネコマサBLOG</h1>
+    <div className="container mx-auto p-4 font-sans text-[#111]">
+      <header className="flex flex-col md:flex-row justify-between items-center py-5 px-4 md:px-10 bg-white border-b border-gray-200 shadow-sm mb-8">
+        <div className="flex flex-col items-center gap-2 mb-4 md:mb-0">
+          <Link href="/">
+            <Image src="/nekomasalogo3.png" alt="NEKOMASA ロゴ" width={200} height={60} className="h-[60px] w-auto brightness-0" />
+          </Link>
+          <p className="text-gray-500 text-sm text-center font-normal">
+            節約術･時間術など生活に役立つ情報を<br />
+            ダジャレベルと共に発信しています
+          </p>
+        </div>
+        {/* Navigation placeholder - can be componentized later */}
+        <nav>
+          <ul className="flex flex-wrap justify-center gap-6 list-none p-0 m-0">
+            <li><Link href="/" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">ブログ</Link></li>
+            <li><span className="text-gray-400 cursor-not-allowed">音楽</span></li>
+            <li><span className="text-gray-400 cursor-not-allowed">NFT</span></li>
+            <li><span className="text-gray-400 cursor-not-allowed">プロフィール</span></li>
+            <li><span className="text-gray-400 cursor-not-allowed">SNS</span></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div className="text-center py-12 px-4 my-8">
+        <div className="max-w-[800px] mx-auto leading-[2.8] font-bold text-[1.1em] text-[#222]">
+          <p className="mb-8 text-[1.3em]">Nekomasa.com は、<br />日常に「クスっ」と笑える余白を。</p>
+          <p className="mb-8">ネコマサは、ダジャレというユーモアが<br />忙しい日々の中で心をゆるめ、<br />ちょっとした潤いや活力を与えてくれると信じています。</p>
+          <p className="mt-10 mb-8">
+            本サイトは、皆さまにとっての<br />いわば「ダジャレのサードプレイス」として、<br />気軽に立ち寄り、気づけば笑っている――<br />そんな、心の休憩所を目指しています。
+          </p>
+          <p className="mt-10 mb-8">
+            便利用品の活用術や生活のちょっとした改善アイデアを、<br />ネコマサ独自の観点とダジャレを添えてお届けしながら、<br />楽しく・愛しく・前向きな気分をお届けします。
+          </p>
+          <p className="mt-10">今日もあなたが、ひと笑いできるきっかけとなれますように。</p>
+        </div>
+        <p className="text-[1.5em] font-bold mt-12 tracking-widest text-[#111]">笑う門には福来る</p>
+        <p className="text-[1.2em] font-bold mt-2 tracking-widest text-[#111]">(企業理念風)</p>
+      </div>
+
+      <h2 className="text-2xl font-bold mb-10 text-center text-[#222]">最新記事</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
           <Link href={`/articles/${post.slug.current}`} key={post._id} className="block border rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
