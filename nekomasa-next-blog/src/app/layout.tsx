@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import "./globals.css";
-import BlogmuraBanner from "@/components/BlogmuraBanner";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +17,6 @@ export default function RootLayout({
     <html lang="ja">
       <body className="antialiased">
         {children}
-        <BlogmuraBanner />
       </body>
     </html>
   );
