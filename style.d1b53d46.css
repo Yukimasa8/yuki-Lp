@@ -4,7 +4,7 @@ body {
   margin: 0;
   background-color: #ffffff;
   /* Changed to white */
-  color: #333;
+  color: #111;
   /* Changed to dark grey */
 }
 
@@ -25,7 +25,7 @@ header {
   /* Light border */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   /* Softer shadow */
-  color: #333;
+  color: #111;
   /* Dark text */
 }
 
@@ -64,7 +64,7 @@ nav ul li a:hover {
 nav ul li a {
   font-size: 1.0em;
   /* Slightly smaller */
-  color: #444;
+  color: #222;
   /* Dark grey */
   font-weight: 500;
 }
@@ -129,7 +129,7 @@ nav ul li {
 }
 
 .category-button {
-  background-color: #555;
+  background-color: #333;
   /* Minimalist Grey */
   color: #fff;
   border: none;
@@ -141,7 +141,7 @@ nav ul li {
 }
 
 .category-button:hover {
-  background-color: #333;
+  background-color: #111;
   transform: translateY(-2px);
 }
 
@@ -169,7 +169,7 @@ a.post-card {
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   text-decoration: none;
-  color: #333;
+  color: #111;
   /* Dark text */
 }
 
@@ -186,7 +186,7 @@ a.post-card:hover {
 }
 
 .post-toggle-button {
-  background-color: #555;
+  background-color: #333;
   /* Minimalist Grey */
   color: #fff;
   border: none;
@@ -201,7 +201,7 @@ a.post-card:hover {
 }
 
 .post-toggle-button:hover {
-  background-color: #333;
+  background-color: #111;
   /* Darker Grey */
 }
 
@@ -216,7 +216,7 @@ a.post-card:hover {
 
 .article-toc h3 {
   font-size: 1.2em;
-  color: #555;
+  color: #333;
   /* Minimalist Grey */
   margin-top: 0;
   margin-bottom: 15px;
@@ -238,7 +238,7 @@ a.post-card:hover {
 }
 
 .article-toc a {
-  color: #555;
+  color: #333;
   text-decoration: none;
   transition: color 0.2s;
   display: inline;
@@ -247,16 +247,16 @@ a.post-card:hover {
 }
 
 .article-toc a:hover {
-  color: #333;
+  color: #111;
   /* Darker Grey */
-  border-bottom-color: #333;
+  border-bottom-color: #111;
 }
 
 .post-card h2 {
   font-size: 1.3em;
   /* タイトルをやや小さく */
   margin: 0 0 10px 0;
-  color: #444;
+  color: #222;
   /* Note-style dark grey */
   background-image: none;
   -webkit-background-clip: border-box;
@@ -290,7 +290,7 @@ a.post-card:hover {
   /* 行間を調整 */
   margin-top: 10px;
   margin-bottom: 1em;
-  color: #444;
+  color: #222;
   /* Darker text */
 }
 
@@ -298,7 +298,7 @@ a.post-card:hover {
   font-size: 1.6em;
   margin-top: 1.6em;
   margin-bottom: 0.8em;
-  color: #444;
+  color: #222;
   /* Minimalist Dark Grey */
 }
 
@@ -306,7 +306,7 @@ a.post-card:hover {
   font-size: 1.3em;
   margin-top: 1.3em;
   margin-bottom: 0.7em;
-  color: #444;
+  color: #222;
   /* Minimalist Dark Grey */
 }
 
@@ -314,7 +314,7 @@ a.post-card:hover {
   font-size: 1.1em;
   margin-top: 1.1em;
   margin-bottom: 0.2em;
-  color: #444;
+  color: #222;
   /* Minimalist Dark Grey */
 }
 
@@ -322,7 +322,7 @@ a.post-card:hover {
   font-size: 1em;
   margin-top: 0.9em;
   margin-bottom: 0.4em;
-  color: #444;
+  color: #222;
   /* Minimalist Dark Grey */
 }
 
@@ -330,7 +330,7 @@ a.post-card:hover {
   font-size: 0.9em;
   margin-top: 0.7em;
   margin-bottom: 0.3em;
-  color: #444;
+  color: #222;
   /* Minimalist Dark Grey */
 }
 
@@ -338,12 +338,12 @@ a.post-card:hover {
   font-size: 0.8em;
   margin-top: 0.5em;
   margin-bottom: 0.2em;
-  color: #444;
+  color: #222;
   /* Minimalist Dark Grey */
 }
 
 .article-content a {
-  color: #555;
+  color: #333;
   /* Minimalist Grey */
   /* Readable blue -> Orange */
   text-decoration: underline;
@@ -353,13 +353,13 @@ a.post-card:hover {
 }
 
 .article-content a:hover {
-  color: #333;
+  color: #111;
   /* Darker Grey */
   /* Darker blue on hover */
 }
 
 .main-content a {
-  color: #555;
+  color: #333;
   /* Minimalist Grey */
   /* 明るい青色に変更 */
   text-decoration: underline;
@@ -416,7 +416,7 @@ footer {
   background-color: #ffffff;
   /* White background */
   border-top: 1px solid #eaeaea;
-  color: #666;
+  color: #444;
   /* Note-style dark grey for footer */
 }
 
@@ -559,7 +559,7 @@ footer p {
 }
 
 .site-description {
-  color: #666;
+  color: #444;
   /* Note-style grey */
   font-size: 0.9em;
   margin: 0;
@@ -570,7 +570,7 @@ footer p {
 .site-description a {
   text-decoration: underline;
   font-weight: normal;
-  color: #555;
+  color: #333;
   /* Minimalist Grey */
   transition: all 0.3s ease;
 }
@@ -595,7 +595,7 @@ footer p {
   display: flex;
   width: 100%;
   height: 30px;
-  background-color: #333;
+  background-color: #111;
   border-radius: 15px;
   overflow: hidden;
   border: 2px solid #555;
@@ -691,7 +691,7 @@ footer p {
 
 .tag-item--no-link {
   cursor: not-allowed;
-  background-color: #444;
+  background-color: #222;
 }
 
 .tags-container {
@@ -729,13 +729,13 @@ a.tag:hover {
 
 /* ヘッダーの説明文の中のリンクスタイル */
 .site-description a {
-  color: #555;
+  color: #333;
   text-decoration: underline;
 }
 
 /* ホバー時のスタイル */
 .site-description a:hover {
-  color: #333;
+  color: #111;
   text-decoration: none;
 }
 
@@ -764,7 +764,7 @@ a.tag:hover {
 }
 
 .dajare-table th {
-  background-color: #444;
+  background-color: #222;
   color: #fff;
   font-weight: bold;
   text-align: center;
@@ -803,7 +803,7 @@ a.tag:hover {
 }
 
 .dajare-intro-text {
-  color: #666;
+  color: #444;
   /* Dark grey */
   font-size: 0.9em;
   /* 小さめのフォントサイズ */
@@ -824,7 +824,7 @@ a.tag:hover {
 #article-body ul,
 #article-body ol {
   /* 段落やリストの文字色と行間を統一します */
-  color: #444;
+  color: #222;
   /* Dark text */
   line-height: 1.8;
   font-weight: 400;
