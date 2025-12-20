@@ -278,14 +278,16 @@ a.post-card:hover {
   font-size: 1.3em;
   /* タイトルをやや小さく */
   margin: 0 0 10px 0;
-  background-image: linear-gradient(to right, #00aaff, #8a2be2);
-  /* 青から紫のグラデーション */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  /* fallback for browsers that don't support text-fill-color */
+  color: #444;
+  /* Note-style dark grey */
+  background-image: none;
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: initial;
+  background-clip: border-box;
+  text-fill-color: initial;
   text-align: center;
-  /* Add this line */
+  font-weight: 600;
+  /* Bold/Semi-bold */
 }
 
 .post-main-image {
