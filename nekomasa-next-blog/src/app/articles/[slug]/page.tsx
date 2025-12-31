@@ -2,6 +2,7 @@ import { client, urlFor } from '@/lib/sanity';
 import PortableTextRenderer from '@/components/PortableTextRenderer';
 import Image from 'next/image';
 import Link from 'next/link';
+import ViewCounter from '@/components/ViewCounter';
 
 // Function to fetch a single post by slug
 async function getPostBySlug(slug: string) {
@@ -12,6 +13,7 @@ async function getPostBySlug(slug: string) {
       slug,
       description,
       publishedAt,
+      views,
       _updatedAt,
       dajareLevel,
       gorioshiLevel,
@@ -76,9 +78,12 @@ export default async function ArticlePage({ params }: { params: { slug: string }
       )}
       <div className="text-gray-600 text-sm mb-6 text-center">
         <p>{new Date(post.publishedAt).toLocaleDateString('ja-JP')} ・ 約{readingTime}分で読めます</p>
-        {post._updatedAt && new Date(post._updatedAt).getTime() > new Date(post.publishedAt).getTime() && (
-          <p className="mt-1">更新日: {new Date(post._updatedAt).toLocaleDateString('ja-JP')}</p>
-        )}
+        <div className="flex justify-center items-center mt-2 gap-4">
+          <ViewCounter id={post._id} initialViews={post.views} />
+          {post._updatedAt && new Date(post._updatedAt).getTime() > new Date(post.publishedAt).getTime() && (
+            <p>更新日: {new Date(post._updatedAt).toLocaleDateString('ja-JP')}</p>
+          )}
+        </div>
       </div>
 
       {/* Dajare and Gorioshi Levels */}

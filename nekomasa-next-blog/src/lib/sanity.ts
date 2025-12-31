@@ -12,6 +12,14 @@ export const client = createClient({
   useCdn: true, // `false` if you want to ensure fresh data
 });
 
+export const writeClient = createClient({
+  projectId,
+  dataset,
+  apiVersion,
+  useCdn: false, // Write operations should not use CDN
+  token: process.env.SANITY_API_TOKEN,
+});
+
 const builder = imageUrlBuilder(client);
 
 export function urlFor(source: any) {
