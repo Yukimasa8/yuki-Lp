@@ -87,7 +87,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
           {post.dajareLevel && (
             <div className="flex items-center">
               <span className="mr-2 font-bold text-gray-700">ダジャレベル</span>
-              <span className="text-yellow-500 tracking-widest text-lg">
+              <span className="text-[#ffc107] tracking-widest text-lg">
                 {'★'.repeat(post.dajareLevel)}{'☆'.repeat(5 - post.dajareLevel)}
               </span>
             </div>
@@ -95,7 +95,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
           {post.gorioshiLevel && (
             <div className="flex items-center">
               <span className="mr-2 font-bold text-gray-700">ゴリ押し度</span>
-              <span className="text-red-500 tracking-widest text-lg">
+              <span className="text-[#ff69b4] tracking-widest text-lg">
                 {'★'.repeat(post.gorioshiLevel)}{'☆'.repeat(5 - post.gorioshiLevel)}
               </span>
             </div>

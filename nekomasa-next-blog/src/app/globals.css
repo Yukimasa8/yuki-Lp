@@ -3,12 +3,12 @@
 body {
   background-color: #ffffff;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  color: #111;
+  color: #222;
 }
 
 /* note.com風のスタイルを適用 */
 .prose {
-  color: #111;
+  color: #222;
 }
 
 /* 見出しのスタイル */
@@ -34,9 +34,9 @@ body {
 .prose p {
   font-size: 1rem;
   /* 16px */
-  line-height: 1.8;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  line-height: 1.7;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 /* リンクのスタイル */

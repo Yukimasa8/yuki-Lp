@@ -34,7 +34,7 @@ export default async function HomePage() {
   console.log("Fetched posts:", JSON.stringify(posts, null, 2));
 
   return (
-    <div className="container mx-auto p-4 font-sans text-[#111]">
+    <div className="container mx-auto p-4 font-sans text-[#222]">
       <header className="flex flex-col md:flex-row justify-between items-center py-5 px-4 md:px-10 bg-white border-b border-gray-200 shadow-sm mb-8">
         <div className="flex flex-col items-center gap-2 mb-4 md:mb-0">
           <Link href="/">
@@ -42,7 +42,8 @@ export default async function HomePage() {
           </Link>
           <p className="text-gray-500 text-sm text-center font-normal">
             節約術･時間術など生活に役立つ情報を<br />
-            ダジャレベルと共に発信しています
+            ダジャレベルと共に発信しています<br />
+            <Link href="/dajare-level" className="underline hover:no-underline text-gray-500 hover:text-[#00aaff] transition-colors">ダジャレベルとは...</Link>
           </p>
         </div>
         {/* Navigation placeholder - can be componentized later */}
@@ -96,8 +97,8 @@ export default async function HomePage() {
             きっかけとなれますように。
           </p>
         </div>
-        <p className="text-2xl md:text-[1.5em] font-bold mt-12 tracking-widest text-[#111]">笑う門には福来る</p>
-        <p className="text-lg md:text-[1.2em] font-bold mt-2 tracking-widest text-[#111]">(企業理念風)</p>
+        <p className="text-2xl md:text-[1.5em] font-bold mt-12 tracking-widest text-[#222]">笑う門には福来る</p>
+        <p className="text-lg md:text-[1.2em] font-bold mt-2 tracking-widest text-[#222]">(企業理念風)</p>
       </div>
 
       <h2 className="text-2xl font-bold mb-10 text-center text-[#222]">最新記事</h2>
