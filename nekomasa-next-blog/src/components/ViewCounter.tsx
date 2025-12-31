@@ -8,7 +8,7 @@ interface ViewCounterProps {
 }
 
 export default function ViewCounter({ id, initialViews = 0 }: ViewCounterProps) {
-    const [views, setViews] = useState<number>(initialViews);
+    const [views, setViews] = useState<number>(initialViews ?? 0);
 
     useEffect(() => {
         const incrementView = async () => {
