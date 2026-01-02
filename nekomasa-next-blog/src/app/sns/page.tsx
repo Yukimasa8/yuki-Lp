@@ -31,7 +31,7 @@ export default function SnsPage() {
           <a href="https://x.com/NEKOMASA28" target="_blank" rel="noopener noreferrer" className="bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors">X (旧Twitter)</a>
           <a href="https://store.line.me/stickershop/product/31434013/ja" target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white py-3 px-6 rounded-lg hover:bg-green-600 transition-colors">LINEスタンプ</a>
           <a href="https://www.youtube.com/@mii-channel" target="_blank" rel="noopener noreferrer" className="bg-red-500 text-white py-3 px-6 rounded-lg hover:bg-red-600 transition-colors">YouTube(ミーちゃんネル)</a>
-          <a href="https://www.instagram.com/yuki_metal_8" target="_blank" rel="noopener noreferrer" className="bg-pink-500 text-white py-3 px-6 rounded-lg hover:bg-pink-600 transition-colors">Instagram</a>
+          <a href="https://www.instagram.com/yukimasa_gram" target="_blank" rel="noopener noreferrer" className="bg-pink-500 text-white py-3 px-6 rounded-lg hover:bg-pink-600 transition-colors">Instagram</a>
           <p className="text-sm text-gray-600 mt-4">(YouTubeとInstagramは現在、個人アカウントで運用中です。今後NEKOMASA用アカウントに移行予定です)</p>
         </div>
       </main>

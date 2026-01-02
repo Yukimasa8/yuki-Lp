@@ -5,7 +5,7 @@ import Image from 'next/image';
 async function getPosts(): Promise<Array<{
   _id: string;
   title: string;
-  slug: { current: string };
+  slug?: { current: string } | null;
   description: string;
   publishedAt: string;
   mainImageUrl: string;
@@ -34,7 +34,7 @@ async function getPosts(): Promise<Array<{
 async function getCategories(): Promise<Array<{
   _id: string;
   title: string;
-  slug: { current: string };
+  slug?: { current: string } | null;
 }>> {
   const query = `
     *[_type == "category"] | order(title asc) {
@@ -122,10 +122,10 @@ export default async function HomePage() {
 
       <div className="text-center mb-8">
         <div className="flex flex-wrap justify-center gap-4">
-          {categories.map((category) => (
+          {categories.filter(category => category.slug?.current).map((category) => (
             <Link
               key={category._id}
-              href={`/categories/${category.slug.current}`}
+              href={`/categories/${category.slug!.current}`}
               className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition-colors"
             >
               {category.title}
@@ -136,8 +136,8 @@ export default async function HomePage() {
 
       <h2 className="text-2xl font-bold mb-10 text-center text-[#222]">最新記事</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post) => (
-          <Link href={`/articles/${post.slug.current}`} key={post._id} className="block border rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+        {posts.filter(post => post.slug?.current).map((post) => (
+          <Link href={`/articles/${post.slug!.current}`} key={post._id} className="block border rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
             {post.mainImageUrl && (
               <div className="relative w-full aspect-[4/3]">
                 <Image
