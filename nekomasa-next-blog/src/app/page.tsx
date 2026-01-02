@@ -52,10 +52,10 @@ export default async function HomePage() {
         <nav>
           <ul className="flex flex-wrap justify-center gap-6 list-none p-0 m-0">
             <li><Link href="/" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">ブログ</Link></li>
-            <li><span className="text-gray-400 cursor-not-allowed">音楽</span></li>
-            <li><span className="text-gray-400 cursor-not-allowed">NFT</span></li>
-            <li><span className="text-gray-400 cursor-not-allowed">プロフィール</span></li>
-            <li><span className="text-gray-400 cursor-not-allowed">SNS</span></li>
+            <li><Link href="/music" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">音楽</Link></li>
+            <li><Link href="/nft" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">NFT</Link></li>
+            <li><Link href="/profile" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">プロフィール</Link></li>
+            <li><Link href="/sns" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">SNS</Link></li>
           </ul>
         </nav>
       </header>
