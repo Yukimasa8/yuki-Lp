@@ -2,6 +2,8 @@ import { client, urlFor } from '@/lib/sanity';
 import Link from 'next/link';
 import Image from 'next/image';
 
+export const revalidate = 60;
+
 async function getPosts(): Promise<Array<{
   _id: string;
   title: string;

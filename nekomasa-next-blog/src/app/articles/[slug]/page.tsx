@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ViewCounter from '@/components/ViewCounter';
 
+export const revalidate = 60;
+
 // Function to fetch a single post by slug
 async function getPostBySlug(slug: string) {
   const query = `
@@ -87,99 +89,99 @@ export default async function ArticlePage({ params }: { params: { slug: string }
       </header>
 
       <div className="max-w-3xl mx-auto">
-      <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center">{post.title}</h1>
-      {post.mainImageUrl && (
-        <div className="relative w-full aspect-[4/3] mb-6 rounded-lg overflow-hidden shadow-md">
-          <Image
-            src={urlFor(post.mainImageUrl).url()}
-            alt={post.title}
-            fill
-            style={{ objectFit: 'cover' }}
-            sizes="100vw"
-            priority
-          />
-        </div>
-      )}
-      <div className="text-gray-600 text-sm mb-6 text-center">
-        <p>{new Date(post.publishedAt).toLocaleDateString('ja-JP')} ・ 約{readingTime}分で読めます</p>
-        <div className="flex justify-center items-center mt-2 gap-4">
-          <ViewCounter id={post._id} initialViews={post.views ?? 0} />
-          {post._updatedAt && new Date(post._updatedAt).getTime() > new Date(post.publishedAt).getTime() && (
-            <p>更新日: {new Date(post._updatedAt).toLocaleDateString('ja-JP')}</p>
-          )}
-        </div>
-      </div>
-
-      {/* Dajare and Gorioshi Levels */}
-      {(post.dajareLevel || post.gorioshiLevel) && (
-        <div className="flex justify-center items-center gap-6 mb-8 text-sm md:text-base">
-          {post.dajareLevel && (
-            <div className="flex items-center">
-              <span className="mr-2 font-bold text-gray-700">ダジャレベル</span>
-              <span className="text-[#ffc107] tracking-widest text-lg">
-                {'★'.repeat(post.dajareLevel)}{'☆'.repeat(5 - post.dajareLevel)}
-              </span>
-            </div>
-          )}
-          {post.gorioshiLevel && (
-            <div className="flex items-center">
-              <span className="mr-2 font-bold text-gray-700">ゴリ押し度</span>
-              <span className="text-[#ff69b4] tracking-widest text-lg">
-                {'★'.repeat(post.gorioshiLevel)}{'☆'.repeat(5 - post.gorioshiLevel)}
-              </span>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Categories */}
-      {post.categories && post.categories.length > 0 && (
-        <div className="mb-6 text-center">
-          <h3 className="text-lg font-semibold mb-2">カテゴリー</h3>
-          <div className="flex flex-wrap justify-center gap-2">
-            {post.categories.map((category: any) => (
-              <Link
-                key={category.title} // Using title as key for now, will use _id later
-                href={`/categories/${category.slug?.current || category.title}`} // Fallback to title if slug is null
-                className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full hover:bg-blue-200 transition-colors"
-              >
-                {category.title}
-              </Link>
-            ))}
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center">{post.title}</h1>
+        {post.mainImageUrl && (
+          <div className="relative w-full aspect-[4/3] mb-6 rounded-lg overflow-hidden shadow-md">
+            <Image
+              src={urlFor(post.mainImageUrl).url()}
+              alt={post.title}
+              fill
+              style={{ objectFit: 'cover' }}
+              sizes="100vw"
+              priority
+            />
+          </div>
+        )}
+        <div className="text-gray-600 text-sm mb-6 text-center">
+          <p>{new Date(post.publishedAt).toLocaleDateString('ja-JP')} ・ 約{readingTime}分で読めます</p>
+          <div className="flex justify-center items-center mt-2 gap-4">
+            <ViewCounter id={post._id} initialViews={post.views ?? 0} />
+            {post._updatedAt && new Date(post._updatedAt).getTime() > new Date(post.publishedAt).getTime() && (
+              <p>更新日: {new Date(post._updatedAt).toLocaleDateString('ja-JP')}</p>
+            )}
           </div>
         </div>
-      )}
 
-      <div className="prose lg:prose-lg mx-auto">
-        <PortableTextRenderer blocks={post.body} />
+        {/* Dajare and Gorioshi Levels */}
+        {(post.dajareLevel || post.gorioshiLevel) && (
+          <div className="flex justify-center items-center gap-6 mb-8 text-sm md:text-base">
+            {post.dajareLevel && (
+              <div className="flex items-center">
+                <span className="mr-2 font-bold text-gray-700">ダジャレベル</span>
+                <span className="text-[#ffc107] tracking-widest text-lg">
+                  {'★'.repeat(post.dajareLevel)}{'☆'.repeat(5 - post.dajareLevel)}
+                </span>
+              </div>
+            )}
+            {post.gorioshiLevel && (
+              <div className="flex items-center">
+                <span className="mr-2 font-bold text-gray-700">ゴリ押し度</span>
+                <span className="text-[#ff69b4] tracking-widest text-lg">
+                  {'★'.repeat(post.gorioshiLevel)}{'☆'.repeat(5 - post.gorioshiLevel)}
+                </span>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Categories */}
+        {post.categories && post.categories.length > 0 && (
+          <div className="mb-6 text-center">
+            <h3 className="text-lg font-semibold mb-2">カテゴリー</h3>
+            <div className="flex flex-wrap justify-center gap-2">
+              {post.categories.map((category: any) => (
+                <Link
+                  key={category.title} // Using title as key for now, will use _id later
+                  href={`/categories/${category.slug?.current || category.title}`} // Fallback to title if slug is null
+                  className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full hover:bg-blue-200 transition-colors"
+                >
+                  {category.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="prose lg:prose-lg mx-auto">
+          <PortableTextRenderer blocks={post.body} />
+        </div>
+
+        {/* Tags */}
+        {post.tags && post.tags.length > 0 && (
+          <div className="mt-8 text-center">
+            <h3 className="text-lg font-semibold mb-2">関連タグ</h3>
+            <div className="flex flex-wrap justify-center gap-2">
+              {post.tags.map((tag: any) => (
+                <Link
+                  key={tag.slug?.current || tag.title} // Using slug as key, fallback to title
+                  href={`/tags/${tag.slug?.current || tag.title}`}
+                  className="bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-full hover:bg-gray-200 transition-colors"
+                >
+                  {tag.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
-      {/* Tags */}
-      {post.tags && post.tags.length > 0 && (
-        <div className="mt-8 text-center">
-          <h3 className="text-lg font-semibold mb-2">関連タグ</h3>
-          <div className="flex flex-wrap justify-center gap-2">
-            {post.tags.map((tag: any) => (
-              <Link
-                key={tag.slug?.current || tag.title} // Using slug as key, fallback to title
-                href={`/tags/${tag.slug?.current || tag.title}`}
-                className="bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-full hover:bg-gray-200 transition-colors"
-              >
-                {tag.title}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
+      <footer className="text-center mt-16 pt-8 pb-8 bg-white border-t border-gray-200 text-[#444] text-sm">
+        <p>
+          このページはバイブコーディングで作成しています<br />
+          &copy; 2025 ネコマサBLOG. All Rights Reserved.<br />
+          <Link href="/privacy-policy" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">プライバシーポリシー</Link> | <Link href="/environment" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">開発環境について</Link>
+        </p>
+      </footer>
     </div>
-
-    <footer className="text-center mt-16 pt-8 pb-8 bg-white border-t border-gray-200 text-[#444] text-sm">
-      <p>
-        このページはバイブコーディングで作成しています<br />
-        &copy; 2025 ネコマサBLOG. All Rights Reserved.<br />
-        <Link href="/privacy-policy" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">プライバシーポリシー</Link> | <Link href="/environment" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">開発環境について</Link>
-      </p>
-    </footer>
-  </div>
-);
+  );
 }
