@@ -1,7 +1,7 @@
 export default function EnvironmentPage() {
   return (
     <div className="container mx-auto p-4 font-sans text-[#222]">
-      <header className="flex flex-col md:flex-row justify-between items-center py-5 px-4 md:px-10 bg-white border-b border-gray-200 shadow-sm mb-8">
+      <header className="flex flex-col md:flex-row justify-between items-center py-5 px-4 md:px-10 bg-white border-t border-gray-200 mb-8">
         <div className="flex flex-col items-center gap-2 mb-4 md:mb-0">
           <a href="/">
             <img src="/nekomasalogo3.png" alt="NEKOMASA ロゴ" className="h-[60px] w-auto brightness-0" />
