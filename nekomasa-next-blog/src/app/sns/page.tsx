@@ -25,7 +25,15 @@ export default function SnsPage() {
 
       <main className="text-center py-12 px-4 my-8">
         <h1 className="text-3xl font-bold mb-8 text-[#222]">SNS</h1>
-        <p className="text-lg text-gray-700">SNSに関するコンテンツは現在準備中です。</p>
+        
+        <div className="max-w-[400px] mx-auto flex flex-col gap-4">
+          <a href="https://jp.mercari.com/user/profile/546972285" target="_blank" rel="noopener noreferrer" className="bg-blue-500 text-white py-3 px-6 rounded-lg hover:bg-blue-600 transition-colors">メルカリ</a>
+          <a href="https://x.com/NEKOMASA28" target="_blank" rel="noopener noreferrer" className="bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors">X (旧Twitter)</a>
+          <a href="https://store.line.me/stickershop/product/31434013/ja" target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white py-3 px-6 rounded-lg hover:bg-green-600 transition-colors">LINEスタンプ</a>
+          <a href="https://www.youtube.com/@mii-channel" target="_blank" rel="noopener noreferrer" className="bg-red-500 text-white py-3 px-6 rounded-lg hover:bg-red-600 transition-colors">YouTube(ミーちゃんネル)</a>
+          <a href="https://www.instagram.com/yuki_metal_8" target="_blank" rel="noopener noreferrer" className="bg-pink-500 text-white py-3 px-6 rounded-lg hover:bg-pink-600 transition-colors">Instagram</a>
+          <p className="text-sm text-gray-600 mt-4">(YouTubeとInstagramは現在、個人アカウントで運用中です。今後NEKOMASA用アカウントに移行予定です)</p>
+        </div>
       </main>
 
       <footer className="text-center mt-16 pt-8 pb-8 bg-white border-t border-gray-200 text-[#444] text-sm">
