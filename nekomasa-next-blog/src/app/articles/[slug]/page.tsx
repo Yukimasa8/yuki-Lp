@@ -89,7 +89,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
       <div className="max-w-3xl mx-auto">
       <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center">{post.title}</h1>
       {post.mainImageUrl && (
-        <div className="relative w-full h-64 md:h-80 mb-6 rounded-lg overflow-hidden shadow-md">
+        <div className="relative w-full aspect-[4/3] mb-6 rounded-lg overflow-hidden shadow-md">
           <Image
             src={urlFor(post.mainImageUrl).url()}
             alt={post.title}
