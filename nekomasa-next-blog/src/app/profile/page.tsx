@@ -45,7 +45,7 @@ export default function ProfilePage() {
               CM出演オファー(スカウト)いつでも待ってます<span className="text-red-500">❤</span><br />
               <a href="https://www.instagram.com/p/B2E30DQB2no/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">グラビアポーズ</a>もできます<span className="text-red-500">❤</span>
             </li>
-            <li><strong className="text-[#222]">最近の目標</strong> 建設開始から3年ほど経ちサグラダ・ファミリアと<br />化した<a href="https://www.instagram.com/p/B-KTZsyhKpS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">建設中のねこちぐら</a>を<span className="inline-block">完成させること</span><br /><br />2026年2月8日に株式会社NEKOMASAを設立すること</li>
+            <li><strong className="text-[#222]">最近の目標</strong> 建設開始から3年ほど経ちサグラダ・ファミリアと<br />化した<a href="https://www.instagram.com/p/B-KTZsyhKpS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">建設中のねこちぐら</a>を<span className="inline-block">完成させること</span><br /><br />2026年2月8日に屋号「NEKOMASA」の開業届を出すこと</li>
           </ul>
 
           <div className="mt-8">
