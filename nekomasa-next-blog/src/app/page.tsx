@@ -108,7 +108,7 @@ export default async function HomePage() {
         {posts.map((post) => (
           <Link href={`/articles/${post.slug.current}`} key={post._id} className="block border rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
             {post.mainImageUrl && (
-              <div className="relative w-full h-48">
+              <div className="relative w-full aspect-[4/3]">
                 <Image
                   src={urlFor(post.mainImageUrl).url()}
                   alt={post.title}
