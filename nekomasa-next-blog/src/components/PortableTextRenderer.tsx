@@ -63,7 +63,6 @@ const components = {
     bullet: ({ children }: any) => <li>{children}</li>,
     number: ({ children }: any) => <li>{children}</li>,
   },
-},
   marks: {
     link: ({ children, value }: any) => {
       const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined;
