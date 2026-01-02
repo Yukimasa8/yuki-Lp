@@ -31,25 +31,9 @@ async function getPosts(): Promise<Array<{
   return posts;
 }
 
-async function getCategories(): Promise<Array<{
-  _id: string;
-  title: string;
-  slug?: { current: string } | null;
-}>> {
-  const query = `
-    *[_type == "category"] | order(title asc) {
-      _id,
-      title,
-      slug
-    }
-  `;
-  const categories = await client.fetch(query);
-  return categories;
-}
 
 export default async function HomePage() {
   const posts = await getPosts();
-  const categories = await getCategories();
   console.log("Fetched posts:", JSON.stringify(posts, null, 2));
 
   return (
@@ -121,17 +105,9 @@ export default async function HomePage() {
       </div>
 
       <div className="text-center mb-8">
-        <div className="flex flex-wrap justify-center gap-4">
-          {categories.filter(category => category.slug?.current).map((category) => (
-            <Link
-              key={category._id}
-              href={`/categories/${category.slug!.current}`}
-              className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition-colors"
-            >
-              {category.title}
-            </Link>
-          ))}
-        </div>
+        <Link href="/categories" className="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors">
+          カテゴリー一覧を見る
+        </Link>
       </div>
 
       <h2 className="text-2xl font-bold mb-10 text-center text-[#222]">最新記事</h2>
