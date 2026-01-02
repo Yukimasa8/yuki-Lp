@@ -103,6 +103,12 @@ export default async function HomePage() {
         <p className="text-lg md:text-[1.2em] font-bold mt-2 tracking-widest text-[#222]">(企業理念風)</p>
       </div>
 
+      <div className="text-center mb-8">
+        <Link href="/categories" className="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors">
+          カテゴリー一覧を見る
+        </Link>
+      </div>
+
       <h2 className="text-2xl font-bold mb-10 text-center text-[#222]">最新記事</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
