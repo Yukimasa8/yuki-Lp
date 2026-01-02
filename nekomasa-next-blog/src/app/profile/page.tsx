@@ -31,21 +31,21 @@ export default function ProfilePage() {
           <img src="/nekomasa.png" alt="ネコマサのプロフィール画像" className="w-48 h-48 rounded-full object-cover mx-auto mb-6" />
 
           <ul className="space-y-4 text-gray-700">
-            <li><strong className="text-[#222]">職業</strong> ネコ型人間会社員</li>
-            <li><strong className="text-[#222]">年齢</strong> 心は28(ニャー)歳<br />中身はオッサンかも...</li>
-            <li><strong className="text-[#222]">好きな音楽</strong>
+            <li><strong className="text-[#222] block mb-1">職業</strong> ネコ型人間会社員</li>
+            <li><strong className="text-[#222] block mb-1">年齢</strong> 心は28(ニャー)歳<br />中身はオッサンかも...</li>
+            <li><strong className="text-[#222] block mb-1">好きな音楽</strong>
               <a href="https://www.instagram.com/reel/CZoNVn0hwJc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">プログレッシブメタル</a><br />
               <a href="https://www.instagram.com/reel/CojVbd6jHzi/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">メロディックスピードメタル</a><br />
               デスメタル
             </li>
-            <li><strong className="text-[#222]">趣味</strong> 飼い猫で元野良猫・<a href="https://www.instagram.com/p/BiNuzxFFa75/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">現押入れアイドルのミーちゃん</a>に<br />ちゅーるを献上しツン9割デレ1割の割合を逆転させること<br /><br />
+            <li><strong className="text-[#222] block mb-1">趣味</strong> 飼い猫で元野良猫・<a href="https://www.instagram.com/p/BiNuzxFFa75/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">現押入れアイドルのミーちゃん</a>に<br />ちゅーるを献上しツン9割デレ1割の割合を逆転させること<br /><br />
               ツンデレ割合を逆転させるためにちゅーるを献上している動画はこちらです(
               <a href="https://www.instagram.com/p/CDk1Rg-Bdw5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">顔出しなし</a> /
               <a href="https://www.instagram.com/p/CF8gEqXBF_7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">顔出しあり</a>)<br /><br />
               CM出演オファー(スカウト)いつでも待ってます<span className="text-red-500">❤</span><br />
               <a href="https://www.instagram.com/p/B2E30DQB2no/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">グラビアポーズ</a>もできます<span className="text-red-500">❤</span>
             </li>
-            <li><strong className="text-[#222]">最近の目標</strong> 建設開始から3年ほど経ちサグラダ・ファミリアと<br />化した<a href="https://www.instagram.com/p/B-KTZsyhKpS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">建設中のねこちぐら</a>を<span className="inline-block">完成させること</span><br /><br />2026年2月8日に屋号「NEKOMASA」の開業届を出すこと</li>
+            <li><strong className="text-[#222] block mb-1">最近の目標</strong> 建設開始から3年ほど経ちサグラダ・ファミリアと<br />化した<a href="https://www.instagram.com/p/B-KTZsyhKpS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">建設中のねこちぐら</a>を<span className="inline-block">完成させること</span><br /><br />2026年2月8日に屋号「NEKOMASA」の開業届を出すこと</li>
           </ul>
 
           <div className="mt-8">
