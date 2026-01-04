@@ -3,7 +3,7 @@ export default function SnsPage() {
     <div className="container mx-auto p-4 font-sans text-[#222]">
       <header className="flex flex-col md:flex-row justify-between items-center py-5 px-4 md:px-10 bg-white border-b border-gray-200 mb-8">
         <div className="flex flex-col items-center gap-2 mb-4 md:mb-0">
-          <a href="/">
+          <a href="/#top-message">
             <img src="/nekomasalogo3.png" alt="NEKOMASA ロゴ" className="h-[60px] w-auto brightness-0" />
           </a>
           <p className="text-gray-500 text-sm text-center font-normal">
@@ -14,6 +14,7 @@ export default function SnsPage() {
         </div>
         <nav>
           <ul className="flex flex-wrap justify-center gap-6 list-none p-0 m-0">
+            <li><a href="/#top-message" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">トップ</a></li>
             <li><a href="/" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">ブログ</a></li>
             <li><a href="/music" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">音楽</a></li>
             <li><a href="/nft" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">NFT</a></li>
@@ -25,7 +26,7 @@ export default function SnsPage() {
 
       <main className="text-center py-12 px-4 my-8">
         <h1 className="text-3xl font-bold mb-8 text-[#222]">SNS</h1>
-        
+
         <div className="max-w-[400px] mx-auto flex flex-col gap-4">
           <a href="https://jp.mercari.com/user/profile/546972285" target="_blank" rel="noopener noreferrer" className="bg-blue-500 text-white py-3 px-6 rounded-lg hover:bg-blue-600 transition-colors">メルカリ</a>
           <a href="https://x.com/NEKOMASA28" target="_blank" rel="noopener noreferrer" className="bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors">X (旧Twitter)</a>

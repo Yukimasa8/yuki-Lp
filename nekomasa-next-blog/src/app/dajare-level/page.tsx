@@ -7,7 +7,7 @@ export default function DajareLevelPage() {
         <div className="container mx-auto p-4 font-sans text-[#222]">
             <header className="flex flex-col md:flex-row justify-between items-center py-5 px-4 md:px-10 bg-white border-b border-gray-200 mb-8">
                 <div className="flex flex-col items-center gap-2 mb-4 md:mb-0">
-                    <Link href="/">
+                    <Link href="/#top-message">
                         <Image src="/nekomasalogo3.png" alt="NEKOMASA ロゴ" width={200} height={60} className="h-[60px] w-auto brightness-0" />
                     </Link>
                     <p className="text-gray-500 text-sm text-center font-normal">
@@ -18,6 +18,7 @@ export default function DajareLevelPage() {
                 </div>
                 <nav>
                     <ul className="flex flex-wrap justify-center gap-6 list-none p-0 m-0">
+                        <li><Link href="/#top-message" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">トップ</Link></li>
                         <li><Link href="/" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">ブログ</Link></li>
                         <li><span className="text-gray-400 cursor-not-allowed">音楽</span></li>
                         <li><span className="text-gray-400 cursor-not-allowed">NFT</span></li>
