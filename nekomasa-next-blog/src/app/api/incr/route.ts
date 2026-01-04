@@ -27,8 +27,8 @@ export async function POST(req: Request) {
 
         console.log('Updated post:', updatedPost);
         return NextResponse.json({ views: updatedPost.views });
-    } catch (error) {
+    } catch (error: any) {
         console.error('Failed to increment views:', error);
-        return NextResponse.json({ error: 'Failed to increment views' }, { status: 500 });
+        return NextResponse.json({ error: error.message || 'Failed to increment views' }, { status: 500 });
     }
 }

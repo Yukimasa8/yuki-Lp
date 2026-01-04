@@ -23,9 +23,11 @@ export default function ViewCounter({ id, initialViews = 0 }: ViewCounterProps) 
 
                 if (res.ok) {
                     const data = await res.json();
+                    console.log('incrementView success, new count:', data.views);
                     setViews(data.views);
                 } else {
-                    console.error('Failed to increment views');
+                    const errorData = await res.json().catch(() => ({}));
+                    console.error('Failed to increment views. Status:', res.status, 'Error:', errorData);
                 }
             } catch (error) {
                 console.error('Error incrementing views:', error);
