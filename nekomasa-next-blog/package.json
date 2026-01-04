@@ -11,6 +11,7 @@
     "deploy": "next build"
   },
   "dependencies": {
+    "@next/third-parties": "^16.1.1",
     "@portabletext/react": "^2.0.0",
     "@sanity/client": "^6.0.0",
     "@sanity/image-url": "^1.2.0",

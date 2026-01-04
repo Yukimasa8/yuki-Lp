@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import "./globals.css";
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html lang="ja">
       <body className="antialiased">
         {children}
+        <GoogleAnalytics gaId="G-P655KCB5Q7" />
       </body>
     </html>
   );
