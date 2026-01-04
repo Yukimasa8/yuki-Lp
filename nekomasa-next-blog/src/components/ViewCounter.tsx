@@ -27,7 +27,7 @@ export default function ViewCounter({ id, initialViews = 0 }: ViewCounterProps) 
                     setViews(data.views);
                 } else {
                     const errorData = await res.json().catch(() => ({}));
-                    console.error('Failed to increment views. Status:', res.status, 'Error:', errorData);
+                    console.error('Failed to increment views. Status:', res.status, 'Error:', JSON.stringify(errorData));
                 }
             } catch (error) {
                 console.error('Error incrementing views:', error);
