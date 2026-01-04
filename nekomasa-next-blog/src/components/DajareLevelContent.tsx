@@ -47,7 +47,7 @@ export default function DajareLevelContent() {
                                         { stars: '★★★★★', name: 'ダジャレの神\n(ダジャレゴッド)', desc: 'オヤジギャグをも凌駕する最高品質。ダジャレを放った瞬間、凍てつく空気とともに誰にも相手されない。' },
                                     ].map((row, i) => (
                                         <tr key={i} className={i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                                            <td className="p-3 border border-gray-300 text-yellow-500 text-center whitespace-nowrap">{row.stars}</td>
+                                            <td className="p-3 border border-gray-300 text-[#222] text-center whitespace-nowrap">{row.stars}</td>
                                             <td className="p-3 border border-gray-300 text-center whitespace-pre-wrap">{row.name}</td>
                                             <td className="p-3 border border-gray-300 text-[#222]">{row.desc}</td>
                                         </tr>
