@@ -82,7 +82,7 @@ export default function DajareLevelContent() {
                                         { stars: '★★★★★', name: 'ダジャレ勇者', desc: 'オヤジギャグをも凌駕する最高品質。ダジャレを放った瞬間、世界が永遠の氷に包まれる。' },
                                     ].map((row, i) => (
                                         <tr key={i} className={i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                                            <td className="p-3 border border-gray-300 text-[#2cb696] text-center whitespace-nowrap">{row.stars}</td>
+                                            <td className="p-3 border border-gray-300 text-[#222] text-center whitespace-nowrap">{row.stars}</td>
                                             <td className="p-3 border border-gray-300 text-center whitespace-pre-wrap">{row.name}</td>
                                             <td className="p-3 border border-gray-300 text-[#222]">{row.desc}</td>
                                         </tr>
@@ -118,7 +118,7 @@ export default function DajareLevelContent() {
                                         { stars: '★★★★★', name: 'ダジャレケンシロウ', desc: 'オヤジギャグをも凌駕する究極奥義「ダジャレ無想転生」。お前はもう笑っている…いや凍っている。世紀末の荒野すら氷結させる寒気でダジャレ界を終焉へ導く。' },
                                     ].map((row, i) => (
                                         <tr key={i} className={i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                                            <td className="p-3 border border-gray-300 text-[#2cb696] text-center whitespace-nowrap">{row.stars}</td>
+                                            <td className="p-3 border border-gray-300 text-[#222] text-center whitespace-nowrap">{row.stars}</td>
                                             <td className="p-3 border border-gray-300 text-center whitespace-pre-wrap">{row.name}</td>
                                             <td className="p-3 border border-gray-300 text-[#222]">{row.desc}</td>
                                         </tr>
@@ -153,7 +153,7 @@ export default function DajareLevelContent() {
                                         { stars: '★★★★★', name: 'ダジャレアテナ', desc: 'オヤジギャグをも凌駕する神域。聞いた瞬間、笑いも声も氷結させるダジャレ界を守護する女神' },
                                     ].map((row, i) => (
                                         <tr key={i} className={i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                                            <td className="p-3 border border-gray-300 text-[#2cb696] text-center whitespace-nowrap">{row.stars}</td>
+                                            <td className="p-3 border border-gray-300 text-[#222] text-center whitespace-nowrap">{row.stars}</td>
                                             <td className="p-3 border border-gray-300 text-center whitespace-pre-wrap">{row.name}</td>
                                             <td className="p-3 border border-gray-300 text-[#222]">{row.desc}</td>
                                         </tr>
@@ -188,7 +188,7 @@ export default function DajareLevelContent() {
                                         { stars: '★★★★★', name: 'ダジャレジェンド', desc: 'ホールインワン級のダジャレを放つ。その瞬間、コース全体が凍りつき、ゴルフ場はクローズとなる。' },
                                     ].map((row, i) => (
                                         <tr key={i} className={i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                                            <td className="p-3 border border-gray-300 text-[#2cb696] text-center whitespace-nowrap">{row.stars}</td>
+                                            <td className="p-3 border border-gray-300 text-[#222] text-center whitespace-nowrap">{row.stars}</td>
                                             <td className="p-3 border border-gray-300 text-center whitespace-pre-wrap">{row.name}</td>
                                             <td className="p-3 border border-gray-300 text-[#222]">{row.desc}</td>
                                         </tr>
