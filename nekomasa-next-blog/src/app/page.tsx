@@ -55,7 +55,7 @@ export default async function HomePage() {
         <nav>
           <ul className="flex flex-wrap justify-center gap-6 list-none p-0 m-0">
             <li><Link href="/#top" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">トップ</Link></li>
-            <li><Link href="/" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">ブログ</Link></li>
+            <li><Link href="/#latest-articles" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">ブログ</Link></li>
             <li><Link href="/music" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">音楽</Link></li>
             <li><Link href="/nft" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">NFT</Link></li>
             <li><Link href="/profile" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">プロフィール</Link></li>
@@ -113,7 +113,7 @@ export default async function HomePage() {
         </Link>
       </div>
 
-      <h2 className="text-2xl font-bold mb-10 text-center text-[#222]">最新記事</h2>
+      <h2 className="text-2xl font-bold mb-10 text-center text-[#222]" id="latest-articles">最新記事</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.filter(post => post.slug?.current).map((post) => (
           <Link href={`/articles/${post.slug!.current}`} key={post._id} className="block border rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">

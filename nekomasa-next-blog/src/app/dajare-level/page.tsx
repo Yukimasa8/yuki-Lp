@@ -19,7 +19,7 @@ export default function DajareLevelPage() {
                 <nav>
                     <ul className="flex flex-wrap justify-center gap-6 list-none p-0 m-0">
                         <li><Link href="/#top" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">トップ</Link></li>
-                        <li><Link href="/" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">ブログ</Link></li>
+                        <li><Link href="/#latest-articles" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">ブログ</Link></li>
                         <li><span className="text-gray-400 cursor-not-allowed">音楽</span></li>
                         <li><span className="text-gray-400 cursor-not-allowed">NFT</span></li>
                         <li><span className="text-gray-400 cursor-not-allowed">プロフィール</span></li>
