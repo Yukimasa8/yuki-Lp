@@ -1,6 +1,8 @@
 import { client } from '@/lib/sanity';
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
+
 async function getCategories(): Promise<Array<{
   _id: string;
   title: string;
