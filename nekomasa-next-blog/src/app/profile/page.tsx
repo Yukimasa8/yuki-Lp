@@ -51,12 +51,12 @@ export default function ProfilePage() {
           <div className="mt-8">
             <h3 className="text-xl font-semibold mb-4 text-[#222]">現在のミーちゃんのツンデレ度</h3>
             <p className="text-gray-600 mb-4">(ツンデレパラメーター)</p>
-            <div className="bg-gray-200 rounded-full h-8 overflow-hidden">
-              <div className="bg-red-500 h-full text-white text-sm flex items-center justify-center" style={{ width: '70%' }}>
+            <div className="flex w-full h-12 rounded-full overflow-hidden shadow-inner">
+              <div className="bg-red-600 h-full text-white font-bold flex items-center justify-center text-base transition-all hover:bg-red-700" style={{ width: '70%' }}>
                 ツン 70% 💔
               </div>
-              <div className="bg-pink-500 h-full text-white text-sm flex items-center justify-end pr-2" style={{ width: '30%', marginLeft: '70%' }}>
-                デレ 30%
+              <div className="bg-pink-400 h-full text-white font-bold flex items-center justify-center text-base transition-all hover:bg-pink-500" style={{ width: '30%' }}>
+                デレ 30% ❤
               </div>
             </div>
           </div>
