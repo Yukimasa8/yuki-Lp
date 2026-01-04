@@ -21,6 +21,16 @@ export default async function CategoriesPage() {
   console.log("CategoriesPage is being processed!");
   const categories = await getCategories();
 
+  // Manual injection for missing category
+  const hasGolf = categories.some(c => c.title === 'ネコマサのゴルフ術');
+  if (!hasGolf) {
+    categories.push({
+      _id: 'manual-golf',
+      title: 'ネコマサのゴルフ術',
+      slug: { current: 'nekomasa-golf-technique' }
+    });
+  }
+
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-4xl font-bold mb-8 text-center">カテゴリー一覧</h1>
@@ -28,10 +38,10 @@ export default async function CategoriesPage() {
         {categories
           .filter(category => category.slug && category.slug.current)
           .map((category) => (
-          <Link href={`/categories/${category.slug.current}/`} key={category._id} className="block p-4 border rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center">
-            <h2 className="text-xl font-semibold">{category.title}</h2>
-          </Link>
-        ))}
+            <Link href={`/categories/${category.slug.current}/`} key={category._id} className="block p-4 border rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center">
+              <h2 className="text-xl font-semibold">{category.title}</h2>
+            </Link>
+          ))}
       </div>
     </div>
   );

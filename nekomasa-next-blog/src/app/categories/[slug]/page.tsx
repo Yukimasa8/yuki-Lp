@@ -51,7 +51,16 @@ export async function generateStaticParams() {
 
 export default async function CategoryPage({ params }: { params: { slug: string } }) {
   const allCategories = await getAllCategories();
-  const currentCategory = allCategories.find(cat => cat.slug && cat.slug.current === params.slug);
+  let currentCategory = allCategories.find(cat => cat.slug && cat.slug.current === params.slug);
+
+  // Manual fallback for golf technique
+  if (!currentCategory && params.slug === 'nekomasa-golf-technique') {
+    currentCategory = {
+      _id: 'manual-golf',
+      title: 'ネコマサのゴルフ術',
+      slug: { current: 'nekomasa-golf-technique' }
+    };
+  }
 
   if (!currentCategory) {
     return <div className="container mx-auto p-4 text-center text-red-500">カテゴリーが見つかりませんでした。</div>;
