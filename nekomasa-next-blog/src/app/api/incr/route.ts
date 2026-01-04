@@ -12,6 +12,11 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: 'Missing ID' }, { status: 400 });
     }
 
+    if (!process.env.SANITY_API_TOKEN) {
+        console.error('SANITY_API_TOKEN is missing');
+        return NextResponse.json({ error: 'Internal Configuration Error: Token missing' }, { status: 500 });
+    }
+
     try {
         console.log('Attempting to patch post with ID:', id);
         const updatedPost = await writeClient
