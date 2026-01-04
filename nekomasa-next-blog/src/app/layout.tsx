@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="ja">
       <body className="antialiased">
         {children}
-        <GoogleAnalytics gaId="G-P655KCB5Q7" />
+        {process.env.NODE_ENV === 'production' && <GoogleAnalytics gaId="G-P655KCB5Q7" />}
       </body>
     </html>
   );
