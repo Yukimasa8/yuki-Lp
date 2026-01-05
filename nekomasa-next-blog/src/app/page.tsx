@@ -42,9 +42,11 @@ export default async function HomePage() {
     <div className="container mx-auto p-4 font-sans text-[#222]" id="top">
       <header className="flex flex-col md:flex-row justify-between items-center py-5 px-4 md:px-10 bg-white border-b border-gray-200 mb-8">
         <div className="flex flex-col items-center gap-2 mb-4 md:mb-0">
-          <Link href="/#top">
-            <Image src="/nekomasalogo3.png" alt="NEKOMASA ロゴ" width={200} height={60} className="h-[60px] w-auto brightness-0" />
-          </Link>
+          <h1 className="leading-none">
+            <Link href="/#top">
+              <Image src="/nekomasalogo3.png" alt="ネコマサブログ(NEKOMASA)" width={200} height={60} className="h-[60px] w-auto brightness-0" />
+            </Link>
+          </h1>
           <p className="text-gray-500 text-sm text-center font-normal">
             節約術･時間術など生活に役立つ情報を<br />
             ダジャレベルと共に発信しています<br />

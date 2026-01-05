@@ -6,8 +6,12 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nekomasa.com'),
-  title: "NEKOMASA",
-  description: "日常に「クスっ」と笑える余白を。ネコマサのブログ。",
+  title: {
+    default: "NEKOMASA | ネコマサブログ",
+    template: "%s | ネコマサブログ",
+  },
+  description: "日常に「クスっ」と笑える余白を。ネコマサのブログ。節約術、時間術、そしてダジャレをお届けします。",
+  keywords: ["ネコマサ", "ブログ", "NEKOMASA", "ダジャレ", "節約", "ライフハック"],
 };
 
 export default function RootLayout({
