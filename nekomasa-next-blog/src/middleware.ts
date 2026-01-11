@@ -13,6 +13,15 @@ export function middleware(request: NextRequest) {
         return NextResponse.redirect(new URL('/', request.url), 301);
     }
 
+    // Handle old site URL structure: /tags.html?slug=...
+    if (request.nextUrl.pathname === '/tags.html') {
+        const slug = request.nextUrl.searchParams.get('slug');
+        if (slug) {
+            return NextResponse.redirect(new URL(`/tags/${slug}`, request.url), 301);
+        }
+        return NextResponse.redirect(new URL('/', request.url), 301);
+    }
+
     return NextResponse.next();
 }
 
