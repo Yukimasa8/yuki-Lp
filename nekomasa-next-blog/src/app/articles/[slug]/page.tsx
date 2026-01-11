@@ -49,11 +49,13 @@ export async function generateStaticParams() {
   }));
 }
 
+import { notFound } from 'next/navigation';
+
 export default async function ArticlePage({ params }: { params: { slug: string } }) {
   const post = await getPostBySlug(params.slug);
 
   if (!post) {
-    return <div className="container mx-auto p-4 text-center text-red-500">記事が見つかりませんでした。</div>;
+    notFound();
   }
 
   const readingTime = Math.ceil(post.body.reduce((acc: number, block: any) => {
