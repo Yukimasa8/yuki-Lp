@@ -25,10 +25,10 @@ export default function PrivacyPolicyPage() {
 
       <main className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-8 text-center text-[#222]">プライバシーポリシー</h1>
-        
+
         <div className="prose prose-lg max-w-none">
           <p>当サイト（以下、「当サイト」）は、以下の通りプライバシーポリシーを定めます。</p>
-          
+
           <h2 className="text-2xl font-semibold mt-8 mb-4 text-[#222]">1. 個人情報の利用目的</h2>
           <p>当サイトでは、お問い合わせや記事へのコメントの際、名前やメールアドレス等の個人情報を入力いただく場合がございます。取得した個人情報は、お問い合わせに対する回答や必要な情報を電子メールなどでご連絡する場合に利用させていただくものであり、これらの目的以外では利用いたしません。</p>
 
@@ -58,7 +58,7 @@ export default function PrivacyPolicyPage() {
         <p>
           このページはバイブコーディングで作成しています<br />
           &copy; 2025 ネコマサBLOG. All Rights Reserved.<br />
-          <a href="/privacy-policy" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">プライバシーポリシー</a> | <a href="/environment" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">開発環境について</a>
+          <a href="/privacy-policy" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">プライバシーポリシー</a> | <a href="/environment" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">開発環境について</a> | <a href="/contact" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">お問い合わせ</a>
         </p>
       </footer>
     </div>

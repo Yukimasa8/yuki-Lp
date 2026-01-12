@@ -178,7 +178,7 @@ export default async function HomePage() {
         <p>
           このページはバイブコーディングで作成しています<br />
           &copy; 2025 ネコマサBLOG. All Rights Reserved.<br />
-          <Link href="/privacy-policy" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">プライバシーポリシー</Link> | <Link href="/environment" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">開発環境について</Link>
+          <Link href="/privacy-policy" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">プライバシーポリシー</Link> | <Link href="/environment" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">開発環境について</Link> | <Link href="/contact" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">お問い合わせ</Link>
         </p>
       </footer>
     </div>
