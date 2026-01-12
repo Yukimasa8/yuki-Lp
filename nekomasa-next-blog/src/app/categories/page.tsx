@@ -1,5 +1,6 @@
 import { client } from '@/lib/sanity';
 import Link from 'next/link';
+import Footer from '@/components/Footer';
 
 export const dynamic = 'force-dynamic';
 
@@ -35,6 +36,7 @@ export default async function CategoriesPage() {
             </Link>
           ))}
       </div>
+      <Footer />
     </div>
   );
 }

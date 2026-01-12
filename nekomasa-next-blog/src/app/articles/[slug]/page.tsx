@@ -3,6 +3,7 @@ import PortableTextRenderer from '@/components/PortableTextRenderer';
 import Image from 'next/image';
 import Link from 'next/link';
 import ViewCounter from '@/components/ViewCounter';
+import Footer from '@/components/Footer';
 
 export const revalidate = 60;
 
@@ -178,13 +179,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
         )}
       </div>
 
-      <footer className="text-center mt-16 pt-8 pb-8 bg-white border-t border-gray-200 text-[#444] text-sm">
-        <p>
-          このページはバイブコーディングで作成しています<br />
-          &copy; 2025 ネコマサBLOG. All Rights Reserved.<br />
-          <Link href="/privacy-policy" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">プライバシーポリシー</Link> | <Link href="/environment" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">開発環境について</Link>
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 }

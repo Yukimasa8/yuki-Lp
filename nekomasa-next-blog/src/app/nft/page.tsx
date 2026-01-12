@@ -1,3 +1,5 @@
+import Footer from '@/components/Footer';
+
 export default function NftPage() {
   return (
     <div className="container mx-auto p-4 font-sans text-[#222]">
@@ -39,13 +41,7 @@ export default function NftPage() {
         </div>
       </main>
 
-      <footer className="text-center mt-16 pt-8 pb-8 bg-white border-t border-gray-200 text-[#444] text-sm">
-        <p>
-          このページはバイブコーディングで作成しています<br />
-          &copy; 2025 ネコマサBLOG. All Rights Reserved.<br />
-          <a href="/privacy-policy" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">プライバシーポリシー</a> | <a href="/environment" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">開発環境について</a>
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 }

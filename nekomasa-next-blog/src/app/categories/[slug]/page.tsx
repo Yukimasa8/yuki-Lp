@@ -1,6 +1,7 @@
 import { client, urlFor } from '@/lib/sanity';
 import Link from 'next/link';
 import Image from 'next/image';
+import Footer from '@/components/Footer';
 
 // Function to fetch all categories with their slugs
 async function getAllCategories(): Promise<Array<{ _id: string, title: string, slug: { current: string } }>> {
@@ -88,6 +89,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
           ))
         )}
       </div>
+      <Footer />
     </div>
   );
 }

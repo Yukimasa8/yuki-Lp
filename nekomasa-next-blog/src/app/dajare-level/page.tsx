@@ -1,6 +1,7 @@
 import DajareLevelContent from '@/components/DajareLevelContent';
 import Link from 'next/link';
 import Image from 'next/image';
+import Footer from '@/components/Footer';
 
 export default function DajareLevelPage() {
     return (
@@ -20,10 +21,10 @@ export default function DajareLevelPage() {
                     <ul className="flex flex-wrap justify-center gap-6 list-none p-0 m-0">
                         <li><Link href="/#top" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">トップ</Link></li>
                         <li><Link href="/#latest-articles" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">ブログ</Link></li>
-                        <li><span className="text-gray-400 cursor-not-allowed">音楽</span></li>
-                        <li><span className="text-gray-400 cursor-not-allowed">NFT</span></li>
-                        <li><span className="text-gray-400 cursor-not-allowed">プロフィール</span></li>
-                        <li><span className="text-gray-400 cursor-not-allowed">SNS</span></li>
+                        <li><Link href="/music" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">音楽</Link></li>
+                        <li><Link href="/nft" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">NFT</Link></li>
+                        <li><Link href="/profile" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">プロフィール</Link></li>
+                        <li><Link href="/sns" className="text-[#222] font-medium text-base hover:text-[#00aaff] transition-colors duration-300">SNS</Link></li>
                     </ul>
                 </nav>
             </header>
@@ -32,13 +33,7 @@ export default function DajareLevelPage() {
                 <DajareLevelContent />
             </main>
 
-            <footer className="text-center mt-16 pt-8 pb-8 bg-white border-t border-gray-200 text-[#444] text-sm">
-                <p>
-                    このページはバイブコーディングで作成しています<br />
-                    &copy; 2025 ネコマサBLOG. All Rights Reserved.<br />
-                    <Link href="/privacy-policy" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">プライバシーポリシー</Link> | <Link href="/environment" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">開発環境について</Link>
-                </p>
-            </footer>
+            <Footer />
         </div>
     );
 }

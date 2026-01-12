@@ -1,3 +1,5 @@
+import Footer from '@/components/Footer';
+
 export default function EnvironmentPage() {
   return (
     <div className="container mx-auto p-4 font-sans text-[#222]">
@@ -25,10 +27,10 @@ export default function EnvironmentPage() {
 
       <main className="text-center py-12 px-4 my-8">
         <h1 className="text-3xl font-bold mb-8 text-[#222]">開発環境</h1>
-        
+
         <div className="max-w-2xl mx-auto space-y-6">
           <p className="text-lg text-gray-700">当サイトは、サーバー代の月額約970円で運営しています。<br />※ネコマサの猫件費(ニャンケンヒ)は含まれておりません。</p>
-          
+
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold text-[#222]">サーバー</h2>
             <p className="text-lg text-gray-700">ConoHaWing(月額約970円)</p>
@@ -54,13 +56,7 @@ export default function EnvironmentPage() {
         </div>
       </main>
 
-      <footer className="text-center mt-16 pt-8 pb-8 bg-white border-t border-gray-200 text-[#444] text-sm">
-        <p>
-          このページはバイブコーディングで作成しています<br />
-          &copy; 2025 ネコマサBLOG. All Rights Reserved.<br />
-          <a href="/privacy-policy" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">プライバシーポリシー</a> | <a href="/environment" className="text-[#333] underline hover:text-[#111] hover:no-underline transition-colors">開発環境について</a>
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 }
