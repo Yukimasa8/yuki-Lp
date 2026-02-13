@@ -121,9 +121,9 @@ export default async function ArticlePage({ params }: { params: { slug: string }
           <div className="flex justify-center items-center gap-6 mb-8 text-sm md:text-base">
             {post.dajareLevel && (
               <div className="flex items-center">
-                <Link href="/dajare-level" className="mr-2 font-bold text-gray-700 hover:text-[#00aaff] transition-colors flex items-center gap-1 group">
-                  ダジャレベル
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400 group-hover:text-[#00aaff] transition-colors">
+                <span className="mr-1 font-bold text-gray-700">ダジャレベル</span>
+                <Link href="/dajare-level" aria-label="ダジャレベルとは">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400 hover:text-[#00aaff] transition-colors">
                     <circle cx="12" cy="12" r="10"></circle>
                     <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
                     <path d="M12 17h.01"></path>
@@ -136,9 +136,9 @@ export default async function ArticlePage({ params }: { params: { slug: string }
             )}
             {post.gorioshiLevel && (
               <div className="flex items-center">
-                <Link href="/dajare-level#gorioshi" className="mr-2 font-bold text-gray-700 hover:text-[#00aaff] transition-colors flex items-center gap-1 group">
-                  ゴリ押し度
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400 group-hover:text-[#00aaff] transition-colors">
+                <span className="mr-1 font-bold text-gray-700">ゴリ押し度</span>
+                <Link href="/dajare-level#gorioshi" aria-label="ゴリ押し度とは">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400 hover:text-[#00aaff] transition-colors">
                     <circle cx="12" cy="12" r="10"></circle>
                     <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
                     <path d="M12 17h.01"></path>
