@@ -218,7 +218,7 @@ export default function DajareLevelContent() {
 
             <hr className="my-10 border-gray-300" />
 
-            <h3 className="text-xl font-bold mb-6 text-[#222]">ゴリ押し度とは？</h3>
+            <h3 id="gorioshi" className="text-xl font-bold mb-6 text-[#222] scroll-mt-24">ゴリ押し度とは？</h3>
             <div className="mb-8 text-left inline-block max-w-2xl px-4">
                 <p className="mb-6 leading-[1.8] text-[#222]">
                     ブログ記事にあるゴリ押し度とは、<br />
