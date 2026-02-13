@@ -121,7 +121,9 @@ export default async function ArticlePage({ params }: { params: { slug: string }
           <div className="flex justify-center items-center gap-6 mb-8 text-sm md:text-base">
             {post.dajareLevel && (
               <div className="flex items-center">
-                <span className="mr-2 font-bold text-gray-700">ダジャレベル</span>
+                <Link href="/dajare-level" className="mr-2 font-bold text-gray-700 hover:text-[#00aaff] transition-colors">
+                  ダジャレベル
+                </Link>
                 <span className="text-[#222] tracking-widest text-lg">
                   {'★'.repeat(post.dajareLevel)}{'☆'.repeat(5 - post.dajareLevel)}
                 </span>
