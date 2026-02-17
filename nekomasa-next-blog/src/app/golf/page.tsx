@@ -49,7 +49,12 @@ export default async function GolfPage() {
                 <h1 className="text-4xl font-bold mb-4 text-[#222]">ネコマサゴルフ</h1>
                 <p className="text-lg md:text-xl font-medium text-gray-700 mb-12">
                     ボールの飛距離はもちろん、<br className="md:hidden" />
-                    ダジャレの飛距離も飛ばします。
+                    ダジャレの飛距離も飛ばします。<br /><br />
+                    <span className="text-base md:text-lg">
+                        「いやぁん、ばかぁん」を抜け出し、<br className="md:hidden" />
+                        先に上がって「ジャンボお先」と<br className="md:hidden" />
+                        言える日を目指しています。
+                    </span>
                 </p>
 
                 {posts.length > 0 ? (
