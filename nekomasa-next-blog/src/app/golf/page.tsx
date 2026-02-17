@@ -53,7 +53,7 @@ export default async function GolfPage() {
                     <span className="text-base md:text-lg">
                         「いやぁん、ばかぁん」を抜け出し、<br className="md:hidden" />
                         先に上がって「ジャンボお先」と<br className="md:hidden" />
-                        言える日を目指しています。
+                        言える日まで...
                     </span>
                 </p>
 
