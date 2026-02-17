@@ -59,6 +59,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
+      url: 'https://nekomasa.com/golf',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: 'https://nekomasa.com/categories',
       lastModified: new Date(),
       changeFrequency: 'weekly',

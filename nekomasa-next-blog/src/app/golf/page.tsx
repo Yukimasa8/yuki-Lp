@@ -4,7 +4,22 @@ import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 
+import { Metadata } from 'next';
+
 export const revalidate = 60;
+
+export const metadata: Metadata = {
+    title: "ネコマサゴルフ | NEKOMASA",
+    description: "ボールの飛距離はもちろん、ダジャレの飛距離も飛ばします。「いやぁん、ばかぁん」を抜け出し、「ジャンボお先」と言える日まで...",
+    openGraph: {
+        title: "ネコマサゴルフ | NEKOMASA",
+        description: "ボールの飛距離はもちろん、ダジャレの飛距離も飛ばします。「いやぁん、ばかぁん」を抜け出し、「ジャンボお先」と言える日まで...",
+        url: 'https://nekomasa.com/golf',
+        siteName: 'NEKOMASA',
+        locale: 'ja_JP',
+        type: 'website',
+    },
+};
 
 async function getGolfPosts(): Promise<Array<{
     _id: string;
