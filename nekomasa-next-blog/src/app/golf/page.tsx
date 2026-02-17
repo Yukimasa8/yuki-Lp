@@ -52,8 +52,7 @@ export default async function GolfPage() {
                     ダジャレの飛距離も飛ばします。<br /><br />
                     <span className="text-base md:text-lg">
                         「いやぁん、ばかぁん」を抜け出し、<br className="md:hidden" />
-                        先に上がって「ジャンボお先」と<br className="md:hidden" />
-                        言える日まで...
+                        「ジャンボお先」と言える日まで...
                     </span>
                 </p>
 
