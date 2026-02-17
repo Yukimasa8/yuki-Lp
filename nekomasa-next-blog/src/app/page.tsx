@@ -17,7 +17,7 @@ async function getPosts(): Promise<Array<{
   categories: Array<{ _id: string, title: string }>;
 }>> {
   const query = `
-    *[_type == "post"] | order(publishedAt desc) {
+    *[_type == "post" && count((categories[]->title)[@ match "ゴルフ" || @ match "Golf"]) == 0] | order(publishedAt desc) {
       _id,
       title,
       slug,
